@@ -1,4 +1,4 @@
-<title>{{ config('app.name', 'Laravel') }} | Courses detail</title>
+<title>{{ config('app.name', 'AVOS') }} | Courses detail</title>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl leading-tight text-center text-green-800 font-semi-bold">

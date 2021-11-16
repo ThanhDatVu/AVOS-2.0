@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Course detail') }}
+            {{$course->title}}
             @if(isset(Auth::user()->enseignant->id))
                 @if ((Auth::user()->enseignant->id != $course->enseignant_id))
                     <a href="{{route('enroll',['id'=>$course->id])}}" class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll the course</a>
@@ -24,13 +24,13 @@
                             <div class="row">
                                 <div class="col-lg-12 course-details-left">
                                     <div class="content-wrapper">
-                                        <h4 class="title">Objectives</h4>
+                                        <h4 class="title">Mục tiêu</h4>
                                         <ul class="ml-4 list-decimal">
-                                            <li>}Master course in all plan.</li>
+                                            <li>Master course in all plan.</li>
                                             <li>take right way to learn step by step.</li>
                                         </ul>
 
-                                        <h4 class="title">Course Outline</h4>
+                                        <h4 class="title">Tổng quan khoá học</h4>
                                         <div class="content">
                                             <ul class="course-list">
                                                 @forelse ($course->leçons as $lesson)
@@ -49,7 +49,7 @@
                                                         </div>
                                                 </li>
                                                 @empty
-                                                    <div class="w-full p-3 mb-3 text-white bg-red-600 rounded">No lessons for this lesson yet.</div>
+                                                    <div class="w-full p-3 mb-3 text-white bg-red-600 rounded">Hiên chưa có bài học nào.</div>
                                                 @endforelse
                                             </ul>
                                         </div>
