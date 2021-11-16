@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('All courses') }}
+            {{ __('Tất cả các khoá học') }}
         </h2>
     </x-slot>
 
@@ -44,10 +44,10 @@
                                         </a>
                                     </li>
                                     <li class="page-item"><a href="#" class="page-link">01</a></li>
-                                    <li class="page-item active"><a href="#" class="page-link">02</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">02</a></li>
                                     <li class="page-item"><a href="#" class="page-link">03</a></li>
                                     <li class="page-item"><a href="#" class="page-link">04</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">09</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">05</a></li>
                                     <li class="page-item">
                                         <a href="#" class="page-link" aria-label="Next">
                                             <span aria-hidden="true">

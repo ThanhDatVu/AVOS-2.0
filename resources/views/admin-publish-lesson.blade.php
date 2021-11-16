@@ -9,7 +9,7 @@
     </style>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Edit course') }}
+            {{ __('Thêm bài học') }}
         </h2>
     </x-slot>
 
@@ -37,7 +37,7 @@
                                 <label for="">Title</label>
                                 <input name="titre" type="text" id="" class="form-control" placeholder="" aria-describedby="helpId">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="">Description</label>
                                 <input name="descriptif" type="text" id="" class="form-control" placeholder="" aria-describedby="helpId">
@@ -52,7 +52,7 @@
                                     @forelse ($cours as $cour)
                                         <option value="{{$cour->id}}">{{$cour->title}}</option>
                                     @empty
-                                        
+
                                     @endforelse
                                 </select>
                             </div>
@@ -77,7 +77,7 @@
     </div>
     @include("eclipse-interface.layouts.footer")
     <script src="{{asset("editeur/tinymce.min.js")}}"></script>
-    <script src="{{asset("editeur/fr_FR.js")}}"></script>
+    
         <script>
         tinymce.init({
             selector: 'textarea#document',
