@@ -16,6 +16,7 @@ class Cour extends Model
      *
      * @var array
      */
+    protected $table = 'courses';
     protected $fillable = [
         'idCours',
         'title',

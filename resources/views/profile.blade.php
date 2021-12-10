@@ -20,11 +20,7 @@
                             <div class="flex content-center mx-auto text-center qr-cont">
                                 <img class="origin-center rounded-l-full h-200 w-200 logo-img" async src="{{isset(Auth::user()->avatar)?Storage::url(Auth::user()->avatar):"avatar/default.png"}}" alt="">
                                 <span async class=" qr">
-                                    {!!
-                                    QrCode::size(250)
-                                    ->backgroundColor(255,255,255)
-                                    ->generate(config("app.url"))
-                                    !!}
+
                                 </span>
                             </div>
 							<a href="#">

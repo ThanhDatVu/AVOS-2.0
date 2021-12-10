@@ -130,7 +130,7 @@ class CourController extends Controller
                 }
             }else{
                 Auth::user()->cours()->toggle([$course->id]);
-            } 
+            }
         }
         $coursA=array();
         $i=0;
@@ -147,13 +147,13 @@ class CourController extends Controller
                 if(($couruser->user_id!=Auth::user()->id)&&($couruser->cour_id!=$id)){
                     if(pay($course,$id))
                         Auth::user()->cours()->toggle([$course->id]);
-                    
+
                 }
             }else{
                 pay($course,$id);
             }
         }
-        
+
         return view('all-courses',["courses"=>Auth::user()->cours]);
         /* if($course->coût_du_cours){
             // Create new payer and method

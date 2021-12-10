@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Administrateur extends Model
 {
+    protected $table = 'admin';
     use HasFactory;
     protected $fillable=[
         "2authpass",
