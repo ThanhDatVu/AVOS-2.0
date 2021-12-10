@@ -31,23 +31,22 @@
                                     @endforeach
                                 </ul>
                             @endif
-                            <input type="file" accept="image/jpeg, image/png" name="lessonimg" class="hidden w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="courseImg">
-                            <label for="courseImg" class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 transition-all duration-200 ease-in-out bg-green-100 border-green-700 rounded shadow-sm hover:text-gray-100 hover:bg-green-600 tborder focus:outline-none focus:border-green-500 " ><span class="ti-camera mr2"></span>&nbsp;&nbsp;Choose a picture image for the course</label>
+
                             <div class="form-group">
-                                <label for="">Title</label>
+                                <label for="">Tiêu đề</label>
                                 <input name="titre" type="text" id="" class="form-control" placeholder="" aria-describedby="helpId">
                             </div>
 
                             <div class="form-group">
-                                <label for="">Description</label>
+                                <label for="">Mô tả</label>
                                 <input name="descriptif" type="text" id="" class="form-control" placeholder="" aria-describedby="helpId">
                             </div>
                             <div class="form-group">
-                                <label for="">Ojectives</label>
+                                <label for="">Mục tiêu</label>
                                 <input name="objectif" type="text" id="" class="form-control" placeholder="" aria-describedby="helpId">
                             </div>
                             <div class="form-group">
-                                <label for="">Select the allowed course</label>
+                                <label for="">Chọn các khoá học dưới</label>
                                 <select name="courseid" class="border btn col-md-12 col-sm-12 col-12">
                                     @forelse ($cours as $cour)
                                         <option value="{{$cour->id}}">{{$cour->title}}</option>
@@ -57,10 +56,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="my-textarea">Edit the lesson with this text editor</label>
+                                <label for="my-textarea">Sử dụng trình soạn thảo văn bản này để soạn thảo bài học</label>
                                 <textarea id="document" class="form-control" name="course" rows="3"></textarea>
                                 <button class="mt-3 text-white bg-green-700 col-md-12 col-sm-12 col-12 btn" type="submit">
-                                    Submit the lesson
+                                    Xong
                                 </button>
                             </div>
 
@@ -77,7 +76,7 @@
     </div>
     @include("eclipse-interface.layouts.footer")
     <script src="{{asset("editeur/tinymce.min.js")}}"></script>
-    
+
         <script>
         tinymce.init({
             selector: 'textarea#document',

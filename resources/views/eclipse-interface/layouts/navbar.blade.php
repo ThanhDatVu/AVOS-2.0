@@ -12,7 +12,7 @@
 
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="navbar-nav">
-            <li><a class="transition duration-150 ease-in-out hover:shadow" href="/"><span class="mr-2 ti-home"></span>Home</a></li>
+            <li><a class="transition duration-150 ease-in-out hover:shadow" href="/"><span class="mr-2 ti-home"></span>Trang chủ</a></li>
             {{-- <li><a class="transition duration-150 ease-in-out hover:shadow" href="{{route("eclipse-courses")}}"><span class="mr-2 ti-book"></span>Courses</a></li> --}}
             {{-- <!-- Dropdown -->
             <li class="dropdown">
@@ -26,11 +26,11 @@
               </div>
             </li>
  --}}
-            <li><a class="transition duration-150 ease-in-out hover:shadow" href="{{route("contact")}}"><span class="mr-2 ti-headphone-alt"></span>Contacts</a></li>
+            <li><a class="transition duration-150 ease-in-out hover:shadow" href="{{route("contact")}}"><span class="mr-2 ti-headphone-alt"></span>Liên hệ</a></li>
 
             @guest
-            <li><a class="mr-1 transition duration-150 ease-in-out rounded-full shadow hover:bg-green-600" href="{{route("login")}}" style='' class="bg-green-600">&nbsp;&nbsp;login&nbsp;&nbsp;</a></li>
-            <li><a class="mr-1 transition duration-150 ease-in-out rounded-full shadow hover:bg-blue-500" href="{{route("register")}}" style='' class="bg-green-600">&nbsp;&nbsp;Register&nbsp;&nbsp;</a></li>
+            <li><a class="mr-1 transition duration-150 ease-in-out rounded-full shadow hover:bg-green-600" href="{{route("login")}}" style='' class="bg-green-600">&nbsp;&nbsp;Đăng nhập&nbsp;&nbsp;</a></li>
+            <li><a class="mr-1 transition duration-150 ease-in-out rounded-full shadow hover:bg-blue-500" href="{{route("register")}}" style='' class="bg-green-600">&nbsp;&nbsp;Đăng ký&nbsp;&nbsp;</a></li>
             @endguest
             @auth
             <li><a class="transition duration-150 ease-in-out hover:shadow" href="{{route('dashboard')}}"><span class="mr-2 ti-dashboard"></span>Dashboard </a></li>

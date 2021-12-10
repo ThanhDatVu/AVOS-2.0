@@ -23,7 +23,7 @@ Route::get('/courses', function () {
     return view('all-courses',["courses"=>Cour::all()]);
 })->name('courses');
 Route::get('/my-courses', function () {
-    return view('all-courses',["courses"=>Auth::user()->cours]);
+    return view('my-courses',["courses"=>Auth::user()->cours()]);
 })->name('my-courses');
 
 

@@ -16,9 +16,7 @@
                                     @forelse ($courses as $cours)
                                     <div class="col-lg-4 col-sm-12 col-md-4 col-4">
                                         <div class="max-w-md px-8 py-4 my-20 bg-white rounded-lg shadow ">
-                                            <div class="flex justify-center -mt-16 md:justify-end">
-                                                <img class="object-cover w-20 h-20 p-1 border-4 border-indigo-500 rounded-full shadow bg-green-50 border-" src="{{Storage::url($cours->image)}}">
-                                            </div>
+
                                             <div>
                                                 <h2 class="text-3xl font-semibold text-gray-800">{{$cours->title}}</h2>
                                                 <p class="mt-2 text-gray-600">{{$cours->descriptif}}</p>
