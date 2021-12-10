@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Tất cả các khoá học') }}all-courses.blade.php
+            {{ __('Tất cả các khoá học') }}
         </h2>
     </x-slot>
 
@@ -23,9 +23,9 @@
                                                 <h2 class="text-3xl font-semibold text-gray-800">{{$cours->title}}</h2>
                                                 <p class="mt-2 text-gray-600">{{$cours->descriptif}}</p>
                                             </div>
-                                            <div>Proposed by <span  class="text-green-800">{{$cours->enseignant->user->nom_utilisateur}}</span></div>
+                                            <div>Biên soạn bởi <span  class="text-green-800">{{$cours->enseignant->user->nom_utilisateur}}</span></div>
                                             <div class="flex justify-end mt-4">
-                                                <a href="{{route("course",$cours->id)}}" class="text-xl font-medium text-indigo-500">Read</a>
+                                                <a href="{{route("course",$cours->id)}}" class="text-xl font-medium text-indigo-500">Xem</a>
                                             </div>
                                         </div>
                                     </div>
