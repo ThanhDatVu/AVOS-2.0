@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Favicon -->
   <!-- Author Meta -->
-  <meta name="author" content="Vũ Thành Đạt" />
+  <meta name="author" content="Daniel Uokof" />
   <!-- Meta Description -->
   <meta name="description" content="" />
   <!-- Meta Keyword -->

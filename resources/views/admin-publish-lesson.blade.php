@@ -77,7 +77,7 @@
     </div>
     @include("eclipse-interface.layouts.footer")
     <script src="{{asset("editeur/tinymce.min.js")}}"></script>
-
+    
         <script>
         tinymce.init({
             selector: 'textarea#document',

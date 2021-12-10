@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Enseignant extends Model
-{   protected $table = 'teacher';
+{
     use HasFactory;
 
     protected $fillable=[

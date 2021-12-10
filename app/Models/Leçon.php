@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Leçon extends Model
 {
     use HasFactory;
-    protected $table = 'lesson';
+
 /**
      * The attributes that are mass assignable.
      *

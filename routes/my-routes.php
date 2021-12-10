@@ -23,12 +23,8 @@ Route::get('/courses', function () {
     return view('all-courses',["courses"=>Cour::all()]);
 })->name('courses');
 Route::get('/my-courses', function () {
-  return view('my-courses',["courses"=>Cour::all()]);
+    return view('all-courses',["courses"=>Auth::user()->cours]);
 })->name('my-courses');
-//sửa sau
-//Route::get('/my-courses', function () {
-  //  return view('all-courses',["courses"=>Auth::user()->cours]);
-//})->name('my-courses');
 
 
 Route::get('/admin-my-course', [CourController::class,"adminmycourse"])->middleware(['auth'])->name('admin-course');
