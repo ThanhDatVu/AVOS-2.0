@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Cour;
+use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrController;
 use App\Http\Controllers\EnseignantController;
@@ -16,7 +16,7 @@ use App\Http\Controllers\EnseignantController;
 |
 */
 Route::get('/', function () {
-    return view('eclipse-interface.index',["cours"=>Cour::All()]);
+    return view('eclipse-interface.index',["cours"=>Course::All()]);
 })->name("home");
 
 

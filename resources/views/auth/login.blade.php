@@ -69,9 +69,6 @@
                     </div>
                     <div class="flex items-center justify-end w-full mt-4">
                         <button class="flex items-center justify-center w-full px-3 py-1 ml-2 text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none focus:ring">
-                            <svg class="inline w-5 h-5"fill="none"stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                            </svg>
                             <p class="ml-1 text-lg">
                             Login
                             </p>

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Cour;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +20,7 @@ Route::post('/edit-course', [CourController::class,"submitEditCourse"])->middlew
 Route::get('/courses/{id}', [CourController::class,"showSingle"])->middleware(['auth'])->name('course');
 Route::get('/courses/enroll/{id}', [CourController::class,"enroll"])->middleware(['auth'])->name('enroll');
 Route::get('/courses', function () {
-    return view('all-courses',["courses"=>Cour::all()]);
+    return view('all-courses',["courses"=>Course::all()]);
 })->name('courses');
 Route::get('/my-courses', function () {
     return view('my-courses',["courses"=>Auth::user()->cours()]);

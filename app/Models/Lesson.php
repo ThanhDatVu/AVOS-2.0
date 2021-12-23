@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Cour;
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Leçon extends Model
-{
+class Lesson extends Model
+{   protected $table = 'leçons';
     use HasFactory;
 
 /**
@@ -26,7 +26,7 @@ class Leçon extends Model
         "updated_at",
         "enseignant_id",
     ];
-    public function cour(){
-        return $this->belongsTo(Cour::class);
+    public function course(){
+        return $this->belongsTo(Course::class);
     }
 }

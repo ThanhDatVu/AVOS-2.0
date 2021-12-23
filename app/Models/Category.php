@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\Categorie;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Categorie extends Model
+class Category extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        "nom",
+        "name",
     ];
 }

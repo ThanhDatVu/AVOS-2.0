@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Cour;
+use App\Models\Course;
 
 class User extends Authenticatable
 {
@@ -55,13 +55,13 @@ class User extends Authenticatable
     ];
 
     public function enseignant(){
-        return $this->hasOne(Enseignant::class);
+        return $this->hasOne(Teacher::class);
     }
-    
+
     public function administrateur(){
-        return $this->hasOne(Administrateur::class);
+        return $this->hasOne(Admin::class);
     }
     public function cours(){
-        return $this->belongsToMany(Cour::class);
+        return $this->belongsToMany(Course::class);
     }
 }

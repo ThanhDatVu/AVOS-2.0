@@ -13,10 +13,10 @@ class CreatePivotTableCourUser extends Migration
      */
     public function up()
     {
-        Schema::create('cour_user', function (Blueprint $table) {
+        Schema::create('course_user', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
-            $table->foreignId("cour_id")->constrained()->onDelete("cascade");
+            $table->foreignId("course_id")->constrained()->onDelete("cascade");
             $table->timestamps();
         });
     }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Administrateur;
-use App\Models\Enseignant;
+use App\Models\Admin;
+use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,9 +13,9 @@ class UserController extends Controller
         if($type=='all'){
             $users=User::All();
         }elseif($type=="teacher"){
-            $users=Enseignant::All();
+            $users=Teacher::All();
         }else{
-            $users=Administrateur::All();
+            $users=Admin::All();
         }
         $user_array=array();
         $i=0;

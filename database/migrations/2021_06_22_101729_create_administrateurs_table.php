@@ -13,7 +13,7 @@ class CreateAdministrateursTable extends Migration
      */
     public function up()
     {
-        Schema::create('administrateurs', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
             $table->string("2authpass");

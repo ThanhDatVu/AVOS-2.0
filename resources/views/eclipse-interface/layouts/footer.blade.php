@@ -56,7 +56,7 @@
 			<div class="footer-bottom row align-items-center">
 				<p class="m-0 footer-text col-lg-8 col-md-12">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="text-red-800 fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/heronational" target="_blank">Daniel Fokou</a>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="text-red-800 fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/TienTienBear" target="_blank">Vũ Thành Đạt</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
 				<div class="text-blue-200 col-lg-4 col-md-12 footer-social">

@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Cour;
+use App\Models\Course;
 use App\Models\User;
-use App\Models\Leçon;
+use App\Models\Lesson;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Enseignant extends Model
+class Teacher extends Model
 {
     use HasFactory;
 
@@ -23,11 +23,11 @@ class Enseignant extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function cours(){
-        return $this->hasMany(Cour::class);
+    public function course(){
+        return $this->hasMany(Course::class);
     }
 
-    public function leçons(){
-        return $this->hasMany(Leçon::class);
+    public function lesson(){
+        return $this->hasMany(Lesson::class);
     }
 }

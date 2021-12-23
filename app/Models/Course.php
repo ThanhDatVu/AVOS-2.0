@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Leçon;
-use App\Models\Enseignant;
+use App\Models\Lesson;
+use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Cour extends Model
+class Course extends Model
 {
     use HasFactory;
 /**
@@ -29,11 +29,11 @@ class Cour extends Model
         "enseignant_id",
     ];
 
-    public function enseignant(){
-        return $this->belongsTo(Enseignant::class);
+    public function teacher(){
+        return $this->belongsTo(Teacher::class);
     }
-    public function leçons(){
-        return $this->hasMany(Leçon::class);
+    public function lessons(){
+        return $this->hasMany(Lesson::class);
     }
     public function users(){
         return $this->belongsToMany(User::class);

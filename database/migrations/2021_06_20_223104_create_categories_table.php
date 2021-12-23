@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Categorie;
+use App\Models\Category;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,19 +16,19 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string("nom")->default("Uncategorized");
+            $table->string("name")->default("Uncategorized");
             $table->timestamps();
         });
-        Categorie::create([
-            "nom"=>"Uncategorized"
+        Category::create([
+            "name"=>"Uncategorized"
         ]);
-        Categorie::create([
-            "nom"=>"Science"
+        Category::create([
+            "name"=>"Science"
         ]);
-        Categorie::create([
-            "nom"=>"Data science"
+        Category::create([
+            "name"=>"Data science"
         ]);
-        Categorie::create([
+        Category::create([
             "nom"=>"Computer science"
         ]);
     }

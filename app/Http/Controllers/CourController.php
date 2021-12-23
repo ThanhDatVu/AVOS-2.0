@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use URL;
 use Session;
 use Exception;
-use App\Models\Cour;
+use App\Models\Course;
 use App\Models\User;
 use PayPal\Api\Item;
-use App\Models\Leçon;
+use App\Models\Lesson;
 use PayPal\Api\Payee;
 use PayPal\Api\Payer;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\Payment;
-use App\Models\CourUser;
+use App\Models\CourseUser;
 use PayPal\Api\ItemList;
-use App\Models\Categorie;
+use App\Models\Category;
 use PayPal\Api\Transaction;
 use PayPal\Rest\ApiContext;
 use Illuminate\Http\Request;
@@ -60,7 +60,7 @@ class CourController extends Controller
          function courseimg(Request $request){
             return $request->courseimg?Storage::disk("public")->put("courses",$request->courseimg):"courses/default".mt_rand(0,2).".png";
         }
-        Cour::create([
+        Course::create([
             'title'=>$request->titre,
             'enseignant_id'=>Auth::user()->enseignant->id,
             'descriptif'=>$request->descriptif,
@@ -74,7 +74,7 @@ class CourController extends Controller
         return view(
             "admin-courses",
             [
-                "courses"=>Cour::where('enseignant_id',Auth::user()->enseignant->id)->get()
+                "courses"=>Course::where('enseignant_id',Auth::user()->enseignant->id)->get()
             ]);
     }
 
@@ -86,7 +86,7 @@ class CourController extends Controller
     public function editcourse()
     {
         if(isset(Auth::user()->enseignant->id)){
-            return view("admin-publish-course",["categories"=>Categorie::All()]);
+            return view("admin-publish-course",["categories"=>Category::All()]);
         }else{
             return view("dashboard");
         }
@@ -102,7 +102,7 @@ class CourController extends Controller
     public function showSingle($id)
     {
 
-        $course=Cour::where('id',$id)->firstOrFail();
+        $course=Course::where('id',$id)->firstOrFail();
         return view('admin-courses-detail',["course"=>$course]);
     }
 
@@ -117,7 +117,7 @@ class CourController extends Controller
     public function enroll($id)
     {
         $this->idu=$id;
-        $course=Cour::where('id',$id)->firstOrFail();
+        $course=Course::where('id',$id)->firstOrFail();
 
         function pay($course,$id){
             if($course->coût_du_cours!=0){
@@ -130,7 +130,7 @@ class CourController extends Controller
                 }
             }else{
                 Auth::user()->cours()->toggle([$course->id]);
-            } 
+            }
         }
         $coursA=array();
         $i=0;
@@ -147,13 +147,13 @@ class CourController extends Controller
                 if(($couruser->user_id!=Auth::user()->id)&&($couruser->cour_id!=$id)){
                     if(pay($course,$id))
                         Auth::user()->cours()->toggle([$course->id]);
-                    
+
                 }
             }else{
                 pay($course,$id);
             }
         }
-        
+
         return view('all-courses',["courses"=>Auth::user()->cours]);
         /* if($course->coût_du_cours){
             // Create new payer and method
@@ -212,7 +212,7 @@ class CourController extends Controller
     {
 
         if(isset(Auth::user()->enseignant->id)){
-            return view('admin-courses',["courses"=>Cour::where('enseignant_id',Auth::user()->enseignant->id)->firstOrFail()->get()]);
+            return view('admin-courses',["courses"=>Course::where('enseignant_id',Auth::user()->enseignant->id)->firstOrFail()->get()]);
         }else{
             return view("dashboard");
         }
@@ -233,21 +233,21 @@ class CourController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cour  $cour
+     * @param  \App\Models\Course  $cour
      * @return \Illuminate\Http\Response
      */
     public function show()
     {
-        return view('admin-courses',["courses"=>Cour::All()]);
+        return view('admin-courses',["courses"=>Course::All()]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Cour  $cour
+     * @param  \App\Models\Course  $cour
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cour $cour)
+    public function edit(Course $cour)
     {
         //
     }
@@ -256,10 +256,10 @@ class CourController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cour  $cour
+     * @param  \App\Models\Course  $cour
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cour $cour)
+    public function update(Request $request, Course $cour)
     {
         //
     }
@@ -267,10 +267,10 @@ class CourController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Cour  $cour
+     * @param  \App\Models\Course  $cour
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cour $cour)
+    public function destroy(Course $cour)
     {
         //
     }

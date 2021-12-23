@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CourUser;
+use App\Models\CourseUser;
 use Illuminate\Http\Request;
 
 class CourUserController extends Controller
@@ -15,7 +15,7 @@ class CourUserController extends Controller
     public function index()
     {
         //
-    } 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -40,10 +40,10 @@ class CourUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CourUser  $courUser
+     * @param  \App\Models\CourseUser  $courUser
      * @return \Illuminate\Http\Response
      */
-    public function show(CourUser $courUser)
+    public function show(CourseUser $courUser)
     {
         //
     }
@@ -51,10 +51,10 @@ class CourUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CourUser  $courUser
+     * @param  \App\Models\CourseUser  $courUser
      * @return \Illuminate\Http\Response
      */
-    public function edit(CourUser $courUser)
+    public function edit(CourseUser $courUser)
     {
         //
     }
@@ -63,10 +63,10 @@ class CourUserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CourUser  $courUser
+     * @param  \App\Models\CourseUser  $courUser
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CourUser $courUser)
+    public function update(Request $request, CourseUser $courUser)
     {
         //
     }
@@ -74,10 +74,10 @@ class CourUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CourUser  $courUser
+     * @param  \App\Models\CourseUser  $courUser
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CourUser $courUser)
+    public function destroy(CourseUser $courUser)
     {
         //
     }

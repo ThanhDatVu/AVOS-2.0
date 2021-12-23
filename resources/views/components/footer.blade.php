@@ -29,7 +29,7 @@
         <div class="flex flex-col items-center mt-16 border-t-2 border-green-700">
             <div class="py-6 text-center sm:w-2/3">
                 <p class="mb-2 text-sm font-bold ">
-                   <span class="text-red-500">© 2020 Greate course</span> <span class="text-white">|</span> <a href="https://altechs.africa" class="text-green-600 transition-all duration-200 ease-in-out hover:text-green-800 ">Altechs Engineering</a>
+                   <span class="text-red-500">© 2021 AVOS</span> <span class="text-white">|</span> <a href="https://altechs.africa" class="text-green-600 transition-all duration-200 ease-in-out hover:text-green-800 ">Vũ Thành Đạt</a>
                 </p>
             </div>
         </div>

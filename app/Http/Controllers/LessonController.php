@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cour;
-use App\Models\Leçon;
+use App\Models\Course;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +30,7 @@ class LessonController extends Controller
             function lessonimg($request){
                 return $request->lessonimg?Storage::disk("public")->put("lessons",$request->lessonimg):"lessons/default".mt_rand(0,2).".png";
             }
-            Leçon::create([
+            Lesson::create([
                 "title"=>"$request->titre",
                 "descriptif"=>"$request->descriptif",
                 "cour_id"=>"$request->courseid",
@@ -53,7 +53,7 @@ class LessonController extends Controller
     {
 
         if(isset(Auth::user()->enseignant->id)){
-            return view("admin-publish-lesson",["cours"=>Cour::where('enseignant_id',Auth::user()->enseignant->id)->get() ]);
+            return view("admin-publish-lesson",["cours"=>Course::where('enseignant_id',Auth::user()->enseignant->id)->get() ]);
         }else{
             return redirect(route("courses"));
         }
@@ -67,10 +67,10 @@ class LessonController extends Controller
     {
 
 //        if(isset(Auth::user()->enseignant->id)){
-              $leçon=Leçon::where('id',"like",$id)->firstOrFail();
+              $leçon=Lesson::where('id',"like",$id)->firstOrFail();
               return view('course-detail',["leçon"=>$leçon]);
 //        }else{
-//            $leçon=Leçon::where('id',"like",$id)->firstOrFail();
+//            $leçon=Lesson::where('id',"like",$id)->firstOrFail();
 //            return view('course-detail',["leçon"=>$leçon]);
  //       }
     }

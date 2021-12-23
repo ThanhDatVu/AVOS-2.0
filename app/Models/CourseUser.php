@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class CourUser extends Model
+class CourseUser extends Model
 {
     use HasFactory;
     protected $fillable=[
@@ -19,15 +19,15 @@ class CourUser extends Model
         return $this->belongsTo(User::class);
     }
  */
-    public function cours(){
-        return $this->hasMany(Cour::class);
+    public function courses(){
+        return $this->hasMany(Course::class);
     }
 
     public function users(){
         return $this->hasMany(User::class);
     }
 
-    public function leçons(){
-        return $this->belongsToMany(Leçon::class);
+    public function lessons(){
+        return $this->belongsToMany(Lesson::class);
     }
 }

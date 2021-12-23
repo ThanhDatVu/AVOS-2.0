@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Administrateur;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class AdministrateurController extends Controller
@@ -41,10 +41,10 @@ class AdministrateurController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Administrateur  $administrateur
+     * @param  \App\Models\Admin  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function show(Administrateur $administrateur)
+    public function show(Admin $administrateur)
     {
         //
     }
@@ -52,10 +52,10 @@ class AdministrateurController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Administrateur  $administrateur
+     * @param  \App\Models\Admin  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function edit(Administrateur $administrateur)
+    public function edit(Admin $administrateur)
     {
         //
     }
@@ -64,10 +64,10 @@ class AdministrateurController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Administrateur  $administrateur
+     * @param  \App\Models\Admin  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Administrateur $administrateur)
+    public function update(Request $request, Admin $administrateur)
     {
         //
     }
@@ -75,10 +75,10 @@ class AdministrateurController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Administrateur  $administrateur
+     * @param  \App\Models\Admin  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Administrateur $administrateur)
+    public function destroy(Admin $administrateur)
     {
         //
     }

@@ -13,9 +13,9 @@ class CreateApreciationTableLeconUser extends Migration
      */
     public function up()
     {
-        Schema::create('leçon_user', function (Blueprint $table) {
+        Schema::create('lesson_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("leçon_id")->constrained()->onDelete("cascade");
+            $table->foreignId("lesson_id")->constrained()->onDelete("cascade");
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
             $table->integer("nombre_etoiles",null,true);
             $table->timestamps();

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Cour;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;

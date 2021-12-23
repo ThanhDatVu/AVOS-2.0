@@ -13,10 +13,10 @@ class CreateCategoriesleconTableCategorieLecon extends Migration
      */
     public function up()
     {
-        Schema::create('categorie_leçon', function (Blueprint $table) {
+        Schema::create('categorie_lesson', function (Blueprint $table) {
             $table->id();
             $table->foreignId("categorie_id")->constrained()->onDelete("cascade");
-            $table->foreignId("leçon_id")->constrained()->onDelete("cascade");
+            $table->foreignId("lesson_id")->constrained()->onDelete("cascade");
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateCategoriesleconTableCategorieLecon extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorie_leçon');
+        Schema::dropIfExists('categorie_lesson');
     }
 }

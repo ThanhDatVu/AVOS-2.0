@@ -13,9 +13,9 @@ class CreateLeçonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('leçons', function (Blueprint $table) {
+        Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("cour_id")->constrained()->onDelete("cascade");
+            $table->foreignId("course_id")->constrained()->onDelete("cascade");
             $table->string("title");
             $table->text("descriptif")->nullable();
             $table->string("image");
@@ -32,6 +32,6 @@ class CreateLeçonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leçons');
+        Schema::dropIfExists('lesson');
     }
 }
