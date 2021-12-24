@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Auth;
 use PayPal\Auth\OAuthTokenCredential;
 use Illuminate\Support\Facades\Storage;
 
-class CourController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -58,11 +58,11 @@ class CourController extends Controller
             "cout"=>"integer",
         ]);
          function courseimg(Request $request){
-            return $request->courseimg?Storage::disk("public")->put("courses",$request->courseimg):"courses/default".mt_rand(0,2).".png";
+            return $request->courseimg ? Storage::disk("public")->put("courses",$request->courseimg)  :  "courses/default".mt_rand(0,2).".png";
         }
         Course::create([
             'title'=>$request->titre,
-            'enseignant_id'=>Auth::user()->enseignant->id,
+            'teacher_id'=>Auth::user()->teacher->id,
             'descriptif'=>$request->descriptif,
             'image'=>courseimg($request),
             "objectif"=>$request->objectif,
@@ -74,7 +74,7 @@ class CourController extends Controller
         return view(
             "admin-courses",
             [
-                "courses"=>Course::where('enseignant_id',Auth::user()->enseignant->id)->get()
+                "courses"=>Course::where('teacher_id',Auth::user()->teacher->id)->get()
             ]);
     }
 
@@ -129,7 +129,7 @@ class CourController extends Controller
                     return false;
                 }
             }else{
-                Auth::user()->cours()->toggle([$course->id]);
+                Auth::user()->course()->toggle([$course->id]);
             }
         }
         $coursA=array();
@@ -146,7 +146,7 @@ class CourController extends Controller
             if(isset(Auth::user()->cours)){
                 if(($couruser->user_id!=Auth::user()->id)&&($couruser->cour_id!=$id)){
                     if(pay($course,$id))
-                        Auth::user()->cours()->toggle([$course->id]);
+                        Auth::user()->course()->toggle([$course->id]);
 
                 }
             }else{

@@ -13,17 +13,17 @@
                     <section class="container">
                             <div class="row">
 
-                                    @forelse ($courses as $cours)
+                                    @forelse ($courses as $course)
                                     <div class="col-lg-4 col-sm-12 col-md-4 col-4">
                                         <div class="max-w-md px-8 py-4 my-20 bg-white rounded-lg shadow ">
 
                                             <div>
-                                                <h2 class="text-3xl font-semibold text-gray-800">{{$cours->title}}</h2>
-                                                <p class="mt-2 text-gray-600">{{$cours->descriptif}}</p>
+                                                <h2 class="text-3xl font-semibold text-gray-800">{{$course->title}}</h2>
+                                                <p class="mt-2 text-gray-600">{{$course->descriptif}}</p>
                                             </div>
-                                            <div>Proposed by <span  class="text-green-800">{{$cours->enseignant->user->nom_utilisateur}}</span></div>
+                                            <div>Proposed by <span  class="text-green-800">{{$course->teacher->user->nom_utilisateur}}</span></div>
                                             <div class="flex justify-end mt-4">
-                                                <a href="{{route("course",$cours->id)}}" class="text-xl font-medium text-indigo-500">Read</a>
+                                                <a href="{{route("course",$course->id)}}" class="text-xl font-medium text-indigo-500">Read</a>
                                             </div>
                                         </div>
                                     </div>

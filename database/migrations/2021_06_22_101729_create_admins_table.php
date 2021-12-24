@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePivotTableCourUser extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePivotTableCourUser extends Migration
      */
     public function up()
     {
-        Schema::create('course_user', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
-            $table->foreignId("course_id")->constrained()->onDelete("cascade");
+            $table->string("2authpass");
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePivotTableCourUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pivot_table_cour_user');
+        Schema::dropIfExists('administrateurs');
     }
 }

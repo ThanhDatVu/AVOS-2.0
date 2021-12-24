@@ -3,7 +3,7 @@
 use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrController;
-use App\Http\Controllers\EnseignantController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ Route::get('/profile', function () {
     return view('profile');
 })->middleware(['auth'])->name('profile');
 
-Route::post('/profile',[EnseignantController::class,"create"])->middleware(['auth'])->name('profile');
+Route::post('/profile',[TeacherController::class,"create"])->middleware(['auth'])->name('profile');
 
 
 Route::get('/dashboard', function () {

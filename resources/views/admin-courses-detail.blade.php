@@ -3,8 +3,8 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{$course->title}}
-            @if(isset(Auth::user()->enseignant->id))
-                @if ((Auth::user()->enseignant->id != $course->enseignant_id))
+            @if(isset(Auth::user()->teacher->id))
+                @if ((Auth::user()->teacher->id != $course->enseignant_id))
                     <a href="{{route('enroll',['id'=>$course->id])}}" class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll the course</a>
                 @endif
             @else

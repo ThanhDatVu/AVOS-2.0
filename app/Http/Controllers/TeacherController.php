@@ -7,7 +7,7 @@ use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class EnseignantController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.

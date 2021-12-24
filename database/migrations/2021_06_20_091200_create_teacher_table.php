@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApreciationTableLeconUser extends Migration
+class CreateTeacherTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateApreciationTableLeconUser extends Migration
      */
     public function up()
     {
-        Schema::create('lesson_user', function (Blueprint $table) {
+        Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("lesson_id")->constrained()->onDelete("cascade");
-            $table->foreignId("user_id")->constrained()->onDelete("cascade");
-            $table->integer("nombre_etoiles",null,true);
+
+            /*$table->unsignedBigInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users"); */
+            $table->foreignId("user_id")->constrained();
+            $table->string("profession");
+            $table->json("formation")->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateApreciationTableLeconUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leçon_user');
+        Schema::dropIfExists('enseignants');
     }
 }

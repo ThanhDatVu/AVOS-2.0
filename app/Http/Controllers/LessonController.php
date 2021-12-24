@@ -20,7 +20,7 @@ class LessonController extends Controller
     public function submitlesson(Request $request)
     {
 
-        if(isset(Auth::user()->enseignant->id)){
+        if(isset(Auth::user()->teacher->id)){
             $request->validate([
                 "titre"=>"required",
                 "descriptif"=>"string",

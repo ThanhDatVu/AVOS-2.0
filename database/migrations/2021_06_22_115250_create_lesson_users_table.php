@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdministrateursTable extends Migration
+class CreateLessonUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateAdministrateursTable extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('lesson_user', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("lesson_id")->constrained()->onDelete("cascade");
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
-            $table->string("2authpass");
+            $table->integer("nombre_etoiles",null,true);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateAdministrateursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administrateurs');
+        Schema::dropIfExists('leçon_user');
     }
 }

@@ -54,14 +54,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function enseignant(){
+    public function teacher(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
         return $this->hasOne(Teacher::class);
     }
 
-    public function administrateur(){
+    public function admin(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
         return $this->hasOne(Admin::class);
     }
-    public function cours(){
-        return $this->belongsToMany(Course::class);
+    public function course(){
+        return $this->hasMany(Course::class);
     }
 }
