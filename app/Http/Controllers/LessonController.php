@@ -52,8 +52,8 @@ class LessonController extends Controller
     public function editlesson(Request $request)
     {
 
-        if(isset(Auth::user()->enseignant->id)){
-            return view("admin-publish-lesson",["cours"=>Course::where('enseignant_id',Auth::user()->enseignant->id)->get() ]);
+        if(isset(Auth::user()->teacher->id)){
+            return view("admin-publish-lesson",["cours"=>Course::where('teacher_id',Auth::user()->teacher->id)->get() ]);
         }else{
             return redirect(route("courses"));
         }

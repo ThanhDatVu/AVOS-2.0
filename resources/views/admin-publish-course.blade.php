@@ -63,7 +63,7 @@
                                 <label for="">Category</label>
                                 <select class="border btn col-md-12 col-sm-12 col-12">
                                     @forelse ($categories as $categorie)
-                                        <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
+                                        <option value="{{$categorie->id}}">{{$categorie->name}}</option>
                                     @empty
 
                                     @endforelse

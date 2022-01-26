@@ -85,7 +85,7 @@ class CourseController extends Controller
      */
     public function editcourse()
     {
-        if(isset(Auth::user()->enseignant->id)){
+        if(isset(Auth::user()->teacher->id)){
             return view("admin-publish-course",["categories"=>Category::All()]);
         }else{
             return view("dashboard");

@@ -47,7 +47,7 @@
                             </x-slot>
                         </x-dropdown>
                     </div>
-                    @if (Auth::user()->administrateur || Auth::user()->enseignant)
+                    @if (Auth::user()->admin || Auth::user()->teacher)
                     <div class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-b-2 border-transparent active hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
                         <x-dropdown  align="right" width="48">
                             <x-slot name="trigger">
