@@ -37,8 +37,8 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            "pseudo"=>"unique:users|required|string|max:15",
+            'fullname' => 'required|string|max:255',
+
             'email' => 'required|string|email|max:255|unique:users',
             "country"=>"required",
             "gender"=>"required",
@@ -71,14 +71,13 @@ class RegisteredUserController extends Controller
             }
         }
         $user = User::create([
-            'nom_utilisateur' => $request->name,
+            'fullname' => $request->fullname,
             'pays' => $request->country,
             'email' => $request->email,
-            'pseudo' => $request->pseudo,
+            'name' => $request->username,
             'genre' => $request->gender,
             'telephone' => $request->phone,
             "biographie"=>$request->biographie,
-            //'role' => $request->role,
             'remember_token'=> str_shuffle(Str::random(5).$request->name.now()),
             'avatar'=> avatar($request),
             'password' => Hash::make($request->password),

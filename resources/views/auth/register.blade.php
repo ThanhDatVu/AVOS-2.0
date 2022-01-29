@@ -43,17 +43,17 @@
                         <input type="file" accept="image/jpeg, image/png" name="avatar" class="hidden w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="avatarImg">
                         <label for="avatarImg" class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 transition-all duration-200 ease-in-out bg-green-100 border-green-700 rounded shadow-sm hover:text-gray-100 hover:bg-green-600 tborder focus:outline-none focus:border-green-500 " >Choose a picture image for profile</label>
                         <input
-                            type="text" placeholder="Full name"
-                            name="name" :value="old('name')" required autofocus
+                            type="text" placeholder="Tên đầy đủ"
+                            name="fullname" :value="old('fullname')" required autofocus
                             class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500"
                         >
                         <input
-                            type="Text" placeholder="Pseudo"
-                            name="pseudo" :value="old('pseudo')" required autofocus
+                            type="Text" placeholder="Username"
+                            name="username" :value="old('username')" required autofocus
                             class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500"
                         >
                         <input
-                            type="Text" placeholder="Phone number"
+                            type="Text" placeholder="Số điện thoại"
                             name="phone" :value="old('phone')" required autofocus
                             class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500"
                         >
@@ -74,11 +74,8 @@
                             class="pl-10 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm col-12 fil focus:outline-none focus:border-green-500"
                             id="country">
                             <option class="w-full px-4" value="">&nbsp;&nbsp;&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                            <option value="cameroun">Cameroon</option>
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="Senegal">Senegal</option>
-                            <option value="Tchad">Tchad</option>
-                            <option value="Autres">Autres</option>
+                            <option value="cameroun">US</option>
+                            <option value="Nigeria">Việt Nam</option>
                         </select>
                         <select name="gender"
                             class="pl-10 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm col-12 fil focus:outline-none focus:border-green-500"

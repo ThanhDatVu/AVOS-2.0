@@ -32,9 +32,9 @@ class UserFactory extends Factory
             "biographie"=>$this->faker->text(),
             "newsletter"=>$this->faker->boolean(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            "role"=>$roles[mt_rand(0,2)],
+            "permission"=>$roles[mt_rand(0,2)],
             'email_verified_at' => now(),
-            "pseudo"=>ucfirst($this->faker->unique()->word().$this->faker->numberBetween(1,200)),
+            "name"=>ucfirst($this->faker->unique()->word().$this->faker->numberBetween(1,200)),
             'remember_token' => Str::random(20),
         ];
     }

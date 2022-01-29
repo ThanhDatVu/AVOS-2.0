@@ -24,9 +24,9 @@ class CreateUsersTable extends Migration
             $table->text('biographie')->nullable();
             $table->boolean('newsletter')->default("0");
             $table->string('password');
-            $table->enum('role',["administrator","student","teacher"])->default("student");
+            $table->enum('permission',["administrator","student","teacher"])->default("student");
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('pseudo')->nullable()->unique();
+            $table->string('name')->nullable()->unique();
             $table->string("avatar")->default("avatar/default.png");
             $table->rememberToken()->unique("token");
             $table->timestamps();
