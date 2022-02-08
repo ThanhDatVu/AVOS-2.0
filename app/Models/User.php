@@ -72,4 +72,15 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+    public function admin(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Admin::class);
+    }
+    public function course(){
+        return $this->hasMany(Course::class);
+    }
+    public function teacher(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Teacher::class);
+    }
 }

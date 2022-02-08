@@ -211,7 +211,7 @@ class CourseController extends Controller
     public function adminmycourse()
     {
 
-        if(isset(Auth::user()->enseignant->id)){
+        if(isset(Auth::user()->teacher->id)){
             return view('admin-courses',["courses"=>Course::where('enseignant_id',Auth::user()->enseignant->id)->firstOrFail()->get()]);
         }else{
             return view("dashboard");

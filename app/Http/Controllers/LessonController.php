@@ -33,11 +33,12 @@ class LessonController extends Controller
             Lesson::create([
                 "title"=>"$request->titre",
                 "descriptif"=>"$request->descriptif",
-                "cour_id"=>"$request->courseid",
+                "course_id"=>"$request->courseid",
                 "objectif"=>"$request->objectif",
                 "image"=>lessonimg($request),
                 "contenu"=>new HtmlString($request->editorvalue),
             ]);;
+
             return view('dashboard');
         }else{
             return view("dashboard");
@@ -67,8 +68,8 @@ class LessonController extends Controller
     {
 
 //        if(isset(Auth::user()->enseignant->id)){
-              $leçon=Lesson::where('id',"like",$id)->firstOrFail();
-              return view('course-detail',["leçon"=>$leçon]);
+              $lesson=Lesson::where('id',"like",$id)->firstOrFail();
+              return view('course-detail',["lesson"=>$lesson]);
 //        }else{
 //            $leçon=Lesson::where('id',"like",$id)->firstOrFail();
 //            return view('course-detail',["leçon"=>$leçon]);

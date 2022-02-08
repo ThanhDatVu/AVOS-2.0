@@ -42,7 +42,7 @@
 								money on boot
 								camp when you can get. Boot camps have itssuppor ters andits detractors.
 							</p>
-                            @if (!Auth::user()->enseignant)
+                            @if (!Auth::user()->teacher)
                             <hr class="divide-red-100">
                             <form action="" method="post">
                                 @csrf

@@ -4,7 +4,7 @@
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{$course->title}}
             @if(isset(Auth::user()->teacher->id))
-                @if ((Auth::user()->teacher->id != $course->enseignant_id))
+                @if ((Auth::user()->teacher->id != $course->teacher_id))
                     <a href="{{route('enroll',['id'=>$course->id])}}" class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll the course</a>
                 @endif
             @else
@@ -33,15 +33,15 @@
                                         <h4 class="title">Tổng quan khoá học</h4>
                                         <div class="content">
                                             <ul class="course-list">
-                                                @forelse ($course->leçons as $lesson)
+                                                @forelse ($course->lessons as $lesson)
 
                                                 <li class="justify-content-between d-flex">
                                                     <p>{{$lesson->title}}</p>
                                                         <div>
                                                             <span class="text-uppercase justify-content-between d-flex" >
                                                                 <a href="{{route('lesson',["id"=>$lesson])}}" class="btn ti-eye">&nbsp;Read</a>
-                                                            @if(isset(Auth::user()->enseignant->id))
-                                                                @if (Auth::user()->enseignant->id == $course->enseignant_id)
+                                                            @if(isset(Auth::user()->teacher->id))
+                                                                @if (Auth::user()->teacher->id == $course->teacher_id)
                                                                 <a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="btn ti-pencil">&nbsp;Update</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a>
                                                                 @endif
                                                             @endif

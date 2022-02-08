@@ -49,7 +49,7 @@
                                 <label for="">Chọn các khoá học dưới</label>
                                 <select name="courseid" class="border btn col-md-12 col-sm-12 col-12">
                                     @forelse ($cours as $cour)
-                                        <option value="{{$cour->id}}">{{$cour->title}}</option>
+                                        <option value="{{$cour->id}}">{{$cour->id}}</option>
                                     @empty
 
                                     @endforelse

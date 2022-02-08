@@ -26,7 +26,7 @@ class Course extends Model
         "coût_du_cours",
         "image",
         "updated_at",
-        "enseignant_id",
+        "teacher_id",
     ];
 
     public function teacher(){

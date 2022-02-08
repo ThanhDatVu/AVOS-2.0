@@ -20,7 +20,6 @@ class CreateTeacherTable extends Migration
             $table->foreign("user_id")->references("id")->on("users"); */
             $table->foreignId("user_id")->constrained();
             $table->string("profession");
-            $table->json("formation")->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateTeacherTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enseignants');
+        Schema::dropIfExists('teachers');
     }
 }

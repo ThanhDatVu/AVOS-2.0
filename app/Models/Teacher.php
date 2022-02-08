@@ -13,7 +13,6 @@ class Teacher extends Model
     use HasFactory;
 
     protected $fillable=[
-        "formation",
         "profession",
         "user_id",
         "updated_at"

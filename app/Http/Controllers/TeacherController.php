@@ -30,17 +30,12 @@ class TeacherController extends Controller
         Teacher::create([
             "profession"=>$request->profession,
             "user_id"=>Auth::user()->id,
-            "formation"=>json_encode(["0"]),
         ]);
         $user=User::where("id",Auth::user()->id);
-        $user->role="enseignant";
+        $user->role="teacher";
         $user->update(["role"=>"teacher"]);
 
-//        $enseignant=Teacher::where("user_id",Auth::user()->id)->limit(1)->first();
-        //$enseignant=Teacher::All();
-        //$enseignant->save();
-        //dd($enseignant);
-        //dd($enseignant->user->nom_utilisateur);
+
         $request->validate([
             "profession"=>"string|required",
         ]);
