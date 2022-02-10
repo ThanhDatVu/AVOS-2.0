@@ -50,7 +50,7 @@ class LessonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function editlesson(Request $request)
+    public function makeNewLesson(Request $request)
     {
 
         if(isset(Auth::user()->teacher->id)){

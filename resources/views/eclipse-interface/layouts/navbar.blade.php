@@ -44,15 +44,6 @@
         </div>
       </div>
     </nav>
-    <div class="search-input" id="search-input-box">
-      <div class="container">
-        <form class="d-flex justify-content-between">
-          <input type="text" name="search-value" class="form-control" id="search-input" placeholder="Search Here" />
-          @csrf
-          <button type="submit" class="btn"></button>
-          <span class="lnr lnr-cross" id="close-search" title="Close Search"></span>
-        </form>
-      </div>
-    </div>
+
   </header>
   <!-- ================ End Header Area ================= -->

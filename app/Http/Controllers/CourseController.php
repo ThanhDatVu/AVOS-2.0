@@ -134,7 +134,7 @@ class CourseController extends Controller
         }
         $coursA=array();
         $i=0;
-        foreach(Auth::user()->cours as $cours){
+        foreach(Auth::user()->course as $cours){
             $coursA[$i]=$cours->id;
         }
         $Existusers = DB::table('cour_user')
@@ -204,22 +204,6 @@ class CourseController extends Controller
 
 
     /**
-     * Show the form for creating a new course.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function adminmycourse()
-    {
-
-        if(isset(Auth::user()->teacher->id)){
-            return view('admin-courses',["courses"=>Course::where('enseignant_id',Auth::user()->enseignant->id)->firstOrFail()->get()]);
-        }else{
-            return view("dashboard");
-        }
-    }
-
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -228,6 +212,36 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function adminmycourse()
+
+    {
+
+        if(isset(Auth::user()->teacher->id)){
+            return view('admin-courses',["courses"=>Course::where('teacher_id',Auth::user()->teacher->id)->firstOrFail()->get()]);
+        }else{
+            return view("dashboard");
+        }
+        //
+    }
+
+    /**
+     * Show the form for creating a new course.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showmycourse()
+    {
+
+        if(true){
+            $userId = Auth::user()->id;
+            $courseIds = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
+
+            return view('my-courses',["courses"=>Course::where('id',$courseIds)->get()]);
+        }else{
+            return view("dashboard");
+        }
     }
 
     /**

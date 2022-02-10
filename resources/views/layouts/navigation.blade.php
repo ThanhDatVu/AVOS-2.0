@@ -66,12 +66,12 @@
 
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                                    href="{{route('edit-course')}}">
+                                    href="{{route('make-new-course')}}">
                                     Create a course
                                 </a>
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                                    href="{{route('edit-lesson')}}">
+                                    href="{{route('make-new-lesson')}}">
                                     Create a lesson
                                 </a>
                                 <a

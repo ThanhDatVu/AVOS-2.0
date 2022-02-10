@@ -17,18 +17,35 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="border-b border-gray-200">
-                    <img class="w-full" src="{{Storage::url($course->image)}}" alt="">
+
+                    <div class="container w-100 lg:w-4/5 mx-auto flex flex-col">
+                        <!-- card -->
+                        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
+                                        bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+                            <!-- media -->
+                            <div class="h-64 w-auto md:w-1/2">
+                                <img class="inset-0 h-full w-full object-cover object-center" src="{{Storage::url($course->image)}}" />
+                            </div>
+                            <!-- content -->
+                            <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+                                <h2 class="font-semibold text-lg leading-tight truncate">{{$course->title}}</h2>
+                                <h3 class="font-semibold text-lg leading-tight truncate">Mục tiêu</h3>
+                                <p class="mt-2">
+                                    {{$course->objectif}}
+                                </p>
+                                <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+                                    {{$course->teacher->user->fullname}}  &bull; {{$course->created_at}}
+                                </p>
+                            </div>
+                        </div><!--/ card-->
+
                     <!--================ Start Course Details Area =================-->
                     <section class="course-details-area">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12 course-details-left">
                                     <div class="content-wrapper">
-                                        <h4 class="title">Mục tiêu</h4>
-                                        <ul class="ml-4 list-decimal">
-                                            <li>Master course in all plan.</li>
-                                            <li>take right way to learn step by step.</li>
-                                        </ul>
+
 
                                         <h4 class="title">Tổng quan khoá học</h4>
                                         <div class="content">

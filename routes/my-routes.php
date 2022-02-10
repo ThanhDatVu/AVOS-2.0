@@ -10,21 +10,25 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\UserController;
 
 /* Lessons */
-Route::get('/edit-lesson',[LessonController::class,"editlesson"])->middleware(['auth'])->name('edit-lesson');
-Route::post('/edit-lesson', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('edit-lesson');
+Route::get('/make-new-lesson',[LessonController::class,"makeNewLesson"])->middleware(['auth'])->name('make-new-lesson');
+
+Route::post('/make-new-lesson', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('submit-lesson');
+
+
 Route::get('/courses/read/{id}', [LessonController::class,"showLesson"])->middleware(['auth'])->name('lesson');
 
 /*courses*/
-Route::get('/edit-course', [CourseController::class,"editcourse"])->middleware(['auth'])->name('edit-course');
-Route::post('/edit-course', [CourseController::class,"submitEditCourse"])->middleware(['auth'])->name('edit-course');
+Route::get('/make-new-course', [CourseController::class,"editcourse"])->middleware(['auth'])->name('make-new-course');
+
+Route::post('/make-new-course', [CourseController::class,"submitEditCourse"])->middleware(['auth'])->name('submit-course');
+
 Route::get('/courses/{id}', [CourseController::class,"showSingle"])->middleware(['auth'])->name('course');
 Route::get('/courses/enroll/{id}', [CourseController::class,"enroll"])->middleware(['auth'])->name('enroll');
 Route::get('/courses', function () {
     return view('all-courses',["courses"=>Course::all()]);
 })->name('courses');
-Route::get('/my-courses', function () {
-    return view('my-courses',["courses"=>Auth::user()->course()]);
-})->name('my-courses');
+Route::get('/my-courses',  [CourseController::class,"showmycourse"])
+->name('my-courses');
 
 
 Route::get('/admin-my-course', [CourseController::class,"adminmycourse"])->middleware(['auth'])->name('admin-course');

@@ -21,7 +21,7 @@
                                                 <h2 class="text-3xl font-semibold text-gray-800">{{$course->title}}</h2>
                                                 <p class="mt-2 text-gray-600">{{$course->descriptif}}</p>
                                             </div>
-                                            <div>Proposed by <span  class="text-green-800">{{$course->teacher->user->nom_utilisateur}}</span></div>
+                                            <div>Proposed by <span  class="text-green-800">{{$course->teacher->user->fullname}}</span></div>
                                             <div class="flex justify-end mt-4">
                                                 <a href="{{route("course",$course->id)}}" class="text-xl font-medium text-indigo-500">Read</a>
                                             </div>

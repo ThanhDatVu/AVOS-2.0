@@ -20,17 +20,13 @@
                             <div class="flex content-center mx-auto text-center qr-cont">
                                 <img class="origin-center rounded-l-full h-200 w-200 logo-img" async src="{{isset(Auth::user()->avatar)?Storage::url(Auth::user()->avatar):"avatar/default.png"}}" alt="">
                                 <span async class=" qr">
-                                    {!!
-                                    QrCode::size(250)
-                                    ->backgroundColor(255,255,255)
-                                    ->generate(config("app.url"))
-                                    !!}
+
                                 </span>
                             </div>
 							<a href="#">
-								<h4>{{ucfirst(Auth::user()->nom_utilisateur)}}</h4>
+								<h4>{{(Auth::user()->fullname)}}</h4>
 							</a>
-							<p>{{ucfirst(Auth::user()->role)}}</p>
+							<p>{{(Auth::user()->role)}}</p>
 							<ul class="social-links">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -38,9 +34,7 @@
 								<li><a href="#"><i class="fa fa-behance"></i></a></li>
 							</ul>
 							<p>
-								Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend
-								money on boot
-								camp when you can get. Boot camps have itssuppor ters andits detractors.
+								Bùm
 							</p>
                             @if (!Auth::user()->teacher)
                             <hr class="divide-red-100">

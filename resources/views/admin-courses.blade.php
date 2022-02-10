@@ -2,10 +2,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            @if (isset(auth()->user()->enseignant->id))
-                {{ __('My online courses') }}
+            @if (isset(auth()->user()->teacher->id))
+                {{ __('Các khoá học do tôi soạn thảo') }}
             @else
-                {{ __('Online courses') }}
+                {{ __('Danh sách các khoá học') }}
             @endif
 
         </h2>

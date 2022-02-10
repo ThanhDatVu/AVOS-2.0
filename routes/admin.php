@@ -9,15 +9,15 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 
 /* Lessons */
-Route::get('/edit-lesson',[LessonController::class,"editlesson"])->middleware(['auth'])->name('edit-lesson');
+Route::get('/make-new-lesson',[LessonController::class,"makeNewLesson"])->middleware(['auth'])->name('edit-lesson');
 
-Route::post('/edit-lesson', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('edit-lesson');
+Route::post('/make-new-lesson', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('submit-lesson');
 
 /* Edit courses*/
 
-Route::get('/edit-course', [CourseController::class,"editcourse"])->middleware(['auth'])->name('edit-course');
+Route::get('/make-new-course', [CourseController::class,"editcourse"])->middleware(['auth'])->name('make-new-course');
 
-Route::post('/edit-course', [CourseController::class,"submitEditCourse"])->middleware(['auth'])->name('edit-course');
+Route::post('/make-new-course', [CourseController::class,"submitEditCourse"])->middleware(['auth'])->name('submit-course');
 
 /* Admin courses*/
 Route::get('/courses/{id}', [CourseController::class,"show"])->middleware(['auth'])->name('admin-course');
