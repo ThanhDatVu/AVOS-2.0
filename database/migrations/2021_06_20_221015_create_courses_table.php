@@ -23,7 +23,7 @@ class CreateCoursesTable extends Migration
             $table->integer("niveau_de_difficulte");
             $table->string("image");
             //$table->json("mots_cle")->nullable();
-            $table->integer("coût_du_cours")->default(0);
+
             $table->timestamps();
         });
     }

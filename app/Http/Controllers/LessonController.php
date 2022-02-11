@@ -54,7 +54,7 @@ class LessonController extends Controller
     {
 
         if(isset(Auth::user()->teacher->id)){
-            return view("admin-publish-lesson",["cours"=>Course::where('teacher_id',Auth::user()->teacher->id)->get() ]);
+           return view("admin-publish-lesson",["cours"=>Course::where('teacher_id',Auth::user()->teacher->id)->get() ]);
         }else{
             return redirect(route("courses"));
         }
@@ -67,13 +67,22 @@ class LessonController extends Controller
     public function showLesson($id)
     {
 
-//        if(isset(Auth::user()->enseignant->id)){
+//
               $lesson=Lesson::where('id',"like",$id)->firstOrFail();
               return view('course-detail',["lesson"=>$lesson]);
-//        }else{
-//            $leçon=Lesson::where('id',"like",$id)->firstOrFail();
-//            return view('course-detail',["leçon"=>$leçon]);
- //       }
+//
+    }  /**
+     * Show the form for showing a lesson.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editlesson($id)
+    {
+
+//
+              $lesson=Lesson::where('id',"like",$id)->firstOrFail();
+              return view('edit-lesson',["lesson"=>$lesson]);
+//
     }
 
 }

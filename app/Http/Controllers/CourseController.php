@@ -68,7 +68,7 @@ class CourseController extends Controller
             "objectif"=>$request->objectif,
             "competences_requises"=>$request->competences,
             "niveau_de_difficulte"=>$request->difficulte,
-            "coût_du_cours"=>$request->cout,
+
             "created_at"=>now(),
         ]);
         return view(

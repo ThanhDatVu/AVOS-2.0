@@ -24,7 +24,7 @@ class Lesson extends Model
         "image",
         "course_id",
         "updated_at",
-        "enseignant_id",
+        "teacher_id",
     ];
     public function course(){
         return $this->belongsTo(Course::class);

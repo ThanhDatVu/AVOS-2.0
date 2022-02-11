@@ -47,7 +47,7 @@
                                 </div>
                             </form>
                             @else
-                                <a href="{{route("edit-course")}}" class="w-full p-6 mt-3 text-white bg-green-700 btn">Edit a new course</a>
+                                <a href="{{route("make-new-course")}}" class="w-full p-6 mt-3 text-white bg-green-700 btn">Edit a new course</a>
                             @endif
 						</div>
 						<div class="single-sidebar-widget popular-post-widget">

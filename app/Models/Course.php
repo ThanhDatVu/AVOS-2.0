@@ -23,7 +23,7 @@ class Course extends Model
         "objectif",
         "competences_requises",
         "niveau_de_difficulte",
-        "coût_du_cours",
+
         "image",
         "updated_at",
         "teacher_id",
