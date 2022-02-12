@@ -59,7 +59,7 @@
                                                                 <a href="{{route('lesson',["id"=>$lesson])}}" class="btn ti-eye">&nbsp;Read</a>
                                                             @if(isset(Auth::user()->teacher->id))
                                                                 @if (Auth::user()->teacher->id == $course->teacher_id)
-                                                                <a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="btn ti-pencil">&nbsp;Update</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a>
+                                                                <a href="{{route("edit-lesson",["id"=>$lesson])}}" class="btn ti-pencil">&nbsp;Update</a><a href="{{route("edit-lesson",$lesson->id)}}" class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a>
                                                                 @endif
                                                             @endif
                                                             </span>

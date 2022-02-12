@@ -22,7 +22,7 @@
                         <x-dropdown  align="right" width="48">
                             <x-slot name="trigger">
                                 <button class="flex items-center text-sm font-medium text-gray-500 transition duration-150 ease-in-out active hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                                    <div><span class="mr-2 ti-book"></span> Courses</div>
+                                    <div><span class="mr-2 ti-book"></span>Khoá học</div>
 
                                     <div class="ml-1">
                                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -42,7 +42,7 @@
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                                     href="{{route('courses')}}">
-                                    All courses
+                                    Tất cả các khoá học
                                 </a>
                             </x-slot>
                         </x-dropdown>
@@ -52,7 +52,7 @@
                         <x-dropdown  align="right" width="48">
                             <x-slot name="trigger">
                                 <button class="flex items-center text-sm font-medium text-gray-500 transition duration-150 ease-in-out active hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                                    <div><span class="ti-settings"></span> Administration</div>
+                                    <div><span class="ti-settings"></span> Quản lý</div>
 
                                     <div class="ml-1">
                                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -67,22 +67,22 @@
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                                     href="{{route('make-new-course')}}">
-                                    Create a course
+                                    Tạo một khoá học
                                 </a>
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                                     href="{{route('make-new-lesson')}}">
-                                    Create a lesson
+                                    Tạo một bài học
                                 </a>
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                                     href="{{route('admin-course')}}">
-                                    My courses
+                                    Khoá học tôi soạn thảo
                                 </a>
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                                     href="{{route('courses')}}">
-                                    All courses
+                                    Tất cả các khoá học
                                 </a>
                                 @if (Auth::user()->administrateur)
 
@@ -107,11 +107,11 @@
                                         <img class="inline-block rounded-full shadow w-9 h-9 ring-2 ring-white" src="{{ Storage::url(Auth::user()->avatar) }}" alt="">
                                     @else
                                         <span  class="inline-block w-10 h-10 text-3xl text-white align-middle bg-green-700 rounded-full shadow text- ring-2 ring-white">
-                                            <span class="relative bottom-0 left-0">{{ ucfirst(substr(Auth::user()->nom_utilisateur, 0,1)) }}</span>
+                                            <span class="relative bottom-0 left-0">{{ ucfirst(substr(Auth::user()->fullname, 0,1)) }}</span>
                                         </span>
                                     @endif
                                 </span>
-                                    &nbsp;&nbsp;{{ ucfirst(Auth::user()->nom_utilisateur) }}
+                                    &nbsp;&nbsp;{{ ucfirst(Auth::user()->fullname) }}
 
                             <div class="ml-1">
                                 <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

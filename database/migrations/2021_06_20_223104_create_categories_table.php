@@ -20,16 +20,16 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
         Category::create([
-            "name"=>"Uncategorized"
+            "name"=>"Chưa phân loại"
         ]);
         Category::create([
-            "name"=>"Science"
+            "name"=>"AT14"
         ]);
         Category::create([
-            "name"=>"Data science"
+            "name"=>"AT15"
         ]);
         Category::create([
-            "nom"=>"Computer science"
+            "name"=>"AT16"
         ]);
     }
 

@@ -18,9 +18,14 @@ Route::post('/make-new-lesson', [LessonController::class,"submitlesson"])->middl
 Route::get('/courses/read/{id}', [LessonController::class,"showLesson"])->middleware(['auth'])->name('lesson');
 
 /*courses*/
-Route::get('/make-new-course', [CourseController::class,"editcourse"])->middleware(['auth'])->name('make-new-course');
+Route::get('/make-new-course', [CourseController::class,"makeNewCourse"])->middleware(['auth'])->name('make-new-course');
 
 Route::post('/make-new-course', [CourseController::class,"submitEditCourse"])->middleware(['auth'])->name('submit-course');
+/*Sửa bài học */
+Route::get('/edit-lesson/{id}',[LessonController::class,"editlesson"])->middleware(['auth'])->name('edit-lesson');
+
+Route::post('/edit-lesson/{id}', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('submit-edited-lesson');
+
 
 Route::get('/courses/{id}', [CourseController::class,"showSingle"])->middleware(['auth'])->name('course');
 Route::get('/courses/enroll/{id}', [CourseController::class,"enroll"])->middleware(['auth'])->name('enroll');

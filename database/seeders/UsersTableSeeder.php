@@ -14,12 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('users')->delete();
-        
+
         \DB::table('users')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'fullname' => 'Prof. Monroe Gaylord I',
@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'fullname' => 'Ernesto Mosciski',
@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'fullname' => 'Marquis McDermott',
@@ -82,7 +82,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'fullname' => 'Dr. Jayda Hermann',
@@ -103,7 +103,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'fullname' => 'Ms. Lina Carter V',
@@ -124,7 +124,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'fullname' => 'Gwendolyn Rohan',
@@ -145,7 +145,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'fullname' => 'Jean Koss',
@@ -166,7 +166,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
                 'fullname' => 'Jett Schuppe',
@@ -187,7 +187,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 9,
                 'fullname' => 'Vallie Weimann',
@@ -208,7 +208,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 10,
                 'fullname' => 'Dr. Jonathan Beier',
@@ -229,7 +229,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 11,
                 'fullname' => 'VU THANH DAT',
@@ -250,29 +250,29 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 16:42:40',
                 'permissions' => '{"platform.systems.attachment":"0","platform.systems.roles":"0","platform.systems.users":"0","platform.index":"0"}',
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 13,
-                'fullname' => NULL,
+                'fullname' => 'Vũ Thành Đạt',
                 'email' => 'admin@admin.com',
                 'pays' => NULL,
                 'genre' => 'Female',
                 'ville_residence' => NULL,
-                'telephone' => NULL,
+                'telephone' => '08798723423',
                 'biographie' => NULL,
                 'newsletter' => 0,
                 'password' => '$2y$10$6a0dh7mvpB95XNXbBBTO5Ob4D/IDCMmnVJoUdsg0tODkuOguxZkrq',
-                'role' => 'student',
+                'role' => 'administrator',
                 'email_verified_at' => NULL,
                 'name' => 'admin',
                 'avatar' => 'avatar/default.png',
-                'remember_token' => 'nCnIzifXTqEKmevDyWg9WpUbq8d34lzthwKfa66YbQYUyUH906L7Gq0jcI04',
+                'remember_token' => 'z74Rs5nZMDQ3EcnkqdwDZJ3TsBdeAMLMrBPoBgQYptJ101W145V85Ry4HOO5',
                 'created_at' => '2022-01-29 16:38:53',
                 'updated_at' => '2022-01-29 16:42:49',
                 'permissions' => '{"platform.systems.attachment":"1","platform.systems.roles":"1","platform.systems.users":"1","platform.index":"1"}',
             ),
         ));
-        
-        
+
+
     }
 }

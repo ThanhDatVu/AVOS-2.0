@@ -83,10 +83,10 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function editcourse()
+    public function makeNewCourse()
     {
         if(isset(Auth::user()->teacher->id)){
-            return view("admin-publish-course",["categories"=>Category::All()]);
+            return view("admin-make-course",["categories"=>Category::All()]);
         }else{
             return view("dashboard");
         }

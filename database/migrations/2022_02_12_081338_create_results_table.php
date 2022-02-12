@@ -15,6 +15,9 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('exam_id');
+            $table->float('points');
             $table->timestamps();
         });
     }

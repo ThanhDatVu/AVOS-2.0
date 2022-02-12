@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_utilisateur');
+            $table->string('fullname');
             $table->string('email')->unique();
             $table->string('pays')->nullable();
             $table->enum('genre',['Female','male','Transgender']);
@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->text('biographie')->nullable();
             $table->boolean('newsletter')->default("0");
             $table->string('password');
-            $table->enum('permission',["administrator","student","teacher"])->default("student");
+            $table->enum('role',["administrator","student","teacher"])->default("student");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('name')->nullable()->unique();
             $table->string("avatar")->default("avatar/default.png");

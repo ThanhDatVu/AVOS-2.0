@@ -15,7 +15,18 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('created_by')->unsigned();
+            $table->string("question");
+            $table->string("hint")->nullable();
+            $table->integer("mark")->default(1);
+            $table->integer("nmark")->default(0);
+            $table->string("explanation")->nullable();
+            $table->bigInteger('exam_id')->unsigned()->index();
+
             $table->timestamps();
+            $table->softDeletes()->index();
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('exam_id')->references('id')->on('exams')->onDelete('cascade');
         });
     }
 
