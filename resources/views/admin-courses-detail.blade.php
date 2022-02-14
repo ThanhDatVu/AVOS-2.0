@@ -62,13 +62,13 @@
                                                             <div>
                                                             <span class="text-uppercase justify-content-between d-flex">
                                                                 <a href="{{route('lesson',["id"=>$lesson])}}"
-                                                                   class="btn ti-eye">&nbsp;Read</a>
+                                                                   class="btn ti-eye">&nbsp;Xem</a>
                                                             @if(isset(Auth::user()->teacher->id))
                                                                     @if (Auth::user()->teacher->id == $course->teacher_id)
                                                                         <a href="{{route("edit-lesson",["id"=>$lesson])}}"
                                                                            class="btn ti-pencil">&nbsp;Update</a><a
                                                                             href="{{route("edit-lesson",$lesson->id)}}"
-                                                                            class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a>
+                                                                            class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Xoá</a>
                                                                     @endif
                                                                 @endif
                                                             </span>
@@ -82,16 +82,55 @@
                                                 </ul>
 
                                             </div>
+                                            <div class='grid place-items-center w-100 m-3'>
+                                                <span class="text-uppercase justify-content-between d-flex">
+                                                    <a href="{{route('make-new-lesson',["id"=>$course->id])}}"
+                                                    class="btn ti-plus bg-gray-100">&nbsp;Thêm bài học mới</a>
 
+                                                </span>
+
+                                            </div>
+
+                                            <h4 class="title">Các bài kiểm tra</h4>
+                                            <div class="content">
+                                                <ul class="course-list">
+                                                    @forelse ($course->exams as $exam)
+
+                                                        <li class="justify-content-between d-flex">
+                                                            <p>{{$exam->title}}</p>
+                                                            <div>
+                                                            <span class="text-uppercase justify-content-between d-flex">
+                                                                <a href="{{route('exam',["id"=>$exam])}}"
+                                                                   class="btn ti-eye">&nbsp;Xem</a>
+                                                            @if(isset(Auth::user()->teacher->id))
+                                                                    @if (Auth::user()->teacher->id == $course->teacher_id)
+                                                                        <a href="{{route("edit-exam",["id"=>$exam])}}"
+                                                                           class="btn ti-pencil">&nbsp;Update</a><a
+                                                                            href="{{route("edit-exam",$exam->id)}}"
+                                                                            class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Xoá</a>
+                                                                    @endif
+                                                                @endif
+                                                            </span>
+                                                            </div>
+                                                        </li>
+                                                    @empty
+                                                        <div class="w-full p-3 mb-3 text-white bg-red-600 rounded">Hiên
+                                                            chưa có bài kiểm tra nào.
+                                                        </div>
+                                                    @endforelse
+                                                </ul>
+
+                                            </div>
                                         </div>
 
                                     </div>
                                     <div class='grid place-items-center w-100 m-3'>
-                                    <span class="text-uppercase justify-content-between d-flex">
-                                        <a href="{{route('make-new-lesson',["id"=>$lesson])}}"
-                                           class="btn ti-plus bg-gray-100">&nbsp;Thêm bài học mới</a>
+                                        
+                                        <span class="text-uppercase justify-content-between d-flex m-2">
+                                        <a href="{{route('make-new-exam',["id"=>$course->id])}}"
+                                           class="btn ti-plus bg-gray-100">&nbsp;Thêm bài kiểm tra mới </a>
 
-                                    </span>
+                                        </span>
 
                                     </div>
 

@@ -69,7 +69,7 @@ class LessonController extends Controller
 
 //
               $lesson=Lesson::where('id',"like",$id)->firstOrFail();
-              return view('course-detail',["lesson"=>$lesson]);
+              return view('lesson-detail',["lesson"=>$lesson]);
 //
     }  /**
      * Show the form for showing a lesson.

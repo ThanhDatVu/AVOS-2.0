@@ -8,15 +8,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ExamController;
 
 /* Lessons */
 Route::get('/make-new-lesson',[LessonController::class,"makeNewLesson"])->middleware(['auth'])->name('make-new-lesson');
 
-Route::post('/make-new-lesson', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('submit-lesson');
-
+Route::post('/make-new-lesson/create', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('submit-lesson');
 
 Route::get('/courses/read/{id}', [LessonController::class,"showLesson"])->middleware(['auth'])->name('lesson');
+/* Exams */
+Route::get('/make-new-exam',[ExamController::class,"makeNewExam"])->middleware(['auth'])->name('make-new-exam');
 
+Route::post('/make-new-exam/create', [ExamController::class,"submitExam"])->middleware(['auth'])->name('submit-exam');
+
+Route::get('/courses/exam/{id}', [ExamController::class,"showExam"])->middleware(['auth'])->name('exam');
+
+Route::get('/edit-exam/{id}',[ExamController::class,"editExam"])->middleware(['auth'])->name('edit-exam');
+
+Route::post('/edit-exam/{id}', [ExamController::class,"submitExam"])->middleware(['auth'])->name('submit-edited-exam');
 /*courses*/
 Route::get('/make-new-course', [CourseController::class,"makeNewCourse"])->middleware(['auth'])->name('make-new-course');
 
