@@ -125,7 +125,7 @@
 
                                     </div>
                                     <div class='grid place-items-center w-100 m-3'>
-                                        
+
                                         <span class="text-uppercase justify-content-between d-flex m-2">
                                         <a href="{{route('make-new-exam',["id"=>$course->id])}}"
                                            class="btn ti-plus bg-gray-100">&nbsp;Thêm bài kiểm tra mới </a>
