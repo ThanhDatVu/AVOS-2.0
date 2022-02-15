@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\exam;
+use App\Models\Result;
 use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
@@ -90,9 +91,32 @@ class ExamController extends Controller
  */
     public function submitTakenExam(Request $request, $id)
     {
-        $answers = $request->answer;
-        dd($answers);
         $exam=Exam::where('id',"like",$id)->firstOrFail();
+        $answers = $request->answer;
+        $questions = $exam->questions;
+
+        $mark = 0;
+        for($x = 0; $x <= 1; $x++){
+
+            if(strcmp($questions[$x]->correctAnswer,$answers[$x])==0){
+                 $mark += 1;
+
+
+            }
+
+
+
+        }
+
+        $result = new Result();
+        $result->user_id = Auth::user()->id;
+        $result->exam_id = $id;
+        $result->points = $mark;
+        $result->save();
+        dd($result);
+
+
+
         return view('edit-exam',["exam"=>$exam]);
 
     }
