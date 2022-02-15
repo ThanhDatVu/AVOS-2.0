@@ -20,8 +20,10 @@ Route::get('/courses/read/{id}', [LessonController::class,"showLesson"])->middle
 Route::get('/make-new-exam',[ExamController::class,"makeNewExam"])->middleware(['auth'])->name('make-new-exam');
 
 Route::post('/make-new-exam/create', [ExamController::class,"submitExam"])->middleware(['auth'])->name('submit-exam');
-
+/* Làm Exams */
 Route::get('/courses/exam/{id}', [ExamController::class,"showExam"])->middleware(['auth'])->name('exam');
+
+Route::post('/courses/exam/{id}', [ExamController::class,"submitTakenExam"])->middleware(['auth'])->name('submit-taken-exam');
 
 Route::get('/edit-exam/{id}',[ExamController::class,"editExam"])->middleware(['auth'])->name('edit-exam');
 

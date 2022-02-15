@@ -69,7 +69,8 @@ class ExamController extends Controller
         $exam=Exam::where('id',"like",$id)->firstOrFail();
         return view('exam-detail',["exam"=>$exam]);
 //
-    }  /**
+    }
+    /**
  * Show the form for showing a exam.
  *
  * @return \Illuminate\Http\Response
@@ -81,6 +82,19 @@ class ExamController extends Controller
         $exam=Exam::where('id',"like",$id)->firstOrFail();
         return view('edit-exam',["exam"=>$exam]);
 //
+    }
+    /**
+ * Show the form for showing a exam.
+ *
+ * @return \Illuminate\Http\Response
+ */
+    public function submitTakenExam(Request $request, $id)
+    {
+        $answers = $request->answer;
+        dd($answers);
+        $exam=Exam::where('id',"like",$id)->firstOrFail();
+        return view('edit-exam',["exam"=>$exam]);
+
     }
 
 }

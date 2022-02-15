@@ -1,5 +1,5 @@
 
-<title>{{ config('app.name', 'AVOS') }} | Courses detail</title>
+<title>{{ config('app.name', 'AVOS') }} | Kiểm tra</title>
 <style>
     body{
         margin:0;
@@ -54,73 +54,47 @@
                                             </p>
                                             <h3 class="mt-20 mb-20">Danh sách câu hỏi</h3>
                                             <div class=" justify-left ml-10">
+                                                <form  action=""  id="exam" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+                                                    @foreach($exam->questions as $question)
+                                                    <h3 class="mb-6 pt-6 mx-auto text-left">Câu {{($loop->index)+1}}: {{$question->question}}</h3>
+                                                    <div class="ml-20 max-w-sm text-left ">
 
-                                                <h3 class="mb-6 pt-6 mx-auto text-left"> Make the right choice :</h3>
-                                                <div class="ml-20 max-w-sm text-left ">
+                                                        <div class="flex items-center mr-4 mb-4">
+                                                            <input id="radio0{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="A" />
+                                                            <label for="radio0{{$loop->index}}" class="flex items-center cursor-pointer">
+                                                                <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                                {{$question->answerA}}</label>
+                                                        </div>
 
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio1" type="radio" name="radio" class="hidden" value="" checked />
-                                                        <label for="radio1" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Best choice</label>
+                                                        <div class="flex items-center mr-4 mb-4">
+                                                            <input id="radio1{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="B" />
+                                                            <label for="radio1{{$loop->index}}" class="flex items-center cursor-pointer">
+                                                                <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                                {{$question->answerB}}</label>
+                                                        </div>
+
+                                                        <div class="flex items-center mr-4 mb-4">
+                                                            <input id="radio2{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="C" />
+                                                            <label for="radio2{{$loop->index}}" class="flex items-center cursor-pointer">
+                                                                <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                                {{$question->answerC}}</label>
+                                                        </div>
+
+                                                        <div class="flex items-center mr-4 mb-4">
+                                                            <input id="radio3{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="D" />
+                                                            <label for="radio3{{$loop->index}}" class="flex items-center cursor-pointer">
+                                                                <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                                {{$question->answerD}}</label>
+                                                        </div>
                                                     </div>
-
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio2" type="radio" name="radio" class="hidden" />
-                                                        <label for="radio2" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Second choice</label>
-                                                    </div>
-
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio3" type="radio" name="radio" class="hidden" />
-                                                        <label for="radio3" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Third choice</label>
-                                                    </div>
-
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio4" type="radio" name="radio" class="hidden" />
-                                                        <label for="radio4" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Fourth choice</label>
-                                                    </div>
+                                                    @endforeach
+                                                        <button class="mt-3 text-white bg-green-700 col-md-12 col-sm-12 col-12 btn" type="submit">
+                                                            Nộp bài
+                                                        </button>
+                                                </form>
 
 
-                                                </div>
-                                                <h3 class="mb-6 pt-6 mx-auto text-left"> Make the right choice :</h3>
-                                                <div class="ml-20 max-w-sm text-left ">
-
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio6" type="radio" name="radio2" class="hidden" value="" checked />
-                                                        <label for="radio6" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Best choice</label>
-                                                    </div>
-
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio7" type="radio" name="radio2" class="hidden" />
-                                                        <label for="radio7" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Second choice</label>
-                                                    </div>
-
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio8" type="radio" name="radio2" class="hidden" />
-                                                        <label for="radio8" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Third choice</label>
-                                                    </div>
-
-                                                    <div class="flex items-center mr-4 mb-4">
-                                                        <input id="radio9" type="radio" name="radio2" class="hidden" />
-                                                        <label for="radio9" class="flex items-center cursor-pointer">
-                                                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                            Fourth choice</label>
-                                                    </div>
-
-
-                                                </div>
                                             </div>
 
                                         </div>
