@@ -8,4 +8,28 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id',
+        'created_by',
+        'exam_id',
+        "question",
+        "answerA",
+        "answerB",
+        "answerC",
+        "answerD",
+        "correctAnswer",
+        "hint",
+        "mark",
+        "explanation",
+        "updated_at",
+        "teacher_id",
+    ];
+    public function exam(){
+        return $this->belongsTo(Exam::class);
+    }
+    public function createdBy(){
+        return $this->belongsTo(User::class);
+    }
+
+
 }

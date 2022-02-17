@@ -17,9 +17,14 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->bigInteger('created_by')->unsigned();
             $table->string("question");
+            $table->string("answerA");
+            $table->string("answerB");
+            $table->string("answerC");
+            $table->string("answerD");
+            $table->string("correctAnswer");
+
             $table->string("hint")->nullable();
             $table->integer("mark")->default(1);
-            $table->integer("nmark")->default(0);
             $table->string("explanation")->nullable();
             $table->bigInteger('exam_id')->unsigned()->index();
 
