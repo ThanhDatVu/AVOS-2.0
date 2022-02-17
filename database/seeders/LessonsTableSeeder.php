@@ -23,7 +23,7 @@ class LessonsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'course_id' => 3,
-                'title' => 'Chương 1',
+                'title' => 'Chương 1 : Tổng quan',
                 'descriptif' => 'tổng quan về hệ quản trị CSDL',
                 'image' => 'lessons/default2.png',
                 'objectif' => '8',
@@ -56,7 +56,7 @@ class LessonsTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'course_id' => 3,
-                'title' => 'Chuong 2',
+                'title' => 'Chuong 2 : Một số hệ quản trị CSDL',
                 'descriptif' => 'Một số hệ quản trị CSDL',
                 'image' => 'lessons/default1.png',
                 'objectif' => '7',
@@ -128,13 +128,74 @@ class LessonsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'course_id' => 3,
-                'title' => 'Chương 3',
+                'title' => 'Chương 3 : hệ quản trị csdl SQL',
                 'descriptif' => 'hệ quản trị csdl SQL',
                 'image' => 'lessons/default2.png',
                 'objectif' => '8',
                 'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>&Aacute;df&agrave;</p>
-<p>&nbsp;</p>',
+<p>&nbsp;</p>
+<p>
+1. Các kiến thức tổng quan về CSDL
+Một hệ CSDL (DB system) bao gồm một CSDL (Database) và một hệ quản trị CSDL
+(DBMS)
+CSDL (CSDL) là một tập hợp dữ liệu được tổ chức và lưu trữ theo một cấu trúc chặt chẽ
+nhằm phục vụ nhiều đối tượng sử dụng với nhiều mục đích khác nhau.
+Hệ quản trị CSDL (Database Management System - DBMS) là một công cụ phần mềm
+tổng quát nhằm hỗ trợ việc lưu trữ, truy xuất và quản trị CSDL. Nó cung cấp cho người dùng
+và ứng dụng một môi trường thuận tiện và sử dụng hiệu quả tài nguyên dữ liệu. Nói cách
+khác, Hệ quản trị CSDL là phần mềm chuyên dụng để giải quyết tốt các tình huống mà CSDL
+đặt ra như: bảo mật, cạnh tranh trong truy xuất.
+Hình 1: Kiến trúc của một hệ quản trị CSDL
+Giáo trình Hệ quản trị CSDL MS SQL Server 1
+Khoa CNTT trường Cao đẳng nghề 3
+2. Các giai đoạn phát triển của một hệ quản trị CSDL.
+Những năm 1975-1976, IBM lần đầu tiên đưa ra hệ quản trị CSDL kiểu quan hệ mang tên
+SYSTEM-R với ngôn ngữ giao tiếp CSDL là SEQUEL (Structured English QUEry
+Language), đó một ngôn ngữ con để thao tác với CSDL.
+Năm 1976 ngôn ngữ SEQUEL được cải tiến thành SEQUEL2. Khoảng năm 1978-1979
+SEQUEL2 được cải tiến và đổi tên thành Ngôn ngữ truy vấn có cấu trúc (Structured
+Query Language - SQL) và cuối năm 1979 được cải tiến thành SYSTEM-R.
+Năm 1986 Viện Tiêu Chuẩn Quốc Gia Mỹ (American National Standards Institute - ANSI)
+đã công nhận và chuẩn hóa ngôn ngữ SQL, và sau đó Tổ chức Tiêu chuẩn Thế giới
+(International Standards Organization - ISO) cũng đã công nhận ngôn ngữ này. Đó là chuẩn
+SQL-86.
+Tới nay SQL đã qua 3 lần chuẩn hóa lại (1989, 1992, 1996) để mở rộng các phép toán và
+tăng cường khả năng bảo mật và tính toàn vẹn dữ liệu.
+Ngôn ngữ CSDL được cài đặt khác nhau đối tùy theo các hệ quản trị CSDL khác
+nhau, tuy nhiên đều phải theo một chuẩn (Standard) nhất định. Hiện nay, đa phần các
+ngôn ngữ truy vấn CSDL dựa trên chuẩn SQL-92.
+3. Giới thiệu về mô hình Client/Server và các hệ quản trị CSDL phục vụ cho mô hình
+Client/Server.
+SQL là một hệ quản trị CSDL nhiều người dùng kiểu Client/Server. Đây là hệ thống cơ
+bản dùng lưu trữ dữ liệu cho hầu hết các ứng dụng lớn hiện nay. Mô hình Client/Server trên
+SQL được sử dụng để điều khiển tất cả các chức năng mà một hệ quản trị CSDL cung cấp
+cho người dùng các khả năng
+• Định nghĩa dữ liệu
+• Truy xuất và thao tác dữ liệu
+• Điều khiển truy cập
+• Đảm bảo toàn vẹn dữ liệu
+4. Các đặc trưng của mô hình Client/server
+Một ứng dụng kiểu Client/Server bao gồm 2 phần: Một phần chạy trên Server (máy chủ)
+và phần khác chạy trên các Workstations (máy trạm).
+Hình 2: Mô hình Client/Server trên SQL Server
+Giáo trình Hệ quản trị CSDL MS SQL Server 1
+Khoa CNTT trường Cao đẳng nghề 4
+Phần Server: (Máy chủ) chứa các CSDL, cung cấp các chức năng phục vụ cho việc tổ
+chức và quản lý CSDL, cho phép nhiều người sử dụng cùng truy cập dữ liệu. Điều này không
+chỉ tiết kiệm mà còn thể hiện tính nhất quán về mặt dữ liệu. Tất cả dữ liệu đều được truy xuất
+thông qua server, không được truy xuất trực tiếp. Do đó, có độ bảo mật cao, tính năng chịu
+lỗi, chạy đồng thời, sao lưu dự phòng…
+Phần Client (Máy khách): Là các phần mềm chạy trên máy trạm cho phép người sử dụng
+giao tiếp CSDL trên Server.
+Hệ thống máy tính Client/Server có 5 mô hình kiến trúc dựa trên cấu hình phân tán về truy
+nhập dữ liệu, gồm:
+- Mô hình CSDL tập trung (Centralized database model)
+- Mô hình CSDL theo kiểu file - server (File - server database model)
+- Mô hình xử lý từng phần CSDL (Database extract proceSQL Servering model)
+- Mô hình CSDL Client/Server (Client/Server database model)
+- Mô hình CSDL phân tán (Distributed database model)
+</p>',
                 'created_at' => '2022-02-17 14:40:00',
                 'updated_at' => '2022-02-17 14:40:00',
             ),
@@ -142,7 +203,8 @@ class LessonsTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'course_id' => 3,
-                'title' => 'Chuong 4',
+                'title' => 'Chuong 4 : SQL server
+',
                 'descriptif' => 'SQL server',
                 'image' => 'lessons/default1.png',
                 'objectif' => '8',
@@ -167,7 +229,7 @@ class LessonsTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'course_id' => 4,
-                'title' => 'Chương 1',
+                'title' => 'Chương 1 : Tổng quan về QTM',
                 'descriptif' => 'Tổng quan về QTM',
                 'image' => 'lessons/default2.png',
                 'objectif' => '8',
@@ -189,436 +251,9 @@ class LessonsTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 6,
-                'course_id' => 1,
-                'title' => 'Chuong 2',
-                'descriptif' => 'Cài đặt phần mề và môi trường',
-                'image' => 'lessons/default0.png',
-                'objectif' => '8',
-                'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>Một số phần mềm cơ bản người học n&ecirc;n sử dụng</p>',
-                'created_at' => '2022-02-17 14:52:00',
-                'updated_at' => '2022-02-17 14:52:00',
-            ),
-            6 => 
-            array (
-                'id' => 7,
-                'course_id' => 1,
-                'title' => 'Chuong 3',
-                'descriptif' => 'Cấu hình mạng, cấu hình hệ thống',
-                'image' => 'lessons/default2.png',
-                'objectif' => '8',
-                'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
-<p>&nbsp;</p>
-<p>Sơ đồ&nbsp;hệ thống mạng một đường</p>
-<p><img src="https://www.daihockhonggiay.com/Network/1/18.jpg" /></p>
-<p>1. Đặt địa chỉ IP cho 2 PC v&agrave; Server</p>
-<table width="523">
-<tbody>
-<tr>
-<td>
-<p>PC0</p>
-</td>
-<td>
-<p>Server IP</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>IP Address: 192.168.1.10</p>
-</td>
-<td>
-<p>IP Address: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Default Gateway:192.168.1.1</p>
-</td>
-<td>
-<p>Default Gateway:8.8.8.1</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>PC1</p>
-</td>
-<td>
-<p>Chỉnh DNS On</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>IP Address: 192.168.2.10</p>
-</td>
-<td>
-<p>Name: google.com</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-<td>
-<p>Address: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Default Getway:192.168.2.1</p>
-</td>
-<td>
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-<td>
-<p>&nbsp;</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>2. Cấu h&igrave;nh Switch&nbsp;</p>
-<p>a. Cấu h&igrave;nh cơ bản Switch</p>
-<p>Switch&gt;enable</p>
-<p>Switch#configure terminal</p>
-<p>Switch(config)#hostname SW0</p>
-<p>SW0(config)#line console 0</p>
-<p>SW0(config-line)#password dainam</p>
-<p>SW0(config-line)#login</p>
-<p>SW0(config-line)#exit</p>
-<p>SW0(config)#line vty 0 4</p>
-<p>SW0(config-line)#password dainam</p>
-<p>SW0(config-line)#login</p>
-<p>SW0(config-line)#exit</p>
-<p>SW0(config)#ban motd "XINCHAO"</p>
-<p>SW0(config)#enable secret dainam</p>
-<p>SW0(config)#service password-encryption (m&atilde; h&oacute;a tất cả mật khẩu)</p>
-<p>b. Cấu h&igrave;nh VLAN</p>
-<p>SW0(config)#vlan 10</p>
-<p>SW0(config-vlan)#name IT</p>
-<p>SW0(config-vlan)#Vlan 20</p>
-<p>SW0(config-vlan)#name Sale</p>
-<p>SW0(config-vlan)#exit</p>
-<p>SW0(config)#interface range f0/1-10</p>
-<p>SW0(config-if-range)#switchport access vlan 10</p>
-<p>SW0(config-if-range)#exit</p>
-<p>SW0(config)#interface range f0/11-20</p>
-<p>SW0(config-if-range)#switchport access vlan 20</p>
-<p>SW0(config-if-range)#exit</p>
-<p>SW0(config)#int g1/1</p>
-<p>SW0(config-if)#switchport mode trunk</p>
-<p>SW0(config-if)#end</p>
-<p>SW0#wr (lưu lại cấu h&igrave;nh)</p>',
-                'created_at' => '2022-02-17 14:53:17',
-                'updated_at' => '2022-02-17 14:53:17',
-            ),
-            7 => 
-            array (
-                'id' => 8,
-                'course_id' => 1,
-                'title' => 'Chuong 3',
-                'descriptif' => 'Cấu hình mạng, cấu hình hệ thống',
-                'image' => 'lessons/default2.png',
-                'objectif' => '8',
-                'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
-<p>&nbsp;</p>
-<p>Sơ đồ&nbsp;hệ thống mạng một đường</p>
-<p><img src="https://www.daihockhonggiay.com/Network/1/18.jpg" /></p>
-<p>1. Đặt địa chỉ IP cho 2 PC v&agrave; Server</p>
-<table width="523">
-<tbody>
-<tr>
-<td>
-<p>PC0</p>
-</td>
-<td>
-<p>Server IP</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>IP Address: 192.168.1.10</p>
-</td>
-<td>
-<p>IP Address: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Default Gateway:192.168.1.1</p>
-</td>
-<td>
-<p>Default Gateway:8.8.8.1</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>PC1</p>
-</td>
-<td>
-<p>Chỉnh DNS On</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>IP Address: 192.168.2.10</p>
-</td>
-<td>
-<p>Name: google.com</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-<td>
-<p>Address: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Default Getway:192.168.2.1</p>
-</td>
-<td>
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-<td>
-<p>&nbsp;</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>2. Cấu h&igrave;nh Switch&nbsp;</p>
-<p>a. Cấu h&igrave;nh cơ bản Switch</p>
-<p>Switch&gt;enable</p>
-<p>Switch#configure terminal</p>
-<p>Switch(config)#hostname SW0</p>
-<p>SW0(config)#line console 0</p>
-<p>SW0(config-line)#password dainam</p>
-<p>SW0(config-line)#login</p>
-<p>SW0(config-line)#exit</p>
-<p>SW0(config)#line vty 0 4</p>
-<p>SW0(config-line)#password dainam</p>
-<p>SW0(config-line)#login</p>
-<p>SW0(config-line)#exit</p>
-<p>SW0(config)#ban motd "XINCHAO"</p>
-<p>SW0(config)#enable secret dainam</p>
-<p>SW0(config)#service password-encryption (m&atilde; h&oacute;a tất cả mật khẩu)</p>
-<p>b. Cấu h&igrave;nh VLAN</p>
-<p>SW0(config)#vlan 10</p>
-<p>SW0(config-vlan)#name IT</p>
-<p>SW0(config-vlan)#Vlan 20</p>
-<p>SW0(config-vlan)#name Sale</p>
-<p>SW0(config-vlan)#exit</p>
-<p>SW0(config)#interface range f0/1-10</p>
-<p>SW0(config-if-range)#switchport access vlan 10</p>
-<p>SW0(config-if-range)#exit</p>
-<p>SW0(config)#interface range f0/11-20</p>
-<p>SW0(config-if-range)#switchport access vlan 20</p>
-<p>SW0(config-if-range)#exit</p>
-<p>SW0(config)#int g1/1</p>
-<p>SW0(config-if)#switchport mode trunk</p>
-<p>SW0(config-if)#end</p>
-<p>SW0#wr (lưu lại cấu h&igrave;nh)</p>',
-                'created_at' => '2022-02-17 14:53:55',
-                'updated_at' => '2022-02-17 14:53:55',
-            ),
-            8 => 
-            array (
-                'id' => 9,
-                'course_id' => 4,
-                'title' => 'Chuong 2',
-                'descriptif' => 'Cài đặt phần mề và môi trường',
-                'image' => 'lessons/default0.png',
-                'objectif' => '8',
-                'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>Một số phần mềm cơ bản người học n&ecirc;n sử dụng</p>',
-                'created_at' => '2022-02-17 14:54:24',
-                'updated_at' => '2022-02-17 14:54:24',
-            ),
-            9 => 
-            array (
-                'id' => 10,
-                'course_id' => 4,
-                'title' => 'Chuong 3',
-                'descriptif' => 'Cài đặt phần mề và môi trường',
-                'image' => 'lessons/default2.png',
-                'objectif' => '8',
-                'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>Sơ đồ&nbsp;hệ thống mạng một đường</p>
-<p><img src="https://www.daihockhonggiay.com/Network/1/18.jpg" /></p>
-<p>1. Đặt địa chỉ IP cho 2 PC v&agrave; Server</p>
-<table width="523">
-<tbody>
-<tr>
-<td>
-<p>PC0</p>
-</td>
-<td>
-<p>Server IP</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>IP Address: 192.168.1.10</p>
-</td>
-<td>
-<p>IP Address: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Default Gateway:192.168.1.1</p>
-</td>
-<td>
-<p>Default Gateway:8.8.8.1</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>PC1</p>
-</td>
-<td>
-<p>Chỉnh DNS On</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>IP Address: 192.168.2.10</p>
-</td>
-<td>
-<p>Name: google.com</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Subnet Mask:255.255.255.0</p>
-</td>
-<td>
-<p>Address: 8.8.8.8</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Default Getway:192.168.2.1</p>
-</td>
-<td>
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>DNS Server: 8.8.8.8</p>
-</td>
-<td>
-<p>&nbsp;</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>2. Cấu h&igrave;nh Switch&nbsp;</p>
-<p>a. Cấu h&igrave;nh cơ bản Switch</p>
-<p>Switch&gt;enable</p>
-<p>Switch#configure terminal</p>
-<p>Switch(config)#hostname SW0</p>
-<p>SW0(config)#line console 0</p>
-<p>SW0(config-line)#password dainam</p>
-<p>SW0(config-line)#login</p>
-<p>SW0(config-line)#exit</p>
-<p>SW0(config)#line vty 0 4</p>
-<p>SW0(config-line)#password dainam</p>
-<p>SW0(config-line)#login</p>
-<p>SW0(config-line)#exit</p>
-<p>SW0(config)#ban motd "XINCHAO"</p>
-<p>SW0(config)#enable secret dainam</p>
-<p>SW0(config)#service password-encryption (m&atilde; h&oacute;a tất cả mật khẩu)</p>
-<p>b. Cấu h&igrave;nh VLAN</p>
-<p>SW0(config)#vlan 10</p>
-<p>SW0(config-vlan)#name IT</p>
-<p>SW0(config-vlan)#Vlan 20</p>
-<p>SW0(config-vlan)#name Sale</p>
-<p>SW0(config-vlan)#exit</p>
-<p>SW0(config)#interface range f0/1-10</p>
-<p>SW0(config-if-range)#switchport access vlan 10</p>
-<p>SW0(config-if-range)#exit</p>
-<p>SW0(config)#interface range f0/11-20</p>
-<p>SW0(config-if-range)#switchport access vlan 20</p>
-<p>SW0(config-if-range)#exit</p>
-<p>SW0(config)#int g1/1</p>
-<p>SW0(config-if)#switchport mode trunk</p>
-<p>SW0(config-if)#end</p>
-<p>SW0#wr (lưu lại cấu h&igrave;nh)</p>',
-                'created_at' => '2022-02-17 14:55:31',
-                'updated_at' => '2022-02-17 14:55:31',
-            ),
-            10 => 
-            array (
                 'id' => 11,
                 'course_id' => 4,
-                'title' => 'Chuong 4',
+                'title' => 'Chuong 2 : Lên kế hoạch, quản trị dự án',
                 'descriptif' => 'Lên kế hoạch, quản trị dự án',
                 'image' => 'lessons/default0.png',
                 'objectif' => '8',
@@ -632,11 +267,11 @@ class LessonsTableSeeder extends Seeder
                 'created_at' => '2022-02-17 14:56:34',
                 'updated_at' => '2022-02-17 14:56:34',
             ),
-            11 => 
+            6 => 
             array (
                 'id' => 12,
                 'course_id' => 4,
-                'title' => 'Chuong 5',
+                'title' => 'Chuong 3 : Giải quyết sự cố',
                 'descriptif' => 'Giải quyết sự cố',
                 'image' => 'lessons/default1.png',
                 'objectif' => '8',
@@ -650,11 +285,11 @@ class LessonsTableSeeder extends Seeder
                 'created_at' => '2022-02-17 14:57:10',
                 'updated_at' => '2022-02-17 14:57:10',
             ),
-            12 => 
+            7 => 
             array (
                 'id' => 13,
                 'course_id' => 5,
-                'title' => 'Chương 1',
+                'title' => 'Chương 1 : tổng quan về phát luật VN',
                 'descriptif' => 'tổng quan về phát luật VN',
                 'image' => 'lessons/default0.png',
                 'objectif' => '8',
@@ -674,11 +309,11 @@ class LessonsTableSeeder extends Seeder
                 'created_at' => '2022-02-17 14:58:42',
                 'updated_at' => '2022-02-17 14:58:42',
             ),
-            13 => 
+            8 => 
             array (
                 'id' => 14,
                 'course_id' => 5,
-                'title' => 'Chuong 2',
+                'title' => 'Chuong 2 : Luật pháp hôn nhân',
                 'descriptif' => 'Luật pháp hôn nhân',
                 'image' => 'lessons/default2.png',
                 'objectif' => '8',
@@ -776,7 +411,7 @@ class LessonsTableSeeder extends Seeder
 'created_at' => '2022-02-17 14:59:52',
 'updated_at' => '2022-02-17 14:59:52',
 ),
-14 => 
+9 => 
 array (
 'id' => 15,
 'course_id' => 6,
@@ -801,11 +436,11 @@ array (
 'created_at' => '2022-02-17 15:03:46',
 'updated_at' => '2022-02-17 15:03:46',
 ),
-15 => 
+10 => 
 array (
 'id' => 16,
 'course_id' => 9,
-'title' => 'Chương 1',
+'title' => 'Chương 1 : Khái niệm cơ bản về HTML',
 'descriptif' => 'Khái niệm cơ bản về HTML',
 'image' => 'lessons/default0.png',
 'objectif' => '8',
@@ -828,11 +463,11 @@ array (
 'created_at' => '2022-02-17 15:05:22',
 'updated_at' => '2022-02-17 15:05:22',
 ),
-16 => 
+11 => 
 array (
 'id' => 17,
 'course_id' => 10,
-'title' => 'Chương 1',
+'title' => 'Chương 1 : Tổng quan',
 'descriptif' => 'Tổng quan',
 'image' => 'lessons/default2.png',
 'objectif' => '8',
@@ -853,11 +488,11 @@ array (
 'created_at' => '2022-02-17 15:06:27',
 'updated_at' => '2022-02-17 15:06:27',
 ),
-17 => 
+12 => 
 array (
 'id' => 18,
 'course_id' => 16,
-'title' => 'Chương 1',
+'title' => 'Chương 1 : Tổng quan',
 'descriptif' => 'aaaaaaa',
 'image' => 'lessons/default1.png',
 'objectif' => '8',
@@ -876,11 +511,11 @@ array (
 'created_at' => '2022-02-17 15:07:17',
 'updated_at' => '2022-02-17 15:07:17',
 ),
-18 => 
+13 => 
 array (
 'id' => 19,
 'course_id' => 17,
-'title' => 'Chương 1',
+'title' => 'Chương 1 : tổng quan về àn toàn CSDL',
 'descriptif' => 'tổng quan về àn toàn CSDL',
 'image' => 'lessons/default1.png',
 'objectif' => '8',
@@ -888,17 +523,236 @@ array (
 'created_at' => '2022-02-17 15:08:05',
 'updated_at' => '2022-02-17 15:08:05',
 ),
-19 => 
+14 => 
 array (
 'id' => 20,
 'course_id' => 3,
-'title' => 'Chuong 5',
+'title' => 'Chuong 5 : Tổng kết',
 'descriptif' => 'tổng kết',
 'image' => 'lessons/default0.png',
 'objectif' => '8',
-'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+<p>
+TOP 5 giáo trình hệ quản trị cơ sở dữ liệu
+Sau khi tìm hiểu về những kiến thức trong phần trên, không quá khó để chúng ta nhận ra tầm quan trọng cũng như mức độ phổ biến của các giáo trình hệ quản trị cơ sở dữ liệu. Mặc dù theo một số thống kê cho thấy hiện nay, có đến hơn 300 hệ quản trị CSDL khác nhau, tuy nhiên, chỉ có khoản hơn 10 giáo trình hệ quản trị cơ sở dữ liệu được sử dụng phổ biến trên thế giới hơn cả để cải thiện khả năng lý dữ liệu cho các ứng dụng công nghệ thông tin, các phần mềm máy tính hay website,… Cùng chúng tôi điểm danh Top 10 hệ quản trị CSDL phổ biến nhất sau đây nhé!
+
+1. Hệ CSDL Oracle
+Là một DBMS thương mại. Nó được đánh giá là hệ CSDL quan hệ đối tượng được sử dụng rộng rãi nhất hiện nay, “đánh bật” cả các “anh lớn” như MySQL, Microsoft SQL Server,… ra khỏi vị trí dẫn đầu. Khởi đầu với phần mềm quản trị cơ sở dữ liệu từ cách đây hơn 50 năm, cho đến hiện tại, ngoài Oracle Database Server, Oracle còn cung cấp khá nhiều sản phẩm khác để phục vụ cho các doanh nghiệp.
+
+Một số tính năng cơ bản:
+
+Được bảo mật
+Hoạt động trên Windows, Linux, UNIX
+Ít chiếm không gian
+Hỗ trợ được cho cơ sở dữ liệu lớn, giảm thời gian CPU xử lý dữ liệu
+2. Giáo trình hệ quản trị cơ sở dữ liệu
+Là một hệ quản trị CSDL thương mại khác, sử dụng mã nguồn mở. Hệ cơ sở dữ liệu này rất phổ biến, và thường được các.chuyên gia lập trình web ưa chuộng sử dụng trong quá.trình phát triển các ứng dụng hay website. Với ưu điểm về tốc độ cũng như tính bảo mật được đánh giá cao,.MySQL thích hợp với các ứng dụng có truy cập cơ sở dữ liệu trên Internet.
+
+giao trinh he quan tri co so du lieu
+giao trinh he quan tri co so du lieu
+Một số tính năng cơ bản:
+
+Hoạt động trên Windows, Linux
+Tốc độ xử lý dữ liệu cao
+Sử dụng trình kích hoạt tăng năng suất và nhiều tính năng
+Có thể khôi phục dữ liệu nếu cần
+Với những ưu điểm của mình, giáo trình hệ quản trị cơ sở dữ liệu mySQL trở.thành một trong những lựa chọn hàng đầu của các công ty.thiết kế website, đặc biệt là Mona Media – Một công ty chuyên thiết kế.và lập trình web đã ứng dụng mySQL trong hầu hết những website của mình và mang.đến những trải nghiệm website tuyệt vời hơn cho khách hàng.
+
+3. Hệ CSDL Microsoft SQL Server
+Microsoft SQL Server luôn luôn là một cái tên có mặt trong Top hầu hết các bảng xếp hạng hệ quản trị CSDL phổ biến nhất. Được phát triển từ năm 1989, sử dụng ngôn ngữ Assembly C, Linux , C ++, đây là một DBMS thương mại được rất nhiều người yêu thích và lựa chọn sử dụng bởi những tiện ích của nó.
+
+
+
+Một số tính năng cơ bản:
+
+Hoạt động trên hệ điều hành Windows và Linux
+Tương thích với Oracle
+Cung cấp, quản lý hiệu quả khối lượng của công việc
+Cho phép nhiều người dùng sử dụng chung một cơ sở dữ liệu
+4. PostgreSQL
+Đứng Top 4 trong bảng xếp hạng các giáo trình hệ quản trị cơ sở dữ liệu phổ.biến nhất, PostgreSQL cũng là một công cụ nguồn mở khá quen thuộc. Đây là một cơ sở dữ liệu nâng cao hơn, hỗ trợ tốt cho việc lưu.trữ dữ liệu không gian. Với sự kết hợp cùng module PostGIS, PostgreSQL.cho phép người sử dụng khả năng lưu trữ các.lớp dữ liệu không gian một cách hiệu quả.
+
+Một số tính năng cơ bản:
+
+Sử dụng cơ sở dữ liệu quan hệ đối tượng
+Hoạt động trên các hệ điều hành Windows và Linux
+Truy xuất dữ liệu tốc độ nhanh
+Chia sẻ dữ liệu qua trang tổng quan nhanh hơn
+Đảm bảo an toàn dữ liệu
+5. MongoDB
+Nếu bạn tìm kiếm một công cụ nguồn mở được sử dụng phổ.biến hàng đầu hiện nay, MongoDB chắc chắn sẽ không.làm bạn thất vọng. Đây là một cơ sở dữ liệu có khả năng xử lý một lượng dữ.liệu lớn, nhưng cũng đồng thời cho phép bạn sử dụng bộ nhớ trong.để có thể truy cập dữ liệu một cách dễ dàng hơn.
+
+giao trinh he quan tri co so du lieu
+giao trinh he quan tri co so du lieu
+Một số tính năng cơ bản:
+
+Dùng cơ chế NoSQL để truy vấn, viết bằng ngôn ngữ C++
+Việc chia tỷ lệ có thể thực hiện dễ dàng
+Sử dụng các phép nối phức tạp không có sẵn
+Lời kết
+
+Mỗi hệ quản trị CSDL trên nói chung và hầu hết các DBMS.khác nói riêng sẽ đều có những tính năng, ưu điểm nhất định. Tùy theo yêu cầu về dữ liệu khác nhau của mỗi người mà chúng ta có.thể đánh giá rằng các hệ quản trị cơ sở trên liệu có phù hợp và hữu ích hay không.
+
+Hi vọng rằng sau những thông tin về Top 5 giáo trình hệ quản trị cơ sở dữ liệu.phổ biến nhất mà chúng tôi đã tổng hợp và cung cấp trong bài viết.trên, bạn sẽ “bỏ túi” thêm nhiều kiến thức để ứng dụng cho công việc,.và thỏa mãn những đam mê về công nghệ của bản thân mình.
+
+Tìm kiếm liên quan
+
+Đâu không phải chức năng của hệ quản trị cơ sở dữ liệu
+Hệ quản trị cơ sở dữ liệu dụng khóa để làm gì
+Giáo trình hệ quản trị cơ sở dữ liệu
+Nội dung liên quan
+
+Cách bước lập kế hoạch Marketing cho sản phẩm đạt hiệu quả cao
+Những bước chiến lược chiêu thị quan trọng trong ngành bán lẻ
+Marketing Specialist là gì? Kỹ năng cần có của người làm Marketing Specialist
+</p>',
 'created_at' => '2022-02-17 15:09:21',
 'updated_at' => '2022-02-17 15:09:21',
+),
+15 => 
+array (
+'id' => 21,
+'course_id' => 4,
+'title' => 'Chuong 4 : Cài đặt phần mềm , môi trường',
+'descriptif' => 'Cài đặt phần mề và môi trường',
+'image' => 'lessons/default0.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+<p>&nbsp;</p>
+<p>Một số phần mềm cơ bản người học n&ecirc;n sử dụng</p>',
+'created_at' => '2022-02-17 15:46:57',
+'updated_at' => '2022-02-17 15:46:57',
+),
+16 => 
+array (
+'id' => 22,
+'course_id' => 4,
+'title' => 'Chuong 5 : Cài đặt cáu hình mạng, hệ thống',
+'descriptif' => 'Cấu hình mạng, cấu hình hệ thống',
+'image' => 'lessons/default2.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+<p>Sơ đồ&nbsp;hệ thống mạng một đường</p>
+<p><img src="https://www.daihockhonggiay.com/Network/1/18.jpg" /></p>
+<p>1. Đặt địa chỉ IP cho 2 PC v&agrave; Server</p>
+<table width="523">
+<tbody>
+<tr>
+<td>
+<p>PC0</p>
+</td>
+<td>
+<p>Server IP</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>IP Address: 192.168.1.10</p>
+</td>
+<td>
+<p>IP Address: 8.8.8.8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Subnet Mask:255.255.255.0</p>
+</td>
+<td>
+<p>Subnet Mask:255.255.255.0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Default Gateway:192.168.1.1</p>
+</td>
+<td>
+<p>Default Gateway:8.8.8.1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DNS Server: 8.8.8.8</p>
+</td>
+<td>
+<p>DNS Server: 8.8.8.8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PC1</p>
+</td>
+<td>
+<p>Chỉnh DNS On</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>IP Address: 192.168.2.10</p>
+</td>
+<td>
+<p>Name: google.com</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Subnet Mask:255.255.255.0</p>
+</td>
+<td>
+<p>Address: 8.8.8.8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Default Getway:192.168.2.1</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DNS Server: 8.8.8.8</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>2. Cấu h&igrave;nh Switch&nbsp;</p>
+<p>a. Cấu h&igrave;nh cơ bản Switch</p>
+<p>Switch&gt;enable</p>
+<p>Switch#configure terminal</p>
+<p>Switch(config)#hostname SW0</p>
+<p>SW0(config)#line console 0</p>
+<p>SW0(config-line)#password dainam</p>
+<p>SW0(config-line)#login</p>
+<p>SW0(config-line)#exit</p>
+<p>SW0(config)#line vty 0 4</p>
+<p>SW0(config-line)#password dainam</p>
+<p>SW0(config-line)#login</p>
+<p>SW0(config-line)#exit</p>
+<p>SW0(config)#ban motd "XINCHAO"</p>
+<p>SW0(config)#enable secret dainam</p>
+<p>SW0(config)#service password-encryption (m&atilde; h&oacute;a tất cả mật khẩu)</p>
+<p>b. Cấu h&igrave;nh VLAN</p>
+<p>SW0(config)#vlan 10</p>
+<p>SW0(config-vlan)#name IT</p>
+<p>SW0(config-vlan)#Vlan 20</p>
+<p>SW0(config-vlan)#name Sale</p>
+<p>SW0(config-vlan)#exit</p>
+<p>SW0(config)#interface range f0/1-10</p>
+<p>SW0(config-if-range)#switchport access vlan 10</p>
+<p>SW0(config-if-range)#exit</p>
+<p>SW0(config)#interface range f0/11-20</p>
+<p>SW0(config-if-range)#switchport access vlan 20</p>
+<p>SW0(config-if-range)#exit</p>
+<p>SW0(config)#int g1/1</p>
+<p>SW0(config-if)#switchport mode trunk</p>
+<p>SW0(config-if)#end</p>
+<p>SW0#wr (lưu lại cấu h&igrave;nh)</p>',
+'created_at' => '2022-02-17 15:49:10',
+'updated_at' => '2022-02-17 15:49:10',
 ),
 ));
         
