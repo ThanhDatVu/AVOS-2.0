@@ -13,7 +13,7 @@ use App\Http\Controllers\ExamController;
 /* Lessons */
 Route::get('/make-new-lesson',[LessonController::class,"makeNewLesson"])->middleware(['auth'])->name('make-new-lesson');
 
-Route::post('/make-new-lesson/create', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('submit-lesson');
+Route::post('/make-new-lesson', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('submit-lesson');
 
 Route::get('/courses/read/{id}', [LessonController::class,"showLesson"])->middleware(['auth'])->name('lesson');
 /* Exams */
