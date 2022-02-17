@@ -3,7 +3,7 @@ composer update
 
 
 tạo cơ sở dữ liệu
-php artisan migrate:fresh
+php artisan migrate:fresh --seed
 
 
 chạy

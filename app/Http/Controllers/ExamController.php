@@ -113,6 +113,7 @@ class ExamController extends Controller
         $result->exam_id = $id;
         $result->points = $mark;
         $result->save();
+        //To do: tìm bản ghi cũ, so sánh điểm, update bản ghi mới
         dd($result);
 
 
