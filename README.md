@@ -9,3 +9,5 @@ php artisan migrate:fresh
 chạy
 php artisan serve
  
+ iseed khoá hoc, bai hoc
+php artisan iseed courses,lessons --force

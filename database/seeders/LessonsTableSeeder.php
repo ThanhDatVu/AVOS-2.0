@@ -68,6 +68,49 @@ print(\'The square root of %0.3f is %0.3f\'%(num ,num_sqrt))</code></pre>',
             'created_at' => '2022-02-10 10:50:27',
             'updated_at' => '2022-02-10 10:50:27',
         ),
+        3 => 
+        array (
+            'id' => 4,
+            'course_id' => 1,
+            'title' => 'Chuong 2',
+            'descriptif' => 'alo',
+            'image' => 'lessons/default1.png',
+            'objectif' => 'alo',
+            'contenu' => '<p><iframe src="//www.youtube.com/embed/0Bz-bX9cBzE" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>',
+            'created_at' => '2022-02-13 14:35:30',
+            'updated_at' => '2022-02-13 14:35:30',
+        ),
+        4 => 
+        array (
+            'id' => 5,
+            'course_id' => 2,
+            'title' => 'Chương 1',
+            'descriptif' => 'Tổng quan về HĐH',
+            'image' => 'lessons/default2.png',
+            'objectif' => '',
+            'contenu' => '<p>Hệ điều h&agrave;nh l&agrave; một phần mềm hệ thống d&ugrave;ng để điều h&agrave;nh, quản l&iacute; c&aacute;c thiết bị phần cứng v&agrave; c&aacute;c t&agrave;i nguy&ecirc;n phần mềm tr&ecirc;n m&aacute;y t&iacute;nh. Hệ điều h&agrave;nh đ&oacute;ng vai tr&ograve; trung gian trong việc giao tiếp giữa người sử dụng v&agrave; phần cứng m&aacute;y t&iacute;nh, cung cấp một m&ocirc;i trường cho ph&eacute;p người sử dụng ph&aacute;t triển v&agrave; thực hiện ứng dụng của họ một c&aacute;ch dễ d&agrave;ng.</p>
+<p>Khi khởi động m&aacute;y t&iacute;nh, ph&agrave;n mềm hệ điều h&agrave;nh được khởi động đầu ti&ecirc;n, sau đ&oacute; người sử dụng mới c&oacute; thể sử dụng được c&aacute;c chưomg tr&igrave;nh ứng dụng kh&aacute;c th&ocirc;ng qua giao diện tương t&aacute;c do hệ điều h&agrave;nh cung cấp. Chương tr&igrave;nh hệ diều h&agrave;nh lu&ocirc;n thường trực trong suốt qu&aacute; tr&igrave;nh m&aacute;y hoạt động. Khi tắt m&aacute;y t&iacute;nh, phần mềm hệ điều h&agrave;nh được tắt cuối c&ugrave;ng để kết th&uacute;c phi&ecirc;n l&agrave;m việc với m&aacute;y.</p>',
+            'created_at' => '2022-02-17 12:58:43',
+            'updated_at' => '2022-02-17 12:58:43',
+        ),
+        5 => 
+        array (
+            'id' => 6,
+            'course_id' => 2,
+            'title' => 'Chuong 2',
+            'descriptif' => 'Cách hoạt động',
+            'image' => 'lessons/default0.png',
+            'objectif' => 'abc',
+            'contenu' => '<p><strong>Nhiệm vụ cơ bản của hệ điều h&agrave;nh</strong></p>
+<ul>
+<li>Điều khiển v&agrave; quản l&iacute; trực tiếp c&aacute;c phần cứng.</li>
+<li>Thực hiện một số thao t&aacute;c cơ bản trong m&aacute;y t&iacute;nh như c&aacute;c thao t&aacute;c đọc, viết tập tin, quản l&iacute; hệ thống tập tin v&agrave; c&aacute;c kho dữ liệu.</li>
+<li>Cung cấp một hệ thống giao diện sơ khai cho c&aacute;c ứng dụng, thường th&ocirc;ng qua một hệ thống thư viện c&aacute;c h&agrave;m chuẩn để điều h&agrave;nh c&aacute;c ph&acirc;n cứng m&agrave; từ đ&oacute; c&aacute;c ứng dụng c&oacute; thể gọi tới.</li>
+<li>Cung cấp một hệ thống lệnh cơ bản để điều h&agrave;nh m&aacute;y. C&aacute;c lệnh n&agrave;y gọi l&agrave; lệnh hệ thống (system command).</li>
+</ul>',
+            'created_at' => '2022-02-17 13:03:07',
+            'updated_at' => '2022-02-17 13:03:07',
+        ),
     ));
         
         
