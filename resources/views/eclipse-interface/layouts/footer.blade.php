@@ -16,16 +16,7 @@
 						<li><a href="{{route("courses")}}">contact us</a></li>
 						<li><a href="{{route("courses")}}">Terms of Service</a></li>
 					</ul>
-				</div>{{--
-				<div class="col-lg-2 col-md-6 single-footer-widget">
-					<h4>Features</h4>
-					<ul>
-						<li><a href="#">Jobs</a></li>
-						<li><a href="#">Brand Assets</a></li>
-						<li><a href="#">Investor Relations</a></li>
-						<li><a href="#">Terms of Service</a></li>
-					</ul>
-				</div> --}}
+				</div>
 				<div class="col-lg-4 col-md-6 single-footer-widget">
 					<h4>Resources</h4>
 					<ul>
@@ -91,6 +82,7 @@
   <script src="{{asset("js/main.js")}}"></script>
   <link rel="stylesheet" href="{{asset('css/print.css')}}">
   <script src="{{asset('js/print.js')}}"></script>
+
 </body>
 
 </html>

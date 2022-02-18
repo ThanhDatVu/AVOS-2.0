@@ -23,12 +23,31 @@
                                             <p class="text-sm text-green-800 excert">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;{{$lesson->descriptif}}
                                             </p>
+                                            <hr>
                                             <h3 class="mt-20 mb-20">Nội dung</h3>
                                             <p class="text-black" style="color: black!important">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;{!! $lesson->contenu !!}
                                             </p>
+                                            <hr>
+                                            <h3>Tài liệu bài học</h3>
+                                            <iframe src ="{{ asset('/laraview/#../pdf/chuong1.pdf') }}" width="1000px" height="600px"></iframe>
+
+                                            <div class='grid place-items-center w-100 m-3'>
+                                                <span class="rounded border justify-content-between align-middle d-flex">
+                                                   <a href="{{route('viewpdf')}}"
+                                                      class="btn  ">&nbsp;Tên tài liệu.pdf</a>
+                                                    <a href="{{route('viewpdf',["pathToFile"=>"pdf/chuong1.pdf"])}}"
+                                                       class="btn ti-eye bg-gray-100">&nbsp;Xem tài liệu</a>
+
+                                                </span>
+
+                                            </div>
                                         </div>
+
+
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -39,5 +58,7 @@
         </div>
     </div>
     @include("eclipse-interface.layouts.footer")
+
 </x-app-layout>
-{{-- @include("components.footer") --}}
+
+

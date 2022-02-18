@@ -72,10 +72,10 @@ class ExamController extends Controller
 //
     }
     /**
- * Show the form for showing a exam.
- *
- * @return \Illuminate\Http\Response
- */
+     * Show the form for showing a exam.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function editExam($id)
     {
 
@@ -85,10 +85,10 @@ class ExamController extends Controller
 //
     }
     /**
- * Show the form for showing a exam.
- *
- * @return \Illuminate\Http\Response
- */
+     * Show the form for showing a exam.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function submitTakenExam(Request $request, $id)
     {
         $exam=Exam::where('id',"like",$id)->firstOrFail();

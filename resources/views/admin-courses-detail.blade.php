@@ -23,6 +23,7 @@
                 <div class="border-b border-gray-200">
 
                     <div class="container w-100 lg:w-4/5 mx-auto flex flex-col">
+                        <iframe src="{{Storage::url('pdf\Chương 1 Tổng quan.pdf')}}" width="100%" height="300"></iframe>
                         <!-- card -->
                         <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
                                         bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">

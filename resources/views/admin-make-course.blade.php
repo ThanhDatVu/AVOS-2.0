@@ -75,5 +75,6 @@
     </div>
     @include("eclipse-interface.layouts.footer")
 
+
 </x-app-layout>
 {{-- @include("components.footer") --}}

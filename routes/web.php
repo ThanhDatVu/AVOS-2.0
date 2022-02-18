@@ -37,6 +37,6 @@ Route::post('/qr', function () {
 })->name('qr-generate');
 require __DIR__.'./my-routes.php';
 //require __DIR__.'./admin.php';
-require __DIR__.'./user_dashboard.php';
+require __DIR__ . './file.php';
 require __DIR__.'./eclipse.php';
 require __DIR__.'./auth.php';
