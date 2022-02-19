@@ -35,6 +35,21 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return 6;
                 }),
+            Menu::make('Khoá học')
+                ->title('Quản lý nội dung')
+                ->icon('note')
+                ->route('platform.example.fields'),
+            Menu::make('Danh mục khoá học')
+                ->icon('note')
+                ->route('platform.example.fields'),
+
+            Menu::make('Điểm số cá nhân')
+                ->title('Quản lý điểm')
+                ->icon('note')
+                ->route('platform.example.fields'),
+            Menu::make('Điểm số theo khoá học')
+                ->icon('note')
+                ->route('platform.example.fields'),
 
             Menu::make('Dropdown menu')
                 ->icon('code')
@@ -83,7 +98,7 @@ class PlatformProvider extends OrchidServiceProvider
                     return Dashboard::version();
                 }, Color::DARK()),
 
-            Menu::make(__('Users'))
+            Menu::make(__('Người dùng'))
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
