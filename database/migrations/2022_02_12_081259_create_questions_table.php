@@ -25,7 +25,7 @@ class CreateQuestionsTable extends Migration
 
             $table->string("hint")->nullable();
             $table->integer("mark")->default(1);
-            $table->string("explanation")->nullable();
+            $table->string("explanation",5000)->nullable();
             $table->bigInteger('exam_id')->unsigned()->index();
 
             $table->timestamps();

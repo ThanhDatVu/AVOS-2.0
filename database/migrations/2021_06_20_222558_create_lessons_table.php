@@ -21,6 +21,7 @@ class CreateLessonsTable extends Migration
             $table->string("image");
             $table->text("objectif")->nullable();
             $table->text("contenu");
+            $table->text("file")->nullable();
             $table->timestamps();
         });
     }
