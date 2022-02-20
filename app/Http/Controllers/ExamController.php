@@ -96,7 +96,7 @@ class ExamController extends Controller
         $questions = $exam->questions;
 
         $mark = 0;
-        for($x = 0; $x <= 1; $x++){
+        for($x = 0; $x <= $exam->number_of_questions-1; $x++){
 
             if(strcmp($questions[$x]->correctAnswer,$answers[$x])==0){
                  $mark += 1;
@@ -114,11 +114,10 @@ class ExamController extends Controller
         $result->points = $mark;
         $result->save();
         //To do: tìm bản ghi cũ, so sánh điểm, update bản ghi mới
-        dd($result);
 
 
 
-        return view('edit-exam',["exam"=>$exam]);
+        return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
 
     }
 

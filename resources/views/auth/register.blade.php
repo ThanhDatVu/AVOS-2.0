@@ -83,7 +83,7 @@
                             <option class="w-full px-4" value="">&nbsp;&nbsp;&nbsp;Gender&nbsp;&nbsp;&nbsp;&nbsp;</option>
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
-                            <option value="Transgender">Transgender</option>
+                            <option value="Transgender">Other</option>
                         </select>
                         <input
                             type="password" placeholder="password.."

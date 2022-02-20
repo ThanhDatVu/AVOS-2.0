@@ -23,7 +23,7 @@
                 <div class="border-b border-gray-200">
 
                     <div class="container w-100 lg:w-4/5 mx-auto flex flex-col">
-                        <iframe src="{{Storage::url('pdf\Chương 1 Tổng quan.pdf')}}" width="100%" height="300"></iframe>
+
                         <!-- card -->
                         <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
                                         bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
@@ -99,6 +99,17 @@
 
                                                         <li class="justify-content-between d-flex">
                                                             <p>{{$exam->title}}</p>
+                                                            @php
+                                                                $result = DB::table('results')
+                                                                                ->where('user_id', Auth::user()->id)
+                                                                                ->where('exam_id', $exam->id)
+                                                                                ->pluck('points')->first();
+
+                                                            @endphp
+                                                            @if($result!=0)
+
+                                                                &nbsp;<p class="bg-gray-200 rounded mx-5 p-2 ">Kết quả: {{$result}} / {{$exam->number_of_questions}}</p>
+                                                            @endif
                                                             <div>
                                                             <span class="text-uppercase justify-content-between d-flex">
                                                                 <a href="{{route('exam',["id"=>$exam])}}"

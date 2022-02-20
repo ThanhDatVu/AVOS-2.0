@@ -4,6 +4,7 @@ use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,8 @@ Route::get('/profile', function () {
 Route::post('/profile',[TeacherController::class,"create"])->middleware(['auth'])->name('profile');
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [CourseController::class,"showmydashboard"]
+)->middleware(['auth'])->name('dashboard');
 
 Route::get('/qr', [QrController::class,'qr_create'])->middleware(["auth"])->name('qr-generate');
 Route::post('/qr', function () {

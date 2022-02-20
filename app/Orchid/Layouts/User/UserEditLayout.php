@@ -6,6 +6,7 @@ namespace App\Orchid\Layouts\User;
 
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Layouts\Rows;
 
 class UserEditLayout extends Rows
@@ -30,6 +31,12 @@ class UserEditLayout extends Rows
                 ->required()
                 ->title(__('Email'))
                 ->placeholder(__('Email')),
+            Select::make('user.gerne')
+                ->title(__('Giới tính'))
+                ->options(['Female', 'Male','Other'])
+                ->required()
+            ->placeholder(__('giới tính')),
+
         ];
     }
 }

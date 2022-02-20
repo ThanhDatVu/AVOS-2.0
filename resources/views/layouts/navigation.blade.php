@@ -84,7 +84,7 @@
                                     href="{{route('courses')}}">
                                     Tất cả các khoá học
                                 </a>
-                                @if (Auth::user()->administrateur)
+                                @if (Auth::user()->admin)
 
                                 <a
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
@@ -95,6 +95,10 @@
                             </x-slot>
                         </x-dropdown>
                     </div>
+                        <x-nav-link :href="route('platform.main')" >
+                            <span class="mr-2 ti-dashboard"></span>{{ __('Admin') }}
+                        </x-nav-link>
+
                     @endif
                 </div>
             </div>

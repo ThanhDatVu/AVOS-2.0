@@ -10,29 +10,29 @@
 				<div class="col-lg-4 col-md-6 single-footer-widget">
 					<h4>Quick Links</h4>
 					<ul>
-						<li><a href="{{route("home")}}">website homepage</a></li>
-						<li><a href="{{route("courses")}}">courses</a></li>
-						<li><a href="{{route("courses")}}">About us</a></li>
-						<li><a href="{{route("courses")}}">contact us</a></li>
-						<li><a href="{{route("courses")}}">Terms of Service</a></li>
+						<li><a href="{{route("home")}}">Trang chủ</a></li>
+						<li><a href="{{route("courses")}}">Các khoá học</a></li>
+						<li><a href="{{route("courses")}}">Về chúng tôi</a></li>
+						<li><a href="{{route("courses")}}">Thông tin liên hệ</a></li>
+						<li><a href="{{route("courses")}}">Điều khoản dịch vụ</a></li>
 					</ul>
 				</div>
 				<div class="col-lg-4 col-md-6 single-footer-widget">
-					<h4>Resources</h4>
+					<h4>Thông tin</h4>
 					<ul>
-						<li><a href="#">Guides</a></li>
-						<li><a href="#">Research</a></li>
-						<li><a href="#">Experts</a></li>
-						<li><a href="#">Partners</a></li>
+						<li><a href="#">Hướng dẫn</a></li>
+						<li><a href="#">Nghiên cứu</a></li>
+						<li><a href="#">Các chuyên gia</a></li>
+						<li><a href="#">Đối tác</a></li>
 					</ul>
 				</div>
 				<div class="col-lg-4 col-md-6 single-footer-widget">
 					<h4>Newsletter</h4>
-					<p>You can trust us. we only send promo offers,</p>
+					<p>Đăng ký để nhận thông tin cập nhật</p>
 					<div class="form-wrap" id="mc_embed_signup">
 						<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
 						 method="get" class="form-inline">
-							<input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+							<input class="form-control" name="EMAIL" placeholder="Địa chỉ email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
 							 required="" type="email">
 							<button class="click-btn btn btn-default text-uppercase">subscribe</button>
 							<div style="position: absolute; left: -5000px;">
@@ -51,7 +51,7 @@
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
 				<div class="text-blue-200 col-lg-4 col-md-12 footer-social">
-                    Follow us on
+                    Theo dõi chúng tôi tại
 					<a href="#"><i class="fa fa-facebook"></i></a>
 					<a href="#"><i class="fa fa-twitter"></i></a>
 					<a href="#"><i class="fa fa-telegram"></i></a>

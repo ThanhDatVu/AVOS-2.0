@@ -61,31 +61,32 @@
                                                     <div class="ml-20 max-w-sm text-left ">
 
                                                         <div class="flex items-center mr-4 mb-4">
+                                                            <input id="radio5{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="Chưa chọn đáp án" checked />
                                                             <input id="radio0{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="A" />
                                                             <label for="radio0{{$loop->index}}" class="flex items-center cursor-pointer">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerA}}</label>
+                                                               A. {{$question->answerA}}</label>
                                                         </div>
 
                                                         <div class="flex items-center mr-4 mb-4">
                                                             <input id="radio1{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="B" />
                                                             <label for="radio1{{$loop->index}}" class="flex items-center cursor-pointer">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerB}}</label>
+                                                                B. {{$question->answerB}}</label>
                                                         </div>
 
                                                         <div class="flex items-center mr-4 mb-4">
                                                             <input id="radio2{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="C" />
                                                             <label for="radio2{{$loop->index}}" class="flex items-center cursor-pointer">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerC}}</label>
+                                                               C. {{$question->answerC}}</label>
                                                         </div>
 
                                                         <div class="flex items-center mr-4 mb-4">
                                                             <input id="radio3{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="D" />
                                                             <label for="radio3{{$loop->index}}" class="flex items-center cursor-pointer">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerD}}</label>
+                                                               D. {{$question->answerD}}</label>
                                                         </div>
                                                     </div>
                                                     @endforeach

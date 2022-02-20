@@ -103,6 +103,8 @@ class CourseController extends Controller
     {
 
         $course=Course::where('id',$id)->firstOrFail();
+
+
         return view('admin-courses-detail',["course"=>$course]);
     }
 
@@ -238,7 +240,24 @@ class CourseController extends Controller
             $userId = Auth::user()->id;
             $courseIds = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
 
-            return view('my-courses',["courses"=>Course::where('id',$courseIds)->get()]);
+            return view('my-courses',["courses"=>Course::whereIn('id',$courseIds)->get()]);
+        }else{
+            return view("dashboard");
+        }
+    }
+    /**
+     * Show the form for creating a new course.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showmydashboard()
+    {
+
+        if(true){
+            $userId = Auth::user()->id;
+            $courseIds = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
+
+            return view('dashboard',["courses"=>Course::whereIn('id',$courseIds)->get()]);
         }else{
             return view("dashboard");
         }

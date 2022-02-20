@@ -52,41 +52,61 @@
                                             <p class="text-sm text-green-800 excert">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;{{$exam->description}}
                                             </p>
+                                            <h3 class="mt-20 mb-20 text-green-700">Kết quả: {{$mark}} / {{$exam->number_of_questions}}</h3>
+                                            <p class="text-center text-lg text-green-800 excert">
+
+                                            </p>
+                                            <hr>
                                             <h3 class="mt-20 mb-20">Danh sách câu hỏi</h3>
                                             <div class=" justify-left ml-10">
 
                                                     @foreach($exam->questions as $question)
-                                                    <h3 class="mb-6 pt-6 mx-auto text-left">Câu {{($loop->index)+1}}: {{$question->question}}</h3>
-                                                    <div class="ml-20 max-w-sm text-left ">
+
+                                                    <h4 class="mb-6 pt-6 mx-auto text-left">Câu {{($loop->index)+1}}: {{$question->question}}</h4>
+                                                    <div class="ml-20 max-w-screen-xl text-left ">
 
                                                         <div class="flex items-center mr-4 mb-4">
-                                                            <input id="radio0{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="A" @if($answer[$loop]=="A") selected @endif />
                                                             <label for="radio0{{$loop->index}}" class="flex items-center cursor-pointer">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerA}}</label>
+                                                                A. {{$question->answerA}} &nbsp;&nbsp;&nbsp;&nbsp;@if($question->correctAnswer=="A")<mark class="bg-green-300 ">Đáp án đúng @endif </mark></label>
                                                         </div>
 
                                                         <div class="flex items-center mr-4 mb-4">
-                                                            <input id="radio1{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="B" @if($answer[$loop]=="B") selected @endif />
-                                                            <label for="radio1{{$loop->index}}" class="flex items-center cursor-pointer">
+
+                                                            <label for="radio1{{$loop->index}}" class="flex items-center ">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerB}}</label>
+                                                                B. {{$question->answerB}}&nbsp;&nbsp;&nbsp;&nbsp;@if($question->correctAnswer=="B")<mark class="bg-green-300 ">Đáp án đúng @endif</label>
                                                         </div>
 
                                                         <div class="flex items-center mr-4 mb-4">
-                                                            <input id="radio2{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="C" @if($answer[$loop]=="C") selected @endif />
-                                                            <label for="radio2{{$loop->index}}" class="flex items-center cursor-pointer">
+                                                             <label for="radio2{{$loop->index}}" class="flex items-center cursor-pointer">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerC}}</label>
+                                                                C. {{$question->answerC}}&nbsp;&nbsp;&nbsp;&nbsp;@if($question->correctAnswer=="C")<mark class="bg-green-300 ">Đáp án đúng @endif</label>
                                                         </div>
 
                                                         <div class="flex items-center mr-4 mb-4">
-                                                            <input id="radio3{{$loop->index}}"  type="radio" name="answer[{{$loop->index}}]" class="hidden" value="D" @if($answer[$loop]=="D") selected @endif />
+
                                                             <label for="radio3{{$loop->index}}" class="flex items-center cursor-pointer">
                                                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                                                                {{$question->answerD}}</label>
+                                                                D. {{$question->answerD}}&nbsp;&nbsp;&nbsp;&nbsp;@if($question->correctAnswer=="D")<mark class="bg-green-300 ">Đáp án đúng @endif</label>
                                                         </div>
+                                                        <div class="border rounded  ">
+                                                            <h5 class="mt-20 mb-20"> &nbsp; Bạn chọn đáp án : {{$answer[$loop->index]}}
+                                                                @if(strcmp($question->correctAnswer,$answer[$loop->index])==0)
 
+                                                                    &nbsp;<mark class="bg-green-300 ">Đúng</mark>
+
+                                                                @else
+                                                                    &nbsp;<mark class="bg-red-300 ">Sai</mark>
+                                                                @endif
+
+
+                                                            </h5>
+                                                            @if(!is_null($question->explanation))
+                                                                <p class="ml-4 mb-20"><strong>Giải thích: </strong> {{$question->explanation}}</p>
+                                                            @endif
+
+                                                        </div>
                                                     </div>
                                                     @endforeach
 
