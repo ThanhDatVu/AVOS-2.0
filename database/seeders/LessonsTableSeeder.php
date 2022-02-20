@@ -49,6 +49,7 @@ class LessonsTableSeeder extends Seeder
 <li>Quản l&yacute; điều khiển tương tranh.</li>
 <li>Ph&aacute;t hiện lỗi v&agrave; phục hồi CSDL</li>
 </ul>',
+                'file' => 'pdf/chuong1.pdf',
                 'created_at' => '2022-02-17 14:35:22',
                 'updated_at' => '2022-02-17 14:35:22',
             ),
@@ -121,6 +122,7 @@ class LessonsTableSeeder extends Seeder
 <li>Oracle Database Enterprise Edition: l&agrave; phi&ecirc;n bản mạnh mẽ nhất, cung cấp nhiều t&iacute;nh năng bảo mật cao cấp, gi&uacute;p cho c&aacute;c c&ocirc;ng ty quản l&yacute; truy xuất c&aacute;c nguồn t&agrave;i nguy&ecirc;n v&agrave; dữ liệu một c&aacute;ch hữu hiệu v&agrave; tiện lợi hơn.</li>
 <li>Oracle Database Personal Edition: l&agrave; một sản phẩm đặc biệt, c&oacute; chứa hầu hết c&aacute;c t&iacute;nh năng của Enterprise Edition (ngoại trừ Oracle Real Application Clusters), ph&ugrave; hợp cho m&ocirc;i trường ph&aacute;t triển v&agrave; triển khai một người d&ugrave;ng c&oacute; đ&ograve;i hỏi c&oacute; sự tương th&iacute;ch đầy đủ với c&aacute;c phi&ecirc;n bản kh&aacute;c của Oracle.</li>
 </ul>',
+                'file' => NULL,
                 'created_at' => '2022-02-17 14:38:26',
                 'updated_at' => '2022-02-17 14:38:26',
             ),
@@ -196,6 +198,7 @@ nhập dữ liệu, gồm:
 - Mô hình CSDL Client/Server (Client/Server database model)
 - Mô hình CSDL phân tán (Distributed database model)
 </p>',
+                'file' => NULL,
                 'created_at' => '2022-02-17 14:40:00',
                 'updated_at' => '2022-02-17 14:40:00',
             ),
@@ -222,6 +225,7 @@ nhập dữ liệu, gồm:
 <li>SQL Client: L&agrave; phi&ecirc;n bản d&agrave;nh cho m&aacute;y kh&aacute;ch, khi thực hiện khai th&aacute;c sẽ thực hiện kết nối đến phi&ecirc;n bản SQL Server, phi&ecirc;n bản n&agrave;y cung cấp giao diện GUI khai th&aacute;c cho người sử dụng.</li>
 <li>SQL Connectivity only: L&agrave; phi&ecirc;n bản sử dụng chỉ cho c&aacute;c ứng dụng để kết nối đến SQL Server, phi&ecirc;n bản n&agrave;y kh&ocirc;ng cung cấp c&ocirc;ng cụ GUI cho người d&ugrave;ng khai th&aacute;c SQL Server.</li>
 </ul>',
+                'file' => NULL,
                 'created_at' => '2022-02-17 14:46:32',
                 'updated_at' => '2022-02-17 14:46:32',
             ),
@@ -246,6 +250,7 @@ nhập dữ liệu, gồm:
 <p>+ Giải quyết sự cố</p>
 <p><img class="alignnone wp-image-6652 size-full" src="https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1.jpg 800w, https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1-300x179.jpg 300w, https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1-768x458.jpg 768w, https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1-184x109.jpg 184w" alt="" width="800" height="477" /></p>
 <p>Tại Trường Cao đẳng Quốc tế H&agrave; Nội, sinh vi&ecirc;n ng&agrave;nh Quản trị mạng m&aacute;y t&iacute;nh được trang bị đầy đủ kiến thức đại cương, kiến thức chuy&ecirc;n ng&agrave;nh. Đồng thời ch&uacute; trọng thực h&agrave;nh, ph&aacute;t triển c&aacute;c kỹ năng triển khai ứng dụng c&ocirc;ng nghệ th&ocirc;ng tin, khả năng nắm bắt c&aacute;c xu thế c&ocirc;ng nghệ mới. Kh&ocirc;ng chỉ vậy, nh&agrave; trường đẩy mạnh hợp t&aacute;c với c&aacute;c doanh nghiệp để tạo điều kiện cho sinh vi&ecirc;n thực tập, tiếp cận việc l&agrave;m.<iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>',
+                'file' => NULL,
                 'created_at' => '2022-02-17 14:48:55',
                 'updated_at' => '2022-02-17 14:48:55',
             ),
@@ -264,6 +269,7 @@ nhập dữ liệu, gồm:
 <p>Sdgdsg</p>
 <p>Dsgdsgdsg</p>
 <p>Sdgdsgdsg</p>',
+                'file' => NULL,
                 'created_at' => '2022-02-17 14:56:34',
                 'updated_at' => '2022-02-17 14:56:34',
             ),
@@ -282,6 +288,7 @@ nhập dữ liệu, gồm:
 <p>Dsgdsgds</p>
 <p>Gdsgdsg</p>
 <p>Dsgdsg</p>',
+                'file' => NULL,
                 'created_at' => '2022-02-17 14:57:10',
                 'updated_at' => '2022-02-17 14:57:10',
             ),
@@ -306,6 +313,7 @@ nhập dữ liệu, gồm:
 <p>Fsa</p>
 <p>F</p>
 <p>Sf</p>',
+                'file' => NULL,
                 'created_at' => '2022-02-17 14:58:42',
                 'updated_at' => '2022-02-17 14:58:42',
             ),
@@ -408,6 +416,7 @@ nhập dữ liệu, gồm:
 <p style="font-weight: 400;"><strong>&nbsp;</strong></p>
 <p style="font-weight: 400;"><strong>Điều 18</strong></p>
 <p style="font-weight: 400;">Khi h&ocirc;n nh&acirc;n tồn tại, nếu một b&ecirc;n y&ecirc;u cầu v&agrave; c&oacute; l&yacute; do ch&iacute;nh đ&aacute;ng, th&igrave; c&oacute; thể chia t&agrave;i sản chung của vợ chồng theo quy định ở Điều 42 của Luật n&agrave;y.</p>',
+'file' => NULL,
 'created_at' => '2022-02-17 14:59:52',
 'updated_at' => '2022-02-17 14:59:52',
 ),
@@ -433,6 +442,7 @@ array (
 <li>Quản l&yacute; hệ thống file</li>
 <li>Quản l&yacute; v&agrave;o ra</li>
 </ul>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:03:46',
 'updated_at' => '2022-02-17 15:03:46',
 ),
@@ -460,6 +470,7 @@ array (
 <p>Gf</p>
 <p>J</p>
 <p>&nbsp;</p>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:05:22',
 'updated_at' => '2022-02-17 15:05:22',
 ),
@@ -485,6 +496,7 @@ array (
 <p>F</p>
 <p>Ư&egrave;</p>
 <p>&nbsp;</p>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:06:27',
 'updated_at' => '2022-02-17 15:06:27',
 ),
@@ -508,6 +520,7 @@ array (
 <p>F</p>
 <p>Ư&egrave;</p>
 <p>&nbsp;</p>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:07:17',
 'updated_at' => '2022-02-17 15:07:17',
 ),
@@ -520,6 +533,7 @@ array (
 'image' => 'lessons/default1.png',
 'objectif' => '8',
 'contenu' => '<p><iframe src="//www.youtube.com/embed/XByLb__xhLk" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:08:05',
 'updated_at' => '2022-02-17 15:08:05',
 ),
@@ -606,6 +620,7 @@ Cách bước lập kế hoạch Marketing cho sản phẩm đạt hiệu quả 
 Những bước chiến lược chiêu thị quan trọng trong ngành bán lẻ
 Marketing Specialist là gì? Kỹ năng cần có của người làm Marketing Specialist
 </p>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:09:21',
 'updated_at' => '2022-02-17 15:09:21',
 ),
@@ -620,6 +635,7 @@ array (
 'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>&nbsp;</p>
 <p>Một số phần mềm cơ bản người học n&ecirc;n sử dụng</p>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:46:57',
 'updated_at' => '2022-02-17 15:46:57',
 ),
@@ -751,6 +767,7 @@ array (
 <p>SW0(config-if)#switchport mode trunk</p>
 <p>SW0(config-if)#end</p>
 <p>SW0#wr (lưu lại cấu h&igrave;nh)</p>',
+'file' => NULL,
 'created_at' => '2022-02-17 15:49:10',
 'updated_at' => '2022-02-17 15:49:10',
 ),

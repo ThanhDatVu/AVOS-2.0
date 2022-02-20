@@ -14,12 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('users')->delete();
-
+        
         \DB::table('users')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
                 'fullname' => 'Prof. Monroe Gaylord I',
@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'fullname' => 'Ernesto Mosciski',
@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'fullname' => 'Marquis McDermott',
@@ -82,7 +82,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'fullname' => 'Dr. Jayda Hermann',
@@ -103,7 +103,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'fullname' => 'Ms. Lina Carter V',
@@ -124,7 +124,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 6,
                 'fullname' => 'Gwendolyn Rohan',
@@ -145,7 +145,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 7,
                 'fullname' => 'Jean Koss',
@@ -166,7 +166,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 8,
                 'fullname' => 'Jett Schuppe',
@@ -187,7 +187,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 9,
                 'fullname' => 'Vallie Weimann',
@@ -208,7 +208,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 10,
                 'fullname' => 'Dr. Jonathan Beier',
@@ -229,7 +229,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 15:36:35',
                 'permissions' => NULL,
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 11,
                 'fullname' => 'VU THANH DAT',
@@ -250,7 +250,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 16:42:40',
                 'permissions' => '{"platform.systems.attachment":"0","platform.systems.roles":"0","platform.systems.users":"0","platform.index":"0"}',
             ),
-            11 =>
+            11 => 
             array (
                 'id' => 13,
                 'fullname' => 'Vũ Thành Đạt',
@@ -271,8 +271,29 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2022-01-29 16:42:49',
                 'permissions' => '{"platform.systems.attachment":"1","platform.systems.roles":"1","platform.systems.users":"1","platform.index":"1"}',
             ),
+            12 => 
+            array (
+                'id' => 14,
+                'fullname' => 'Sinh viên test',
+                'email' => 'sinhvien1@admin.com',
+                'pays' => 'cameroun',
+                'genre' => 'male',
+                'ville_residence' => NULL,
+                'telephone' => '123412355',
+                'biographie' => 'adfasdfaf',
+                'newsletter' => 0,
+                'password' => '$2y$10$bEkjidrdDxZa3lQGfQev2ek5jG4S4BDRPw2NFnZ0.fzY5wLb7d072',
+                'role' => 'student',
+                'email_verified_at' => NULL,
+                'name' => 'sinhvien',
+                'avatar' => 'avatar/other/2.png',
+                'remember_token' => '504:212Oy5214- 202m:-01e',
+                'created_at' => '2022-02-20 14:51:41',
+                'updated_at' => '2022-02-20 17:26:46',
+                'permissions' => '{"platform.systems.attachment":"0","platform.systems.roles":"0","platform.systems.users":"0","platform.index":"0"}',
+            ),
         ));
-
-
+        
+        
     }
 }

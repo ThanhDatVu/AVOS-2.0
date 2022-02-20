@@ -11,3 +11,4 @@ php artisan serve
  
  iseed khoá hoc, bai hoc
 php artisan iseed courses,lessons --force
+ php artisan iseed courses,lessons,questions,exams,users --force
