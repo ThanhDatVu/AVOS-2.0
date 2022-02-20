@@ -24,6 +24,8 @@ Route::post('/make-new-exam/create', [ExamController::class,"submitExam"])->midd
 Route::get('/courses/exam/{id}', [ExamController::class,"showExam"])->middleware(['auth'])->name('exam');
 
 Route::post('/courses/exam/{id}', [ExamController::class,"submitTakenExam"])->middleware(['auth'])->name('submit-taken-exam');
+/* kết quả Exams */
+Route::get('/courses/exam/{id}/result', [ExamController::class,"showResult"])->middleware(['auth'])->name('exam-result');
 
 Route::get('/edit-exam/{id}',[ExamController::class,"editExam"])->middleware(['auth'])->name('edit-exam');
 

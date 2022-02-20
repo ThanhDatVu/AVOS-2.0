@@ -26,6 +26,20 @@
     input[type="radio"]:checked + label{
         color: #3490DC; //text-blue
     }
+    .float{
+        position:fixed;
+        width:120px;
+        height:50px;
+        bottom:50%;
+        left:40px;
+        background-color:#0C9;
+        color:#FFF;
+        text-align:center;
+        box-shadow: 2px 2px 3px #999;
+    }
+    .my-float{
+        margin-top:22px;
+    }
 
 </style>
 <x-app-layout>
@@ -34,7 +48,9 @@
             {{ $exam->course->title}} - {{ $exam->title}}
         </h2>
     </x-slot>
-
+        <a  class="float rounded text-white">
+                Thời gian làm bài:<br><span class ="text-white text-xl" id="time">15:00</span>
+        </a>
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
@@ -90,7 +106,7 @@
                                                         </div>
                                                     </div>
                                                     @endforeach
-                                                        <button class="mt-3 text-white bg-green-700 col-md-12 col-sm-12 col-12 btn" type="submit">
+                                                        <button class="mt-3 text-white bg-green-700 col-md-12 col-sm-12 col-12 btn" id="btnsubmit" type="submit">
                                                             Nộp bài
                                                         </button>
                                                 </form>
@@ -111,6 +127,30 @@
         </div>
     </div>
     @include("eclipse-interface.layouts.footer")
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    document.getElementById("btnsubmit").click();
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fiveMinutes = 60*15,
+                display = document.querySelector('#time');
+            startTimer(fiveMinutes, display);
+        };
+    </script>
 </x-app-layout>
 
 {{-- @include("components.footer") --}}

@@ -30,7 +30,7 @@
                                             </p>
                                             <hr>
                                             <h3>Tài liệu bài học</h3>
-                                            <iframe src ="{{ asset('/laraview/#../pdf/chuong1.pdf') }}" width="1000px" height="600px"></iframe>
+                                            <iframe src ="{{ asset('/laraview/#../'.$lesson->file) }}" width="1000px" height="600px"></iframe>
 
                                             <div class='grid place-items-center w-100 m-3'>
                                                 <span class="rounded border justify-content-between align-middle d-flex">

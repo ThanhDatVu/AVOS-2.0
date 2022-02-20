@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Session;
 
 class ExamController extends Controller
 {
@@ -113,8 +114,25 @@ class ExamController extends Controller
         $result->exam_id = $id;
         $result->points = $mark;
         $result->save();
+        session(['exam' => $exam]);
+        session(['answers' => $answers]);
+        session(['mark' => $mark]);
         //To do: tìm bản ghi cũ, so sánh điểm, update bản ghi mới
 
+        return redirect(route("exam-result",["id"=>$id]));
+       // return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
+
+    }
+    /**
+    * Show the form for showing a exam.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showResult(Request $request)
+    {
+        $exam = $request->session()->get('exam');
+        $answers = $request->session()->get('answers');
+        $mark = $request->session()->get('mark');
 
 
         return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
