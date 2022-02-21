@@ -5,10 +5,11 @@ namespace App\Models;
 use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Orchid\Screen\AsSource;
 
 class Lesson extends Model
 {
-    use HasFactory;
+    use HasFactory,AsSource;
 
 /**
      * The attributes that are mass assignable.

@@ -5,10 +5,12 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Orchid\Screen\AsSource;
+
 
 class CourseUser extends Model
 {
-    use HasFactory;
+    use HasFactory,AsSource;
     protected $fillable=[
         "user_id",
         "cour_id",

@@ -117,11 +117,11 @@ class UsersTableSeeder extends Seeder
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
                 'role' => 'administrator',
                 'email_verified_at' => '2022-01-29 15:36:35',
-                'name' => 'Commodi93',
+                'name' => 'Nguyễn Thị X',
                 'avatar' => 'avatar/default.png',
                 'remember_token' => 'VKGspkNYxus9Ynw4hr6O',
                 'created_at' => '2022-01-29 15:36:35',
-                'updated_at' => '2022-01-29 15:36:35',
+                'updated_at' => '2022-02-21 18:13:15',
                 'permissions' => NULL,
             ),
             5 => 

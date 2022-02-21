@@ -15,10 +15,17 @@ use Orchid\Access\UserSwitch;
 use Orchid\Platform\Models\User;
 use Orchid\Screen\Action;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Actions\ModalToggle;
+use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Layouts\Persona;
 use Orchid\Screen\Screen;
+use Orchid\Screen\TD;
 use Orchid\Support\Color;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Result;
 
 class UserGradeScreen extends Screen
 {
@@ -56,14 +63,14 @@ class UserGradeScreen extends Screen
     public function query(User $user): array
     {
         $this->user = $user;
+        $results = Result::all()->where('user_id', $user->id);
 
-        if (! $user->exists) {
-            $this->name = 'Create User';
-        }
+
 
         $user->load(['roles']);
 
         return [
+            'results' => $results,
             'user'       => $user,
             'permission' => $user->getStatusPermission(),
         ];
@@ -97,50 +104,52 @@ class UserGradeScreen extends Screen
     public function layout(): array
     {
         return [
+            Layout::table('results',[
+                TD::make('name', __('Tên khoá học'))
+                    ->sort()
+                    ->cantHide()
+                    ->filter(Input::make())
+                    ->render(function (Result $result) {
+                        return $result->exam->course->title;
+                    }),
+                TD::make('name', __('Tên bài kiểm tra'))
+                    ->sort()
+                    ->cantHide()
+                    ->filter(Input::make())
+                    ->render(function (Result $result) {
+                        return $result->exam->title;
+                    }),
 
-            Layout::block(UserEditLayout::class)
-                ->title(__('Profile Information'))
-                ->description(__('Update your account\'s profile information and email address.'))
-                ->commands(
-                    Button::make(__('Save'))
-                        ->type(Color::DEFAULT())
-                        ->icon('check')
-                        ->canSee($this->user->exists)
-                        ->method('save')
-                ),
+                TD::make('point', __('Điểm số'))
+                    ->sort()
+                    ->cantHide()
+                    ->filter(Input::make())
+                    ->render(function (Result $result) {
+                        return $result->points.'/'.$result->exam->number_of_questions;
+                    }),
 
-            Layout::block(UserPasswordLayout::class)
-                ->title(__('Password'))
-                ->description(__('Ensure your account is using a long, random password to stay secure.'))
-                ->commands(
-                    Button::make(__('Save'))
-                        ->type(Color::DEFAULT())
-                        ->icon('check')
-                        ->canSee($this->user->exists)
-                        ->method('save')
-                ),
+                TD::make('updated_at', __('Last edit'))
+                    ->sort()
+                    ->render(function (Result $result) {
+                        return $result->updated_at->toDateTimeString();
+                    })
 
-            Layout::block(UserRoleLayout::class)
-                ->title(__('Roles'))
-                ->description(__('A Role defines a set of tasks a user assigned the role is allowed to perform.'))
-                ->commands(
-                    Button::make(__('Save'))
-                        ->type(Color::DEFAULT())
-                        ->icon('check')
-                        ->canSee($this->user->exists)
-                        ->method('save')
-                ),
 
-            Layout::block(RolePermissionLayout::class)
-                ->title(__('Permissions'))
-                ->description(__('Allow the user to perform some actions that are not provided for by his roles'))
-                ->commands(
-                    Button::make(__('Save'))
-                        ->type(Color::DEFAULT())
-                        ->icon('check')
-                        ->canSee($this->user->exists)
-                        ->method('save')
-                ),
+
+
+
+
+
+
+
+
+
+
+
+
+                ]),
+
+
 
         ];
     }

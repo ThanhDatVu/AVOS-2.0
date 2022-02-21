@@ -27,14 +27,14 @@ class UserEditScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Edit User';
+    public $name = 'Chỉnh sửa người dùng';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Details such as name, email and password';
+    public $description = 'Các thông tin cơ bản như tên, mật khẩu';
 
     /**
      * @var string
@@ -77,19 +77,15 @@ class UserEditScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Button::make(__('Impersonate user'))
-                ->icon('login')
-                ->confirm('You can revert to your original state by logging out.')
-                ->method('loginAs')
-                ->canSee($this->user->exists && \request()->user()->id !== $this->user->id),
 
-            Button::make(__('Remove'))
+
+            Button::make(__('Xoá'))
                 ->icon('trash')
-                ->confirm(__('Once the account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.'))
+                ->confirm(__('Tài khoản này sẽ bị xoá vĩnh viễn và không thể khôi phục'))
                 ->method('remove')
                 ->canSee($this->user->exists),
 
-            Button::make(__('Save'))
+            Button::make(__('Lưu'))
                 ->icon('check')
                 ->method('save'),
         ];
@@ -103,10 +99,10 @@ class UserEditScreen extends Screen
         return [
 
             Layout::block(UserEditLayout::class)
-                ->title(__('Profile Information'))
-                ->description(__('Update your account\'s profile information and email address.'))
+                ->title(__('Thông tin tài khoản '))
+                ->description(__('Câp nhật thông tin người dùng và email.'))
                 ->commands(
-                    Button::make(__('Save'))
+                    Button::make(__('Lưu'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -115,9 +111,9 @@ class UserEditScreen extends Screen
 
             Layout::block(UserPasswordLayout::class)
                 ->title(__('Password'))
-                ->description(__('Ensure your account is using a long, random password to stay secure.'))
+                ->description(__('Sử dụng mật khẩu dài để đảm bảo an toàn '))
                 ->commands(
-                    Button::make(__('Save'))
+                    Button::make(__('Lưu'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -126,9 +122,9 @@ class UserEditScreen extends Screen
 
             Layout::block(UserRoleLayout::class)
                 ->title(__('Roles'))
-                ->description(__('A Role defines a set of tasks a user assigned the role is allowed to perform.'))
+                ->description(__('Một Role sẽ quy định các quyền mà người dùng này có thể thực hiện'))
                 ->commands(
-                    Button::make(__('Save'))
+                    Button::make(__('Lưu'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -137,9 +133,9 @@ class UserEditScreen extends Screen
 
             Layout::block(RolePermissionLayout::class)
                 ->title(__('Permissions'))
-                ->description(__('Allow the user to perform some actions that are not provided for by his roles'))
+                ->description(__('Cho người dùng 1 sô quyền không được cung cấp bởi Role của mình'))
                 ->commands(
-                    Button::make(__('Save'))
+                    Button::make(__('Lưu'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -209,17 +205,6 @@ class UserEditScreen extends Screen
         return redirect()->route('platform.systems.users');
     }
 
-    /**
-     * @param User $user
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function loginAs(User $user)
-    {
-        UserSwitch::loginAs($user);
 
-        Toast::info(__('You are now impersonating this user'));
 
-        return redirect()->route(config('platform.index'));
-    }
 }

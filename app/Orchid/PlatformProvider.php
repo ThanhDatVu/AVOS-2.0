@@ -28,6 +28,34 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
+
+            Menu::make('Tất cả Khoá học')
+                ->title('Quản lý nội dung')
+                ->icon('book-open')
+                ->route('platform.systems.courses'),
+            Menu::make('Danh mục khoá học')
+                ->icon('list')
+                ->route('platform.systems.categories'),
+
+            Menu::make('Điểm số cá nhân')
+                ->title('Quản lý điểm')
+                ->icon('calculator')
+                ->route('platform.systems.users.grade',13),
+            Menu::make('Điểm số theo khoá học')
+                ->icon('database')
+                ->route('platform.example.fields'),
+
+
+            Menu::make(__('Danh sách Users'))
+                ->icon('user')
+                ->route('platform.systems.users')
+                ->permission('platform.systems.users')
+                ->title(__('Quản lý người dùng')),
+
+            Menu::make(__('Roles'))
+                ->icon('lock')
+                ->route('platform.systems.roles')
+                ->permission('platform.systems.roles'),
             Menu::make('Example screen')
                 ->icon('monitor')
                 ->route('platform.example')
@@ -35,29 +63,12 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return 6;
                 }),
-            Menu::make('Khoá học')
-                ->title('Quản lý nội dung')
-                ->icon('note')
-                ->route('platform.systems.courses'),
-            Menu::make('Danh mục khoá học')
-                ->icon('note')
-                ->route('platform.systems.categories'),
-
-            Menu::make('Điểm số cá nhân')
-                ->title('Quản lý điểm')
-                ->icon('note')
-                ->route('platform.systems.users.grade',14),
-            Menu::make('Điểm số theo khoá học')
-                ->icon('note')
-                ->route('platform.example.fields'),
-
             Menu::make('Dropdown menu')
                 ->icon('code')
                 ->list([
                     Menu::make('Sub element item 1')->icon('bag'),
                     Menu::make('Sub element item 2')->icon('heart'),
                 ]),
-
             Menu::make('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')
@@ -98,16 +109,7 @@ class PlatformProvider extends OrchidServiceProvider
                     return Dashboard::version();
                 }, Color::DARK()),
 
-            Menu::make(__('Người dùng'))
-                ->icon('user')
-                ->route('platform.systems.users')
-                ->permission('platform.systems.users')
-                ->title(__('Access rights')),
 
-            Menu::make(__('Roles'))
-                ->icon('lock')
-                ->route('platform.systems.roles')
-                ->permission('platform.systems.roles'),
         ];
     }
 

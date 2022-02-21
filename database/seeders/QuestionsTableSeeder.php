@@ -757,6 +757,24 @@ class QuestionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'deleted_at' => NULL,
             ),
+            41 => 
+            array (
+                'id' => 212,
+                'created_by' => 13,
+                'question' => 'PostBack có cho Form nào dưới đây',
+                'answerA' => ' Winforms',
+                'answerB' => 'HTMLForms',
+                'answerC' => 'Webforms',
+                'answerD' => 'Cả 3 câu a,b,c đều đúng',
+                'correctAnswer' => 'C',
+                'hint' => NULL,
+                'mark' => 1,
+                'explanation' => NULL,
+                'exam_id' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
         ));
         
         

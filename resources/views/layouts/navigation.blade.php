@@ -95,7 +95,7 @@
                             </x-slot>
                         </x-dropdown>
                     </div>
-                        <x-nav-link :href="route('platform.main')" >
+                        <x-nav-link :href="route('platform.systems.courses')" >
                             <span class="mr-2 ti-dashboard"></span>{{ __('Admin') }}
                         </x-nav-link>
 

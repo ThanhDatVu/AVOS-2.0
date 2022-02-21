@@ -92,6 +92,7 @@ class ExamController extends Controller
      */
     public function submitTakenExam(Request $request, $id)
     {
+
         $exam=Exam::where('id',"like",$id)->firstOrFail();
         $answers = $request->answer;
         $questions = $exam->questions;
@@ -108,12 +109,20 @@ class ExamController extends Controller
 
 
         }
+        //Kiểm tra kết quả đã tồn tại chưa
+        $result = Result::firstOrCreate(
+            ['exam_id' => $id],['user_id' => 13]
 
-        $result = new Result();
-        $result->user_id = Auth::user()->id;
-        $result->exam_id = $id;
-        $result->points = $mark;
-        $result->save();
+
+        );
+
+
+        //Cập nhật nếu điểm mới lớn hơn
+        $oldmark = $result->points;
+        if($oldmark < $mark){
+            $result->points = $mark;
+            $result->save();
+        }
         session(['exam' => $exam]);
         session(['answers' => $answers]);
         session(['mark' => $mark]);

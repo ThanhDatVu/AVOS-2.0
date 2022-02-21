@@ -27,6 +27,14 @@ class CourseUserTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            1 => 
+            array (
+                'id' => 2,
+                'user_id' => 14,
+                'course_id' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
