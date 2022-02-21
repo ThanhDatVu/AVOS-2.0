@@ -21,7 +21,7 @@ class UserListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Users';
+    public $name = 'Danh sách User';
 
     /**
      * Display header description.

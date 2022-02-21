@@ -51,6 +51,14 @@ Route::screen('users/{user}/edit', UserEditScreen::class)
             ->parent('platform.systems.users')
             ->push(__('User'), route('platform.systems.users.edit', $user));
     });
+// Platform > System > Users
+Route::screen('users/{user}/grade', \App\Orchid\Screens\User\UserGradeScreen::class)
+    ->name('platform.systems.users.grade')
+    ->breadcrumbs(function (Trail $trail, $user) {
+        return $trail
+            ->parent('platform.systems.users')
+            ->push(__('Điểm số'), route('platform.systems.users.grade', $user));
+    });
 
 // Platform > System > Users > Create
 Route::screen('users/create', UserEditScreen::class)
@@ -68,6 +76,22 @@ Route::screen('users', UserListScreen::class)
         return $trail
             ->parent('platform.index')
             ->push(__('Users'), route('platform.systems.users'));
+    });
+// Platform > System > Khoahoc
+Route::screen('courses', \App\Orchid\Screens\KhoaHocScreen::class)
+    ->name('platform.systems.courses')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Khoá học'), route('platform.systems.users'));
+    });
+// Platform > System > DanhmucKhoahoc
+Route::screen('categories', \App\Orchid\Screens\DanhMucKhoaHocScreen::class)
+    ->name('platform.systems.categories')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Danh mục'), route('platform.systems.users'));
     });
 
 // Platform > System > Roles > Role

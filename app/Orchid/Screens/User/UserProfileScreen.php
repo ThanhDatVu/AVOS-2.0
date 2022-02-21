@@ -24,7 +24,7 @@ class UserProfileScreen extends Screen
      *
      * @var string
      */
-    public $name = 'My account';
+    public $name = 'Tài khoản ';
 
     /**
      * Display header description.

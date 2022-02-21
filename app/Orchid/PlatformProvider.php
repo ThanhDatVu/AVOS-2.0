@@ -38,15 +38,15 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Khoá học')
                 ->title('Quản lý nội dung')
                 ->icon('note')
-                ->route('platform.example.fields'),
+                ->route('platform.systems.courses'),
             Menu::make('Danh mục khoá học')
                 ->icon('note')
-                ->route('platform.example.fields'),
+                ->route('platform.systems.categories'),
 
             Menu::make('Điểm số cá nhân')
                 ->title('Quản lý điểm')
                 ->icon('note')
-                ->route('platform.example.fields'),
+                ->route('platform.systems.users.grade',14),
             Menu::make('Điểm số theo khoá học')
                 ->icon('note')
                 ->route('platform.example.fields'),

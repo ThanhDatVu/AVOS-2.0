@@ -22,6 +22,7 @@ class CreateCoursesTable extends Migration
             $table->text("competences_requises")->nullable();
             $table->integer("niveau_de_difficulte");
             $table->string("image");
+            $table->string("category")->nullable();
             //$table->json("mots_cle")->nullable();
 
             $table->timestamps();
