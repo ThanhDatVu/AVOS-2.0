@@ -16,6 +16,7 @@
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 {{-- <img src="{{Storage::get($ courses[0]->id)}}" class="w-full" alt="" srcset=""> --}}
                 <div class="p-6 border-b border-gray-200">
+
                     <!-- Start top-category-widget Area -->
                     <section class="pt-10 top-category-widget-area pb-90 ">
                         <div class="container">

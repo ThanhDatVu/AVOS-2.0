@@ -93,7 +93,7 @@ class ExamController extends Controller
     public function submitTakenExam(Request $request, $id)
     {
 
-        $exam=Exam::where('id',"like",$id)->firstOrFail();
+        $exam=Exam::where('id',"like",$id)->with('questions')->firstOrFail();
         $answers = $request->answer;
         $questions = $exam->questions;
 

@@ -25,6 +25,7 @@ class User extends Authenticatable
         'remember_token',
         'avatar',
         'password',
+        'class',
     ];
 
     /**

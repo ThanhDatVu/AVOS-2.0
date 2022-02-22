@@ -7,13 +7,10 @@
       <div class="row justify-content-center fullscreen align-items-center">
         <div class="col-lg-5 col-md-8 home-banner-left">
           <h1 class="text-white">
-            Take the first step <br />
-            to learn with us
+              Khởi đầu ngay hôm nay với AVOS
           </h1>
           <p class="mx-auto mt-20 mb-40 text-white">
-            In the history of modern astronomy, there is probably no one
-            greater leap forward than the building and launch of the space
-            telescope known as the Hubble.
+             "Học, học nữa, học mãi" - Vladimir Lenin
           </p>
         </div>
         <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
@@ -34,9 +31,9 @@
           <div class="feature-item d-flex">
             <i class="ti-book"></i>
             <div class="ml-20">
-              <h4>New Classes</h4>
+              <h4>Các khoá học mới nhất</h4>
               <p>
-                In the history of modern astronomy, there is probably no one greater leap forward.
+                Các khoá học mới nhất, được cập nhật với công nghê hiện tại,
               </p>
             </div>
           </div>
@@ -45,9 +42,9 @@
           <div class="feature-item d-flex">
             <i class="ti-cup"></i>
             <div class="ml-20">
-              <h4>Top Courses</h4>
+              <h4>Chất lượng hàng đầu</h4>
               <p>
-                In the history of modern astronomy, there is probably no one greater leap forward.
+                Các nội dung được soạn thảo bởi các chuyên gia giáo dục hàng đầu
               </p>
             </div>
           </div>
@@ -56,9 +53,9 @@
           <div class="feature-item d-flex border-right-0">
             <i class="ti-desktop"></i>
             <div class="ml-20">
-              <h4>Full E-Books</h4>
+              <h4>Tài liệu phong phú</h4>
               <p>
-                In the history of modern astronomy, there is probably no one greater leap forward.
+                Các khoá học được đính kèm với 1 lượng tài liệu phong phú
               </p>
             </div>
           </div>
@@ -74,8 +71,8 @@
       <div class="row justify-content-center section-title">
         <div class="col-lg-12">
           <h2>
-            Popular Courses <br />
-            Available Right Now
+            Các khoá học phổ biến<br />
+
           </h2>
           <p>
            {{--  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -91,11 +88,11 @@
           </div>
           <div class="details">
             <div class="mb-20 d-flex justify-content-between">
-              <p class="name">{{$cour->title}}</p>
-              <p class="value">{{$cour->coût}}</p>
+              <p class="name">{{$cour->category}}</p>
+
             </div>
             <a href="{{route("course",$cour->id)}}">
-              <h4>{{substr($cour->descriptif,0,30)}}</h4>
+              <h4>{{$cour->title}}</h4>
             </a>
             <div class="bottom d-flex mt-15">
               <ul class="list">

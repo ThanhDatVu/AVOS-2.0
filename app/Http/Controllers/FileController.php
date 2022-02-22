@@ -14,13 +14,13 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSinglePDF()
+    public function showSinglePDF(Request $request)
     {
+        $id = $request->get("id");
 
-        $url=Storage::url('avatar/default.png');
 
 
-        return Storage::download(public_path($url));
+        return response()->file(public_path($id));
 
 
 

@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->text('biographie')->nullable();
             $table->boolean('newsletter')->default("0");
             $table->string('password');
-            $table->string('class');
+            $table->string('class')->default("AT15");;
             $table->enum('role',["administrator","student","teacher"])->default("student");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('name')->nullable()->unique();

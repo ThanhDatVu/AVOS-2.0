@@ -34,9 +34,10 @@
 
                                             <div class='grid place-items-center w-100 m-3'>
                                                 <span class="rounded border justify-content-between align-middle d-flex">
-                                                   <a href="{{route('viewpdf')}}"
-                                                      class="btn  ">&nbsp;Tên tài liệu.pdf</a>
-                                                    <a href="{{route('viewpdf',["pathToFile"=>"pdf/chuong1.pdf"])}}"
+                                                   <a href="{{route("viewpdf",['id'=>$lesson->file])}}"
+                                                      class="btn  ">&nbsp;{{$lesson->file}}</a>
+
+                                                         <a href="{{route("viewpdf",['id'=>$lesson->file])}}"
                                                        class="btn ti-eye bg-gray-100">&nbsp;Xem tài liệu</a>
 
                                                 </span>
