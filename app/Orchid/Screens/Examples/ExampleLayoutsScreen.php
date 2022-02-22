@@ -45,9 +45,9 @@ class ExampleLayoutsScreen extends Screen
     /**
      * Views.
      *
+     * @return \Orchid\Screen\Layout[]
      * @throws \Throwable
      *
-     * @return \Orchid\Screen\Layout[]
      */
     public function layout(): array
     {

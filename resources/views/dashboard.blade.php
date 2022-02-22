@@ -12,10 +12,10 @@
                 <div class="border-b border-gray-200">
 
                     <div class="container w-100 lg:w-4/5 mx-auto flex flex-col">
-                        @foreach($courses as $course)
+                    @foreach($courses as $course)
 
 
-                            <!-- card -->
+                        <!-- card -->
                             <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
                                         bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
                                 <!-- media -->
@@ -25,7 +25,7 @@
                                 </div>
                                 <!-- content -->
                                 <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-                                    <a href="">
+                                    <a href="{{route("course",['id'=>$course->id])}}">
                                         <h2 class="font-semibold text-lg leading-tight truncate">{{$course->title}}</h2>
                                     </a>
                                     <p class="mt-2">
@@ -48,7 +48,8 @@
                 </div>
             </div>
         </div>
-    </div>>
+    </div>
+    >
     @include("eclipse-interface.layouts.footer")
 </x-app-layout>
 {{-- @include("components.footer") --}}

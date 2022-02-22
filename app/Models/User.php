@@ -45,8 +45,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'permissions'          => 'array',
-        'email_verified_at'    => 'datetime',
+        'permissions' => 'array',
+        'email_verified_at' => 'datetime',
     ];
 
     /**
@@ -73,18 +73,24 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
     public function admin(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Admin::class);
     }
-    public function course(){
+
+    public function course()
+    {
         return $this->hasMany(Course::class);
     }
+
     public function teacher(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Teacher::class);
     }
-    public function courseUsers(){
+
+    public function courseUsers()
+    {
         return $this->hasMany(Course::class);
     }
 

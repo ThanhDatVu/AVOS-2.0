@@ -12,11 +12,13 @@
     height: 100%;
     background-color: hsla(0, 0%, 100%, 0.91);
 }
+
 .printClose {
     position: absolute;
     right: 10px;
     top: 10px;
 }
+
 .printClose:before {
     content: "\00D7";
     font-family: Helvetica Neue, sans-serif;

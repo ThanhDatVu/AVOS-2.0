@@ -8,7 +8,8 @@ use Orchid\Screen\AsSource;
 
 class Result extends Model
 {
-    use HasFactory,AsSource;
+    use HasFactory, AsSource;
+
     protected $fillable = [
         'id',
         "user_id",
@@ -17,10 +18,14 @@ class Result extends Model
         "updated_at",
 
     ];
-    public function user(){
+
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-    public function exam(){
+
+    public function exam()
+    {
         return $this->belongsTo(Exam::class);
     }
 

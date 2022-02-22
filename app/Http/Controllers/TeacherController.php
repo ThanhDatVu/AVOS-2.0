@@ -28,16 +28,16 @@ class TeacherController extends Controller
     {
 
         Teacher::create([
-            "profession"=>$request->profession,
-            "user_id"=>Auth::user()->id,
+            "profession" => $request->profession,
+            "user_id" => Auth::user()->id,
         ]);
-        $user=User::where("id",Auth::user()->id);
-        $user->role="teacher";
-        $user->update(["role"=>"teacher"]);
+        $user = User::where("id", Auth::user()->id);
+        $user->role = "teacher";
+        $user->update(["role" => "teacher"]);
 
 
         $request->validate([
-            "profession"=>"string|required",
+            "profession" => "string|required",
         ]);
         return view("profile");
     }
@@ -45,7 +45,7 @@ class TeacherController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -56,7 +56,7 @@ class TeacherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Teacher  $enseignant
+     * @param \App\Models\Teacher $enseignant
      * @return \Illuminate\Http\Response
      */
     public function show(Teacher $enseignant)
@@ -67,7 +67,7 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Teacher  $enseignant
+     * @param \App\Models\Teacher $enseignant
      * @return \Illuminate\Http\Response
      */
     public function edit(Teacher $enseignant)
@@ -78,8 +78,8 @@ class TeacherController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Teacher  $enseignant
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Teacher $enseignant
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Teacher $enseignant)
@@ -90,7 +90,7 @@ class TeacherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Teacher  $enseignant
+     * @param \App\Models\Teacher $enseignant
      * @return \Illuminate\Http\Response
      */
     public function destroy(Teacher $enseignant)

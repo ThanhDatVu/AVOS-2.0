@@ -8,7 +8,8 @@ use Orchid\Screen\AsSource;
 
 class Question extends Model
 {
-    use HasFactory,AsSource;
+    use HasFactory, AsSource;
+
     protected $fillable = [
         'id',
         'created_by',
@@ -25,10 +26,14 @@ class Question extends Model
         "updated_at",
         "teacher_id",
     ];
-    public function exam(){
+
+    public function exam()
+    {
         return $this->belongsTo(Exam::class);
     }
-    public function createdBy(){
+
+    public function createdBy()
+    {
         return $this->belongsTo(User::class);
     }
 

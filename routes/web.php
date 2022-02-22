@@ -17,7 +17,7 @@ use App\Http\Controllers\CourseController;
 |
 */
 Route::get('/', function () {
-    return view('eclipse-interface.index',["cours"=>Course::All()]);
+    return view('eclipse-interface.index', ["cours" => Course::All()]);
 })->name("home");
 
 
@@ -25,18 +25,18 @@ Route::get('/profile', function () {
     return view('profile');
 })->middleware(['auth'])->name('profile');
 
-Route::post('/profile',[TeacherController::class,"create"])->middleware(['auth'])->name('profile');
+Route::post('/profile', [TeacherController::class, "create"])->middleware(['auth'])->name('profile');
 
 
-Route::get('/dashboard', [CourseController::class,"showmydashboard"]
+Route::get('/dashboard', [CourseController::class, "showmydashboard"]
 )->middleware(['auth'])->name('dashboard');
 
-Route::get('/qr', [QrController::class,'qr_create'])->middleware(["auth"])->name('qr-generate');
+Route::get('/qr', [QrController::class, 'qr_create'])->middleware(["auth"])->name('qr-generate');
 Route::post('/qr', function () {
     return view('qr');
 })->name('qr-generate');
-require __DIR__.'./my-routes.php';
+require __DIR__ . './my-routes.php';
 //require __DIR__.'./admin.php';
 require __DIR__ . './file.php';
-require __DIR__.'./eclipse.php';
-require __DIR__.'./auth.php';
+require __DIR__ . './eclipse.php';
+require __DIR__ . './auth.php';

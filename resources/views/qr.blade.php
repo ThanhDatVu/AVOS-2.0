@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Laravel 8 Qr Code Example</title>
+    <title>Laravel 8 Qr Code Example</title>
 </head>
 <body>
 <style>
-    .qr-cont{
+    .qr-cont {
         height: {{$Qrsize}}px;
         width: {{$Qrsize}}px;
         position: relative;
     }
-    .qr{
+
+    .qr {
         padding: 5px;
         border-radius: 5px;
     }
-    .logo-img,.qr{
+
+    .logo-img, .qr {
         position: absolute;
     }
-    .logo-img{
-        padding:2px;
+
+    .logo-img {
+        padding: 2px;
         border: 2px solid red;
         /*width: 24%;*/
         width: 20%;
         box-sizing: border-box;
-        top:39%;
+        top: 39%;
         border-radius: 50%;
-        left:39%;
+        left: 39%;
         z-index: 20000;
         background: aliceblue;
     }

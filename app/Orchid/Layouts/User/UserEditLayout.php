@@ -33,9 +33,9 @@ class UserEditLayout extends Rows
                 ->placeholder(__('Email')),
             Select::make('user.gerne')
                 ->title(__('Giới tính'))
-                ->options(['Female', 'Male','Other'])
+                ->options(['Female', 'Male', 'Other'])
                 ->required()
-            ->placeholder(__('giới tính')),
+                ->placeholder(__('giới tính')),
 
         ];
     }

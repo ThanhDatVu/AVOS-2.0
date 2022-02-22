@@ -22,26 +22,26 @@ class ExamController extends Controller
     public function submitExam(Request $request)
     {
 
-        if(isset(Auth::user()->teacher->id)){
+        if (isset(Auth::user()->teacher->id)) {
             $request->validate([
-                "title"=>"required",
-                "description"=>"string",
-                "courseid"=>"integer",
+                "title" => "required",
+                "description" => "string",
+                "courseid" => "integer",
 
             ]);
 
-            exam::create([
-                "title"=>"$request->title",
-                "description"=>"$request->description",
-                "course_id"=>"$request->courseid",
-                "number_of_questions"=>"$request->number_of_questions"
+            $exam = exam::create([
+                "title" => "$request->title",
+                "description" => "$request->description",
+                "course_id" => "$request->courseid",
+                "number_of_questions" => "$request->number_of_questions"
 
 
             ]);;
 
-            return view('dashboard');
-        }else{
-            return view("dashboard");
+            return redirect(route("create-questions", $exam->id));
+        } else {
+            return redirect(route("course", $request->courseid));
         }
     }
 
@@ -53,12 +53,13 @@ class ExamController extends Controller
     public function makeNewExam(Request $request)
     {
 
-        if(isset(Auth::user()->teacher->id)){
-            return view("admin-make-exam",["cours"=>Course::where('teacher_id',Auth::user()->teacher->id)->get() ]);
-        }else{
+        if (isset(Auth::user()->teacher->id)) {
+            return view("admin-make-exam", ["cours" => Course::where('teacher_id', Auth::user()->teacher->id)->get()]);
+        } else {
             return redirect(route("courses"));
         }
     }
+
     /**
      * Show the form for showing a exam.
      *
@@ -68,10 +69,11 @@ class ExamController extends Controller
     {
 
 //
-        $exam=Exam::where('id',"like",$id)->firstOrFail();
-        return view('exam-detail',["exam"=>$exam]);
+        $exam = Exam::where('id', "like", $id)->firstOrFail();
+        return view('exam-detail', ["exam" => $exam]);
 //
     }
+
     /**
      * Show the form for showing a exam.
      *
@@ -81,10 +83,11 @@ class ExamController extends Controller
     {
 
 //
-        $exam=Exam::where('id',"like",$id)->firstOrFail();
-        return view('edit-exam',["exam"=>$exam]);
+        $exam = Exam::where('id', "like", $id)->firstOrFail();
+        return view('edit-exam', ["exam" => $exam]);
 //
     }
+
     /**
      * Show the form for showing a exam.
      *
@@ -93,25 +96,24 @@ class ExamController extends Controller
     public function submitTakenExam(Request $request, $id)
     {
 
-        $exam=Exam::where('id',"like",$id)->with('questions')->firstOrFail();
+        $exam = Exam::where('id', "like", $id)->with('questions')->firstOrFail();
         $answers = $request->answer;
         $questions = $exam->questions;
 
         $mark = 0;
-        for($x = 0; $x <= $exam->number_of_questions-1; $x++){
+        for ($x = 0; $x <= $exam->number_of_questions - 1; $x++) {
 
-            if(strcmp($questions[$x]->correctAnswer,$answers[$x])==0){
-                 $mark += 1;
+            if (strcmp($questions[$x]->correctAnswer, $answers[$x]) == 0) {
+                $mark += 1;
 
 
             }
 
 
-
         }
         //Kiểm tra kết quả đã tồn tại chưa
         $result = Result::firstOrCreate(
-            ['exam_id' => $id],['user_id' => 13]
+            ['exam_id' => $id], ['user_id' => 13]
 
 
         );
@@ -119,7 +121,7 @@ class ExamController extends Controller
 
         //Cập nhật nếu điểm mới lớn hơn
         $oldmark = $result->points;
-        if($oldmark < $mark){
+        if ($oldmark < $mark) {
             $result->points = $mark;
             $result->save();
         }
@@ -128,12 +130,13 @@ class ExamController extends Controller
         session(['mark' => $mark]);
         //To do: tìm bản ghi cũ, so sánh điểm, update bản ghi mới
 
-        return redirect(route("exam-result",["id"=>$id]));
-       // return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
+        return redirect(route("exam-result", ["id" => $id]));
+        // return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
 
     }
+
     /**
-    * Show the form for showing a exam.
+     * Show the form for showing a exam.
      *
      * @return \Illuminate\Http\Response
      */
@@ -144,7 +147,7 @@ class ExamController extends Controller
         $mark = $request->session()->get('mark');
 
 
-        return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
+        return view('exam-result', ["exam" => $exam, "answer" => $answers, "mark" => $mark]);
 
     }
 

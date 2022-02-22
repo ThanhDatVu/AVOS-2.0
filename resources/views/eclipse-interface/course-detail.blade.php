@@ -1,15 +1,15 @@
-<div style="position: absolute; height: 100vh"  id="particles-js">
+<div style="position: absolute; height: 100vh" id="particles-js">
 @extends("eclipse-interface.layouts.eclipse",["title"=>"Course detail"])
 @section("banner")
-<!-- ================ start banner Area ================= -->
-    <section class="banner-area">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-12 banner-right">
-                    <h1 class="text-white">
-                        Course Details
-                    </h1>
-                    <div class="link-nav">
+    <!-- ================ start banner Area ================= -->
+        <section class="banner-area">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-12 banner-right">
+                        <h1 class="text-white">
+                            Course Details
+                        </h1>
+                        <div class="link-nav">
                         <span class="box">
                             <a href="index.html">Home </a>
                             <i class="lnr lnr-arrow-right"></i>
@@ -17,14 +17,14 @@
                             <i class="lnr lnr-arrow-right"></i>
                             <a href="course-details.html">Course Details</a>
                         </span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ================ End banner Area ================= -->
+        </section>
+        <!-- ================ End banner Area ================= -->
 
-@endsection
+    @endsection
 </div>
 @section("content")
     <!--================ Start Course Details Area =================-->

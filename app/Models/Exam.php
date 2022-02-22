@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;use Orchid\Screen\AsSource;
+use Illuminate\Database\Eloquent\Model;
+use Orchid\Screen\AsSource;
 
 class Exam extends Model
 {
-    use HasFactory,AsSource;
+    use HasFactory, AsSource;
+
     protected $fillable = [
         'id',
         'title',
@@ -17,10 +19,14 @@ class Exam extends Model
         "updated_at",
         "teacher_id",
     ];
-    public function course(){
+
+    public function course()
+    {
         return $this->belongsTo(Course::class);
     }
-    public function questions(){
+
+    public function questions()
+    {
         return $this->hasMany(Question::class);
     }
 }

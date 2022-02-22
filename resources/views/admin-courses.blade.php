@@ -23,22 +23,24 @@
                             <div class="row">
                                 @forelse ($courses as $course)
 
-                                <div class=" col-lg-4 col-sm-12 col-md-4 col-4">
-                                    <div class="single-cat-widget">
-                                        <div class="relative content">
-                                            <div class=" overlay overlay-bg"></div>
-                                            <a href="{{route("course",$course->id)}}">
-                                                <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="{{Storage::url($course->image)}}" alt="">
-                                                </div>
-                                                <div class="content-details">
-                                                    <h4 class="mx-auto content-title text-uppercase">{{substr($course->title,0,15)}}...</h4>
-                                                    <p>{{substr($course->descriptif,0,70)}}</p>
-                                                </div>
-                                            </a>
+                                    <div class=" col-lg-4 col-sm-12 col-md-4 col-4">
+                                        <div class="single-cat-widget">
+                                            <div class="relative content">
+                                                <div class=" overlay overlay-bg"></div>
+                                                <a href="{{route("course",$course->id)}}">
+                                                    <div class="thumb">
+                                                        <img class="mx-auto content-image img-fluid d-block"
+                                                             src="{{Storage::url($course->image)}}" alt="">
+                                                    </div>
+                                                    <div class="content-details">
+                                                        <h4 class="mx-auto content-title text-uppercase">{{substr($course->title,0,15)}}
+                                                            ...</h4>
+                                                        <p>{{substr($course->descriptif,0,70)}}</p>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
                                 @empty
 

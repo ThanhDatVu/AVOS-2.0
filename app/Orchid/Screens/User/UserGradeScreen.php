@@ -66,12 +66,11 @@ class UserGradeScreen extends Screen
         $results = Result::all()->where('user_id', $user->id);
 
 
-
         $user->load(['roles']);
 
         return [
             'results' => $results,
-            'user'       => $user,
+            'user' => $user,
             'permission' => $user->getStatusPermission(),
         ];
     }
@@ -104,7 +103,7 @@ class UserGradeScreen extends Screen
     public function layout(): array
     {
         return [
-            Layout::table('results',[
+            Layout::table('results', [
                 TD::make('name', __('Tên khoá học'))
                     ->sort()
                     ->cantHide()
@@ -125,7 +124,7 @@ class UserGradeScreen extends Screen
                     ->cantHide()
                     ->filter(Input::make())
                     ->render(function (Result $result) {
-                        return $result->points.'/'.$result->exam->number_of_questions;
+                        return $result->points . '/' . $result->exam->number_of_questions;
                     }),
 
                 TD::make('updated_at', __('Last edit'))
@@ -135,27 +134,14 @@ class UserGradeScreen extends Screen
                     })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-                ]),
-
+            ]),
 
 
         ];
     }
 
     /**
-     * @param User    $user
+     * @param User $user
      * @param Request $request
      *
      * @return \Illuminate\Http\RedirectResponse
@@ -201,9 +187,9 @@ class UserGradeScreen extends Screen
     /**
      * @param User $user
      *
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      *
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function remove(User $user)
     {

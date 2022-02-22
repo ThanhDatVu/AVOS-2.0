@@ -40,7 +40,7 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Điểm số cá nhân')
                 ->title('Quản lý điểm')
                 ->icon('calculator')
-                ->route('platform.systems.users.grade',13),
+                ->route('platform.systems.users.grade', 13),
             Menu::make('Điểm số theo khoá học')
                 ->icon('database')
                 ->route('platform.example.fields'),

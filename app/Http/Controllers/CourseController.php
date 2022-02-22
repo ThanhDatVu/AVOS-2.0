@@ -40,6 +40,7 @@ class CourseController extends Controller
     {
         //
     }
+
     /**
      * Submit an edited course to publish.
      *
@@ -47,34 +48,36 @@ class CourseController extends Controller
      */
 
 
-     public function submitEditCourse(Request $request)
+    public function submitEditCourse(Request $request)
     {
         $request->validate([
-            "titre"=>"string",
-            'descriptif'=>"string|required",
-            "objectif"=>"string|required",
-            "competences"=>"required|string",
-            "difficulte"=>"integer|max:10",
-            "cout"=>"integer",
+            "titre" => "string",
+            'descriptif' => "string|required",
+            "objectif" => "string|required",
+            "competences" => "required|string",
+            "difficulte" => "integer|max:10",
+            "cout" => "integer",
         ]);
-         function courseimg(Request $request){
-            return $request->courseimg ? Storage::disk("public")->put("courses",$request->courseimg)  :  "courses/default".mt_rand(0,2).".png";
+        function courseimg(Request $request)
+        {
+            return $request->courseimg ? Storage::disk("public")->put("courses", $request->courseimg) : "courses/default" . mt_rand(0, 2) . ".png";
         }
-        Course::create([
-            'title'=>$request->titre,
-            'teacher_id'=>Auth::user()->teacher->id,
-            'descriptif'=>$request->descriptif,
-            'image'=>courseimg($request),
-            "objectif"=>$request->objectif,
-            "competences_requises"=>$request->competences,
-            "niveau_de_difficulte"=>$request->difficulte,
 
-            "created_at"=>now(),
+        Course::create([
+            'title' => $request->titre,
+            'teacher_id' => Auth::user()->teacher->id,
+            'descriptif' => $request->descriptif,
+            'image' => courseimg($request),
+            "objectif" => $request->objectif,
+            "competences_requises" => $request->competences,
+            "niveau_de_difficulte" => $request->difficulte,
+
+            "created_at" => now(),
         ]);
         return view(
             "admin-courses",
             [
-                "courses"=>Course::where('teacher_id',Auth::user()->teacher->id)->get()
+                "courses" => Course::where('teacher_id', Auth::user()->teacher->id)->get()
             ]);
     }
 
@@ -85,13 +88,12 @@ class CourseController extends Controller
      */
     public function makeNewCourse()
     {
-        if(isset(Auth::user()->teacher->id)){
-            return view("admin-make-course",["categories"=>Category::All()]);
-        }else{
+        if (isset(Auth::user()->teacher->id)) {
+            return view("admin-make-course", ["categories" => Category::All()]);
+        } else {
             return view("dashboard");
         }
     }
-
 
 
     /**
@@ -102,12 +104,11 @@ class CourseController extends Controller
     public function showSingle($id)
     {
 
-        $course=Course::where('id',$id)->firstOrFail();
+        $course = Course::where('id', $id)->firstOrFail();
 
 
-        return view('admin-courses-detail',["course"=>$course]);
+        return view('admin-courses-detail', ["course" => $course]);
     }
-
 
 
     /**
@@ -116,47 +117,50 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $idu;
+
     public function enroll($id)
     {
-        $this->idu=$id;
-        $course=Course::where('id',$id)->firstOrFail();
+        $this->idu = $id;
+        $course = Course::where('id', $id)->firstOrFail();
 
-        function pay($course,$id){
-            if($course->coût_du_cours!=0){
-                $url="http://money_service.local?number=".Auth::user()->telephone."&benef=657675216&amount=$course->coût_du_cours";
-                $pay=@json_decode(file_get_contents($url));
-                if($pay->status){
+        function pay($course, $id)
+        {
+            if ($course->coût_du_cours != 0) {
+                $url = "http://money_service.local?number=" . Auth::user()->telephone . "&benef=657675216&amount=$course->coût_du_cours";
+                $pay = @json_decode(file_get_contents($url));
+                if ($pay->status) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
-            }else{
+            } else {
                 Auth::user()->course()->toggle([$course->id]);
             }
         }
-        $coursA=array();
-        $i=0;
-        foreach(Auth::user()->course as $cours){
-            $coursA[$i]=$cours->id;
+
+        $coursA = array();
+        $i = 0;
+        foreach (Auth::user()->course as $cours) {
+            $coursA[$i] = $cours->id;
         }
         $Existusers = DB::table('cour_user')
             ->whereIn('cour_id', $coursA)
             ->where('user_id', Auth::user()->id)
             ->get();
-        if(!isset($Existusers[0])){
+        if (!isset($Existusers[0])) {
 
-            if(isset(Auth::user()->cours)){
-                if(($couruser->user_id!=Auth::user()->id)&&($couruser->cour_id!=$id)){
-                    if(pay($course,$id))
+            if (isset(Auth::user()->cours)) {
+                if (($couruser->user_id != Auth::user()->id) && ($couruser->cour_id != $id)) {
+                    if (pay($course, $id))
                         Auth::user()->course()->toggle([$course->id]);
 
                 }
-            }else{
-                pay($course,$id);
+            } else {
+                pay($course, $id);
             }
         }
 
-        return view('all-courses',["courses"=>Auth::user()->cours]);
+        return view('all-courses', ["courses" => Auth::user()->cours]);
         /* if($course->coût_du_cours){
             // Create new payer and method
             $payer = new Payer();
@@ -208,7 +212,7 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -220,9 +224,9 @@ class CourseController extends Controller
 
     {
 
-        if(isset(Auth::user()->teacher->id)){
-            return view('admin-courses',["courses"=>Course::where('teacher_id',Auth::user()->teacher->id)->firstOrFail()->get()]);
-        }else{
+        if (isset(Auth::user()->teacher->id)) {
+            return view('admin-courses', ["courses" => Course::where('teacher_id', Auth::user()->teacher->id)->firstOrFail()->get()]);
+        } else {
             return view("dashboard");
         }
         //
@@ -236,15 +240,16 @@ class CourseController extends Controller
     public function showmycourse()
     {
 
-        if(true){
+        if (true) {
             $userId = Auth::user()->id;
             $courseIds = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
 
-            return view('my-courses',["courses"=>Course::whereIn('id',$courseIds)->get()]);
-        }else{
+            return view('my-courses', ["courses" => Course::whereIn('id', $courseIds)->get()]);
+        } else {
             return view("dashboard");
         }
     }
+
     /**
      * Show the form for creating a new course.
      *
@@ -253,12 +258,12 @@ class CourseController extends Controller
     public function showmydashboard()
     {
 
-        if(true){
+        if (true) {
             $userId = Auth::user()->id;
             $courseIds = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
 
-            return view('dashboard',["courses"=>Course::whereIn('id',$courseIds)->get()]);
-        }else{
+            return view('dashboard', ["courses" => Course::whereIn('id', $courseIds)->get()]);
+        } else {
             return view("dashboard");
         }
     }
@@ -266,18 +271,44 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Course  $cour
+     * @param \App\Models\Course $cour
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
-        return view('admin-courses',["courses"=>Course::All()]);
+
+        $courses = Course::query();
+
+        if ($request->has('category')) {
+            $courses->where('category', 'LIKE', '%' . $request->category . '%');
+        }
+        $courses->get();
+        return view('admin-courses', ["courses" => $courses]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param \App\Models\Course $cour
+     * @return \Illuminate\Http\Response
+     */
+    public function showAll(Request $request)
+    {
+
+        $courses = Course::query();
+
+        if ($request->has('category')) {
+            $courses->where('category', 'LIKE', '%' . $request->category . '%');
+        }
+        $listCourse = $courses->get();
+
+        return view('all-courses', ["courses" => $listCourse]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Course  $cour
+     * @param \App\Models\Course $cour
      * @return \Illuminate\Http\Response
      */
     public function edit(Course $cour)
@@ -288,8 +319,8 @@ class CourseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $cour
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Course $cour
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Course $cour)
@@ -300,7 +331,7 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Course  $cour
+     * @param \App\Models\Course $cour
      * @return \Illuminate\Http\Response
      */
     public function destroy(Course $cour)

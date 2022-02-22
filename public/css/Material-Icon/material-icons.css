@@ -5,6 +5,7 @@
     font-weight: 400;
     src: url(material-icon.woff2) format("woff2");
 }
+
 /* fallback */
 @font-face {
     font-family: "Material Icons Outlined";
@@ -12,6 +13,7 @@
     font-weight: 400;
     src: url(material-icon-outlined.woff2) format("woff2");
 }
+
 /* fallback */
 @font-face {
     font-family: "Material Icons Round";
@@ -19,6 +21,7 @@
     font-weight: 400;
     src: url(material-icon-round.woff2) format("woff2");
 }
+
 /* fallback */
 @font-face {
     font-family: "Material Icons Sharp";
@@ -26,6 +29,7 @@
     font-weight: 400;
     src: url(material-icon-sharp.woff2) format("woff2");
 }
+
 /* fallback */
 @font-face {
     font-family: "Material Icons Two Tone";

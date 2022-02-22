@@ -28,8 +28,6 @@ class KhoaHocScreen extends Screen
     {
         return [
             'courses' => Course::with('teacher')
-
-
                 ->paginate(),
 
 
@@ -62,6 +60,7 @@ class KhoaHocScreen extends Screen
             CourseListLayout::class
         ];
     }
+
     public function remove(Request $request): void
     {
         Course::findOrFail($request->get('id'))

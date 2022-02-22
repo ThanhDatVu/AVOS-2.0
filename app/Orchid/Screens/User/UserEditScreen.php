@@ -57,14 +57,14 @@ class UserEditScreen extends Screen
     {
         $this->user = $user;
 
-        if (! $user->exists) {
+        if (!$user->exists) {
             $this->name = 'Create User';
         }
 
         $user->load(['roles']);
 
         return [
-            'user'       => $user,
+            'user' => $user,
             'permission' => $user->getStatusPermission(),
         ];
     }
@@ -146,7 +146,7 @@ class UserEditScreen extends Screen
     }
 
     /**
-     * @param User    $user
+     * @param User $user
      * @param Request $request
      *
      * @return \Illuminate\Http\RedirectResponse
@@ -192,9 +192,9 @@ class UserEditScreen extends Screen
     /**
      * @param User $user
      *
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      *
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function remove(User $user)
     {
@@ -204,7 +204,6 @@ class UserEditScreen extends Screen
 
         return redirect()->route('platform.systems.users');
     }
-
 
 
 }

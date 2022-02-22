@@ -17,7 +17,7 @@ class CreateLessonUsersTable extends Migration
             $table->id();
             $table->foreignId("lesson_id")->constrained()->onDelete("cascade");
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
-            $table->integer("nombre_etoiles",null,true);
+            $table->integer("nombre_etoiles", null, true);
             $table->timestamps();
         });
     }

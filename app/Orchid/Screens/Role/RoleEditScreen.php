@@ -53,7 +53,7 @@ class RoleEditScreen extends Screen
         $this->exist = $role->exists;
 
         return [
-            'role'       => $role,
+            'role' => $role,
             'permission' => $role->getStatusPermission(),
         ];
     }
@@ -100,7 +100,7 @@ class RoleEditScreen extends Screen
     }
 
     /**
-     * @param Role    $role
+     * @param Role $role
      * @param Request $request
      *
      * @return \Illuminate\Http\RedirectResponse
@@ -133,9 +133,9 @@ class RoleEditScreen extends Screen
     /**
      * @param Role $role
      *
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      *
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function remove(Role $role)
     {

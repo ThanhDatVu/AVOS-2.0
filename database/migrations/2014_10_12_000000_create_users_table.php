@@ -18,14 +18,14 @@ class CreateUsersTable extends Migration
             $table->string('fullname');
             $table->string('email')->unique();
             $table->string('pays')->nullable();
-            $table->enum('genre',['Female','male','Transgender']);
+            $table->enum('genre', ['Female', 'male', 'Transgender']);
             $table->string('ville_residence')->nullable();
-            $table->string('telephone',20);
+            $table->string('telephone', 20);
             $table->text('biographie')->nullable();
             $table->boolean('newsletter')->default("0");
             $table->string('password');
             $table->string('class')->default("AT15");;
-            $table->enum('role',["administrator","student","teacher"])->default("student");
+            $table->enum('role', ["administrator", "student", "teacher"])->default("student");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('name')->nullable()->unique();
             $table->string("avatar")->default("avatar/default.png");

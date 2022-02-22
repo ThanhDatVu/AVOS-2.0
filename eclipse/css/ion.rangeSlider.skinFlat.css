@@ -18,21 +18,26 @@
 .irs {
     height: 40px;
 }
+
 .irs-with-grid {
     height: 60px;
 }
+
 .irs-line {
     height: 12px;
     top: 25px;
 }
+
 .irs-line-left {
     height: 12px;
     background-position: 0 -30px;
 }
+
 .irs-line-mid {
     height: 12px;
     background-position: 0 0;
 }
+
 .irs-line-right {
     height: 12px;
     background-position: 100% -30px;
@@ -43,6 +48,7 @@
     top: 25px;
     background-position: 0 -60px;
 }
+
 .irs-bar-edge {
     top: 25px;
     height: 12px;
@@ -56,6 +62,7 @@
     background: #000;
     opacity: 0.25;
 }
+
 .lt-ie9 .irs-shadow {
     filter: alpha(opacity=25);
 }
@@ -66,6 +73,7 @@
     top: 22px;
     background-position: 0 -120px;
 }
+
 .irs-slider.state_hover,
 .irs-slider:hover {
     background-position: 0 -150px;
@@ -96,6 +104,7 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
+
 .irs-from:after,
 .irs-to:after,
 .irs-single:after {
@@ -115,6 +124,7 @@
 .irs-grid-pol {
     background: #e1e4e9;
 }
+
 .irs-grid-text {
     color: #999;
 }

@@ -44,7 +44,6 @@ class CourseCategoryListLayout extends Table
                 }),
 
 
-
             TD::make('updated_at', __('Cập nhật lần cuối'))
                 ->sort()
                 ->render(function (Category $category) {

@@ -29,7 +29,7 @@ class RegisteredUserController extends Controller
     /**
      * Handle an incoming registration request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      *
      * @throws \Illuminate\Validation\ValidationException
@@ -40,12 +40,12 @@ class RegisteredUserController extends Controller
             'fullname' => 'required|string|max:255',
 
             'email' => 'required|string|email|max:255|unique:users',
-            "country"=>"required",
-            "gender"=>"required",
+            "country" => "required",
+            "gender" => "required",
             //"role"=>"required",
-            "phone"=>"required",
+            "phone" => "required",
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            "avatar"=>"image",
+            "avatar" => "image",
         ]);
         //Storage::disk("local")->put("avatar/",$request->avatar);
         //$name=Storage::disk("local")->put("avatar",$request->avatar);
@@ -61,15 +61,18 @@ class RegisteredUserController extends Controller
         ); */
 
         //dd($request->avatar);
-        function avatar(Request $request){
-            if($request->gender=="male"){
-                return $request->avatar?Storage::disk("public")->put("avatar",$request->avatar):"avatar/male/".mt_rand(1,47).".png";
-            }if($request->gender=="female"){
-                return $request->avatar?Storage::disk("public")->put("avatar",$request->avatar):"avatar/female/".mt_rand(1,19).".png";
-            }else{
-                return $request->avatar?Storage::disk("public")->put("avatar",$request->avatar):"avatar/other/".mt_rand(1,39).".png";
+        function avatar(Request $request)
+        {
+            if ($request->gender == "male") {
+                return $request->avatar ? Storage::disk("public")->put("avatar", $request->avatar) : "avatar/male/" . mt_rand(1, 47) . ".png";
+            }
+            if ($request->gender == "female") {
+                return $request->avatar ? Storage::disk("public")->put("avatar", $request->avatar) : "avatar/female/" . mt_rand(1, 19) . ".png";
+            } else {
+                return $request->avatar ? Storage::disk("public")->put("avatar", $request->avatar) : "avatar/other/" . mt_rand(1, 39) . ".png";
             }
         }
+
         $user = User::create([
             'fullname' => $request->fullname,
             'pays' => $request->country,
@@ -77,19 +80,20 @@ class RegisteredUserController extends Controller
             'name' => $request->username,
             'genre' => $request->gender,
             'telephone' => $request->phone,
-            "biographie"=>$request->biographie,
-            'remember_token'=> str_shuffle(Str::random(5).$request->name.now()),
-            'avatar'=> avatar($request),
+            "biographie" => $request->biographie,
+            'remember_token' => str_shuffle(Str::random(5) . $request->name . now()),
+            'avatar' => avatar($request),
             'password' => Hash::make($request->password),
         ]);
         event(new Registered($user));
         Auth::login($user);
         return redirect(RouteServiceProvider::HOME);
     }
+
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -100,7 +104,7 @@ class RegisteredUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
@@ -111,8 +115,8 @@ class RegisteredUserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
@@ -123,7 +127,7 @@ class RegisteredUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)

@@ -20,16 +20,16 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
         Category::create([
-            "name"=>"Chưa phân loại"
+            "name" => "Chưa phân loại"
         ]);
         Category::create([
-            "name"=>"AT14"
+            "name" => "AT14"
         ]);
         Category::create([
-            "name"=>"AT15"
+            "name" => "AT15"
         ]);
         Category::create([
-            "name"=>"AT16"
+            "name" => "AT16"
         ]);
     }
 

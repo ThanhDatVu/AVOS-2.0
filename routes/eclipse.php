@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 /* Route::get('/courses/{id}', function () {
     return view('eclipse-interface.course-detail');
 })->name("eclipse-course-detail");

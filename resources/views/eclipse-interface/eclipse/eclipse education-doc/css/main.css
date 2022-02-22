@@ -21,6 +21,7 @@ a:focus {
     text-decoration: none;
     outline: 0;
 }
+
 h1,
 h2,
 h3,
@@ -35,15 +36,19 @@ h6 {
 h1 {
     font-size: 28px;
 }
+
 h2 {
     font-size: 24px;
 }
+
 h3 {
     font-size: 18px;
 }
+
 h5 {
     font-size: 16px;
 }
+
 h6 {
     font-size: 14px;
 }
@@ -78,9 +83,11 @@ section p {
     content: " ";
     display: table;
 }
+
 .clearfix:after {
     clear: both;
 }
+
 .clearfix {
     *zoom: 1;
 }

@@ -20,27 +20,29 @@ class LessonController extends Controller
     public function submitlesson(Request $request)
     {
 
-        if(isset(Auth::user()->teacher->id)){
+        if (isset(Auth::user()->teacher->id)) {
             $request->validate([
-                "titre"=>"required",
-                "descriptif"=>"string",
-                "courseid"=>"integer",
-                "editorvalue"=>"required",
+                "titre" => "required",
+                "descriptif" => "string",
+                "courseid" => "integer",
+                "editorvalue" => "required",
             ]);
-            function lessonimg($request){
-                return $request->lessonimg?Storage::disk("public")->put("lessons",$request->lessonimg):"lessons/default".mt_rand(0,2).".png";
+            function lessonimg($request)
+            {
+                return $request->lessonimg ? Storage::disk("public")->put("lessons", $request->lessonimg) : "lessons/default" . mt_rand(0, 2) . ".png";
             }
+
             Lesson::create([
-                "title"=>"$request->titre",
-                "descriptif"=>"$request->descriptif",
-                "course_id"=>"$request->courseid",
-                "objectif"=>"$request->objectif",
-                "image"=>lessonimg($request),
-                "contenu"=>new HtmlString($request->editorvalue),
+                "title" => "$request->titre",
+                "descriptif" => "$request->descriptif",
+                "course_id" => "$request->courseid",
+                "objectif" => "$request->objectif",
+                "image" => lessonimg($request),
+                "contenu" => new HtmlString($request->editorvalue),
             ]);;
 
             return view('dashboard');
-        }else{
+        } else {
             return view("dashboard");
         }
     }
@@ -53,13 +55,14 @@ class LessonController extends Controller
     public function makeNewLesson(Request $request)
     {
 
-        if(isset(Auth::user()->teacher->id)){
-           return view("admin-make-lesson",["cours"=>Course::where('teacher_id',Auth::user()->teacher->id)->get() ]);
-        }else{
+        if (isset(Auth::user()->teacher->id)) {
+            return view("admin-make-lesson", ["cours" => Course::where('teacher_id', Auth::user()->teacher->id)->get()]);
+        } else {
             return redirect(route("courses"));
         }
     }
-      /**
+
+    /**
      * Show the form for showing a lesson.
      *
      * @return \Illuminate\Http\Response
@@ -68,10 +71,12 @@ class LessonController extends Controller
     {
 
 //
-              $lesson=Lesson::where('id',"like",$id)->firstOrFail();
-              return view('lesson-detail',["lesson"=>$lesson]);
+        $lesson = Lesson::where('id', "like", $id)->firstOrFail();
+        return view('lesson-detail', ["lesson" => $lesson]);
 //
-    }  /**
+    }
+
+    /**
      * Show the form for showing a lesson.
      *
      * @return \Illuminate\Http\Response
@@ -80,8 +85,8 @@ class LessonController extends Controller
     {
 
 //
-              $lesson=Lesson::where('id',"like",$id)->firstOrFail();
-              return view('edit-lesson',["lesson"=>$lesson]);
+        $lesson = Lesson::where('id', "like", $id)->firstOrFail();
+        return view('edit-lesson', ["lesson" => $lesson]);
 //
     }
 

@@ -9,9 +9,9 @@ use Orchid\Screen\AsSource;
 
 class Lesson extends Model
 {
-    use HasFactory,AsSource;
+    use HasFactory, AsSource;
 
-/**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -27,7 +27,9 @@ class Lesson extends Model
         "updated_at",
         "teacher_id",
     ];
-    public function course(){
+
+    public function course()
+    {
         return $this->belongsTo(Course::class);
     }
 }

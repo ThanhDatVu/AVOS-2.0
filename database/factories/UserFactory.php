@@ -22,19 +22,19 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $roles=["administrator","student","teacher"];
+        $roles = ["administrator", "student", "teacher"];
         return [
             'nom_utilisateur' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            "pays"=>$this->faker->country(),
-            "ville_residence"=>$this->faker->city(),
-            "telephone"=>$this->faker->phoneNumber(),
-            "biographie"=>$this->faker->text(),
-            "newsletter"=>$this->faker->boolean(),
+            "pays" => $this->faker->country(),
+            "ville_residence" => $this->faker->city(),
+            "telephone" => $this->faker->phoneNumber(),
+            "biographie" => $this->faker->text(),
+            "newsletter" => $this->faker->boolean(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            "permission"=>$roles[mt_rand(0,2)],
+            "permission" => $roles[mt_rand(0, 2)],
             'email_verified_at' => now(),
-            "name"=>ucfirst($this->faker->unique()->word().$this->faker->numberBetween(1,200)),
+            "name" => ucfirst($this->faker->unique()->word() . $this->faker->numberBetween(1, 200)),
             'remember_token' => Str::random(20),
         ];
     }

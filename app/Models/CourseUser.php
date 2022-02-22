@@ -10,26 +10,30 @@ use Orchid\Screen\AsSource;
 
 class CourseUser extends Model
 {
-    use HasFactory,AsSource;
-    protected $fillable=[
+    use HasFactory, AsSource;
+
+    protected $fillable = [
         "user_id",
         "cour_id",
         "payement"
     ];
 
-/*     public function users(){
-        return $this->belongsTo(User::class);
-    }
- */
-    public function courses(){
+    /*     public function users(){
+            return $this->belongsTo(User::class);
+        }
+     */
+    public function courses()
+    {
         return $this->hasMany(Course::class);
     }
 
-    public function users(){
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
 
-    public function lessons(){
+    public function lessons()
+    {
         return $this->belongsToMany(Lesson::class);
     }
 }

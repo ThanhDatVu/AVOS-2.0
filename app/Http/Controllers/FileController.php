@@ -19,9 +19,7 @@ class FileController extends Controller
         $id = $request->get("id");
 
 
-
         return response()->file(public_path($id));
-
 
 
     }

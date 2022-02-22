@@ -9,9 +9,9 @@ use Orchid\Screen\AsSource;
 
 class Category extends Model
 {
-    use HasFactory,AsSource;
+    use HasFactory, AsSource;
 
-    protected $fillable=[
+    protected $fillable = [
         "name",
     ];
 }
