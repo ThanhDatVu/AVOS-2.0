@@ -14,14 +14,15 @@
                     <section class="top-category-widget-area pt-90 pb-90 ">
                         <div class="container">
                             <div class="row">
-                                
+
                                 <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
                                     <div class="single-cat-widget">
                                         <div class="relative content">
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Social life</h4>
@@ -38,7 +39,8 @@
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Social life</h4>
@@ -49,49 +51,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
                                     <div class="single-cat-widget">
                                         <div class="relative content">
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
-                                                </div>
-                                                <div class="content-details">
-                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
-                                                    <span></span>
-                                                    <p>Enjoy your social life together</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
-                                    <div class="single-cat-widget">
-                                        <div class="relative content">
-                                            <div class="overlay overlay-bg"></div>
-                                            <a href="#" target="_blank">
-                                                <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
-                                                </div>
-                                                <div class="content-details">
-                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
-                                                    <span></span>
-                                                    <p>Enjoy your social life together</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
-                                    <div class="single-cat-widget">
-                                        <div class="relative content">
-                                            <div class="overlay overlay-bg"></div>
-                                            <a href="#" target="_blank">
-                                                <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Social life</h4>
@@ -108,7 +76,8 @@
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Social life</h4>
@@ -119,49 +88,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
                                     <div class="single-cat-widget">
                                         <div class="relative content">
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
-                                                </div>
-                                                <div class="content-details">
-                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
-                                                    <span></span>
-                                                    <p>Enjoy your social life together</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
-                                    <div class="single-cat-widget">
-                                        <div class="relative content">
-                                            <div class="overlay overlay-bg"></div>
-                                            <a href="#" target="_blank">
-                                                <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
-                                                </div>
-                                                <div class="content-details">
-                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
-                                                    <span></span>
-                                                    <p>Enjoy your social life together</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
-                                    <div class="single-cat-widget">
-                                        <div class="relative content">
-                                            <div class="overlay overlay-bg"></div>
-                                            <a href="#" target="_blank">
-                                                <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Social life</h4>
@@ -178,7 +113,82 @@
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget2.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
+                                                </div>
+                                                <div class="content-details">
+                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
+                                                    <span></span>
+                                                    <p>Enjoy your social life together</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
+                                    <div class="single-cat-widget">
+                                        <div class="relative content">
+                                            <div class="overlay overlay-bg"></div>
+                                            <a href="#" target="_blank">
+                                                <div class="thumb">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
+                                                </div>
+                                                <div class="content-details">
+                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
+                                                    <span></span>
+                                                    <p>Enjoy your social life together</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
+                                    <div class="single-cat-widget">
+                                        <div class="relative content">
+                                            <div class="overlay overlay-bg"></div>
+                                            <a href="#" target="_blank">
+                                                <div class="thumb">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
+                                                </div>
+                                                <div class="content-details">
+                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
+                                                    <span></span>
+                                                    <p>Enjoy your social life together</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
+                                    <div class="single-cat-widget">
+                                        <div class="relative content">
+                                            <div class="overlay overlay-bg"></div>
+                                            <a href="#" target="_blank">
+                                                <div class="thumb">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
+                                                </div>
+                                                <div class="content-details">
+                                                    <h4 class="mx-auto content-title text-uppercase">Social life</h4>
+                                                    <span></span>
+                                                    <p>Enjoy your social life together</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
+                                    <div class="single-cat-widget">
+                                        <div class="relative content">
+                                            <div class="overlay overlay-bg"></div>
+                                            <a href="#" target="_blank">
+                                                <div class="thumb">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget2.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Politics</h4>
@@ -189,14 +199,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="pt-3 col-lg-4 col-sm-12 col-md-4 col-4">
                                     <div class="single-cat-widget">
                                         <div class="relative content">
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget1.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget1.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Social life</h4>
@@ -213,7 +224,8 @@
                                             <div class="overlay overlay-bg"></div>
                                             <a href="#" target="_blank">
                                                 <div class="thumb">
-                                                    <img class="mx-auto content-image img-fluid d-block" src="img/blog/cat-widget3.jpg" alt="">
+                                                    <img class="mx-auto content-image img-fluid d-block"
+                                                         src="img/blog/cat-widget3.jpg" alt="">
                                                 </div>
                                                 <div class="content-details">
                                                     <h4 class="mx-auto content-title text-uppercase">Food</h4>

@@ -86,7 +86,7 @@
                                             <div class='grid place-items-center w-100 m-3'>
                                                 <span class="text-uppercase justify-content-between d-flex">
                                                     <a href="{{route('make-new-lesson',["id"=>$course->id])}}"
-                                                    class="btn ti-plus bg-gray-100">&nbsp;Thêm bài học mới</a>
+                                                       class="btn ti-plus bg-gray-100">&nbsp;Thêm bài học mới</a>
 
                                                 </span>
 
@@ -108,7 +108,9 @@
                                                             @endphp
                                                             @if($result!=0)
 
-                                                                &nbsp;<p class="bg-gray-200 rounded mx-5 p-2 ">Kết quả: {{$result}} / {{$exam->number_of_questions}}</p>
+                                                                &nbsp;<p class="bg-gray-200 rounded mx-5 p-2 ">Kết
+                                                                    quả: {{$result}}
+                                                                    / {{$exam->number_of_questions}}</p>
                                                             @endif
                                                             <div>
                                                             <span class="text-uppercase justify-content-between d-flex">

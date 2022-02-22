@@ -11,7 +11,7 @@
 
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Sửa bài học') }} - Phần: {{ $exam->title}} - Khoá học: {{ $exam->course->title}}
+            {{ __('Tạo câu hỏi') }} - Phần: {{ $exam->title}} - Khoá học: {{ $exam->course->title}}
         </h2>
     </x-slot>
 
@@ -37,20 +37,40 @@
                             @for ($i = 0; $i < $exam->number_of_questions; $i++)
                                 <hr>
                                 <div class="form-group">
-                                    <label for="">Tiêu đề</label>
-                                    <input name="titre" type="text" id="" class="form-control"
-                                           placeholder="{{ $exam->title}}" aria-describedby="helpId">
+                                    <label for="">Câu hỏi thứ {{$i+1}}</label>
+                                    <input name="question[{{$i}}]" type="text" id="" class="form-control"
+                                           placeholder="Câu hỏi thứ {{$i + 1}}" aria-describedby="helpId" required>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="">Mô tả</label>
-                                    <input name="descriptif" type="text" id="" class="form-control"
-                                           placeholder="{{ $exam->descriptif}}" aria-describedby="helpId">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Số câu hỏi</label>
-                                    <input name="number_of_questions" type="text" id="" class="form-control"
-                                           placeholder="{{ $exam->objectif}}" aria-describedby="helpId">
+                                <div class="p-4">
+                                    <div class="form-group">
+                                        <label for="">Đáp án A</label>
+                                        <input name="answerA[{{$i}}]" type="text" id="" class="form-control"
+                                               placeholder="Đáp án A : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Đáp án B</label>
+                                        <input name="answerB[{{$i}}]" type="text" id="" class="form-control"
+                                               placeholder="Đáp án B : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Đáp án C</label>
+                                        <input name="answerC[{{$i}}]" type="text" id="" class="form-control"
+                                               placeholder="Đáp án C : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Đáp án D</label>
+                                        <input name="answerD[{{$i}}]" type="text" id="" class="form-control"
+                                               placeholder="Đáp án D : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                    </div>
+                                    <div>
+                                        <label for="">Đáp án đúng</label>
+                                        <select class="rounded" name="correctAnswer" id="cars">
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                        </select>
+                                    </div>
                                 </div>
                             @endfor
 
