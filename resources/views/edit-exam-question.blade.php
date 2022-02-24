@@ -39,32 +39,32 @@
                                 <div class="form-group">
                                     <label for="">Câu hỏi thứ {{$i+1}}</label>
                                     <input name="question[{{$i}}]" type="text" id="" class="form-control"
-                                           placeholder="Câu hỏi thứ {{$i + 1}}" aria-describedby="helpId" required>
+                                           value="Câu hỏi thứ {{$i + 1}}" aria-describedby="helpId" required>
                                 </div>
                                 <div class="p-4">
                                     <div class="form-group">
                                         <label for="">Đáp án A</label>
                                         <input name="answerA[{{$i}}]" type="text" id="" class="form-control"
-                                               placeholder="Đáp án A : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                               value="Đáp án A : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án B</label>
                                         <input name="answerB[{{$i}}]" type="text" id="" class="form-control"
-                                               placeholder="Đáp án B : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                               value="Đáp án B : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án C</label>
                                         <input name="answerC[{{$i}}]" type="text" id="" class="form-control"
-                                               placeholder="Đáp án C : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                               value="Đáp án C : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án D</label>
                                         <input name="answerD[{{$i}}]" type="text" id="" class="form-control"
-                                               placeholder="Đáp án D : Câu {{$i + 1}}" aria-describedby="helpId" required>
+                                               value="Đáp án D : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div>
                                         <label for="">Đáp án đúng</label>
-                                        <select class="rounded" name="correctAnswer" id="cars">
+                                        <select class="rounded" name="correctAnswer[{{$i}}]" id="cars">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -97,36 +97,7 @@
     <script src="{{asset("editeur/tinymce.min.js")}}"></script>
 
     <script>
-        tinymce.init({
-            selector: 'textarea#document',
-            height: 290,
-            theme: 'modern',
-            plugins: [
-                'addlist autolink lists link image charmap print preview hr anchor pagebreak',
-                'searchreplace wordcount0 visualblocks visualchars code fullscreen',
-                'insertdatetime media nonbreaking save table contextmenu directionality',
-                'emoticons template paste textcolor colorpicker textpattern imagetools codesample'
-            ],
-            toolbar1: 'undo redo | cut copy paste | styleselect fontselect fontsizeselect forecolor',
-            toolbar2: 'backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink',
-            toolbar3: 'anchor codesample image emoticons media | preview',
-            statusbar: true,
-            resizehandle: false
-        });
 
-        $("#editor").on("submit", (e) => {
-            e.preventDefault();
-            $("#editor-value").val(tinyMCE.activeEditor.getContent());
-
-            // Get the HTML contents of the currently active editor
-            $("#result").html($("#result").html() + tinyMCE.activeEditor.getContent());
-            $("#editor").submit();
-            // Get the raw contents of the currently active editor
-            tinyMCE.activeEditor.getContent({format: 'raw'});
-
-            // Get content of a specific editor:
-            tinyMCE.get('content id').getContent()
-        });
 
     </script>
 </x-app-layout>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\exam;
+use App\Models\Question;
 use App\Models\Result;
 use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
@@ -94,44 +95,37 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function submitTakenExam(Request $request, $id)
+    public function submitExamQuestion(Request $request, $id)
     {
 
         $exam = Exam::where('id', "like", $id)->with('questions')->firstOrFail();
-        $answers = $request->answer;
-        $questions = $exam->questions;
-
-        $mark = 0;
-        for ($x = 0; $x <= $exam->number_of_questions - 1; $x++) {
-
-            if (strcmp($questions[$x]->correctAnswer, $answers[$x]) == 0) {
-                $mark += 1;
+        $questions = $request->question;
+        $answerAs = $request->answerA;
+        $answerBs = $request->answerB;
+        $answerCs = $request->answerC;
+        $answerDs = $request->answerD;
+        $correctAnswers = $request->correctAnswer;
 
 
-            }
 
+
+        for ($x = 0; $x <= $exam->number_of_questions-1; $x++) {
+
+            $question = Question::create([
+                    "created_by" => Auth::user()->id,
+                    "exam_id" => "$id",
+                    "question" => "$questions[$x]",
+                    "answerA" => "$answerAs[$x]",
+                    "answerB" => "$answerBs[$x]",
+                    "answerC" => "$answerCs[$x]",
+                    "answerD" => "$answerDs[$x]",
+                    "correctAnswer" => "$correctAnswers[$x]"
+            ])  ;
 
         }
-        //Kiểm tra kết quả đã tồn tại chưa
-        $result = Result::firstOrCreate(
-            ['exam_id' => $id], ['user_id' => 13]
 
 
-        );
-
-
-        //Cập nhật nếu điểm mới lớn hơn
-        $oldmark = $result->points;
-        if ($oldmark < $mark) {
-            $result->points = $mark;
-            $result->save();
-        }
-        session(['exam' => $exam]);
-        session(['answers' => $answers]);
-        session(['mark' => $mark]);
-        //To do: tìm bản ghi cũ, so sánh điểm, update bản ghi mới
-
-        return redirect(route("exam-result", ["id" => $id]));
+        return redirect(route("exam", ["id" => $id]));
         // return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
 
     }

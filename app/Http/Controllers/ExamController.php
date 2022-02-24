@@ -37,7 +37,7 @@ class ExamController extends Controller
                 "number_of_questions" => "$request->number_of_questions"
 
 
-            ]);;
+            ]);
 
             return redirect(route("create-questions", $exam->id));
         } else {

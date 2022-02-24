@@ -33,6 +33,9 @@ Route::get('/edit-exam/{id}', [ExamController::class, "editExam"])->middleware([
 Route::post('/edit-exam/{id}', [ExamController::class, "submitExam"])->middleware(['auth'])->name('submit-edited-exam');
 //Tạo câu hỏi trong bài kiểm tra
 Route::get('/question/create/{examid}', [QuestionController::class, "createExamQuestion"])->middleware(['auth'])->name('create-questions');
+//Lưu câu hỏi trong bài kiểm tra
+Route::post('/question/create/{examid}', [QuestionController::class, "submitExamQuestion"])->middleware(['auth'])->name('create-questions');
+
 /*courses*/
 Route::get('/make-new-course', [CourseController::class, "makeNewCourse"])->middleware(['auth'])->name('make-new-course');
 
