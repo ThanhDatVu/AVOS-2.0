@@ -31,7 +31,7 @@
                     <x-slot name="content">
                         <a
                             class="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                            href="{{route("courses")}}" >
+                            href="{{route("courses")}}">
                             Tất cả
                         </a>
                         <a
@@ -64,15 +64,22 @@
                                 <div class="max-w-md px-8 py-4 my-20 bg-white rounded-lg shadow ">
 
                                     <div>
+                                        <div class=" w-auto md:w-1/2">
+                                            <img class="inset-0  w-full object-cover object-center"
+                                                 src="{{Storage::url($course->image)}}"/>
+                                        </div>
                                         <h2 class="text-3xl font-semibold text-gray-800">{{$course->title}}</h2>
                                         <p class="mt-2 text-gray-600">{{$course->descriptif}}</p>
-                                        <p class="mt-2 text-gray-600">{{$course->category}}</p>
+                                        <a href="{{route('courses',['category'=>$course->category])}}">
+
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{$course->category}}</span>
+                                        </a>
                                     </div>
-                                    <div>Biên soạn bởi <span
+                                    <div>Soạn thảo bởi <span
                                             class="text-green-800">{{$course->teacher->user->fullname}}</span></div>
                                     <div class="flex justify-end mt-4">
                                         <a href="{{route("course",$course->id)}}"
-                                           class="text-xl font-medium text-indigo-500">Read</a>
+                                           class="text-xl font-medium text-indigo-500">Xem</a>
                                     </div>
                                 </div>
                             </div>

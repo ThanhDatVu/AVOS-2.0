@@ -242,7 +242,9 @@ class CourseController extends Controller
 
         if (true) {
             $userId = Auth::user()->id;
-            $courseIds = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
+            $courseIds1 = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
+            $courseIds2 = DB::table('courses')->where('category', Auth::user()->class)->pluck('id');
+            $courseIds =$courseIds1->merge($courseIds2);
 
             return view('my-courses', ["courses" => Course::whereIn('id', $courseIds)->get()]);
         } else {
