@@ -56,6 +56,22 @@ class QuestionController extends Controller
         $exam = Exam::find($examid);
 
         if (isset(Auth::user()->teacher->id)) {
+            return view("create-exam-question", ["exam" => $exam]);
+        } else {
+            return redirect(route("courses"));
+        }
+    }
+
+    /**
+     * Show the form for creating a new exam.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editExamQuestion(Request $request, $examid)
+    {
+        $exam = Exam::find($examid);
+
+        if (isset(Auth::user()->teacher->id)) {
             return view("edit-exam-question", ["exam" => $exam]);
         } else {
             return redirect(route("courses"));
@@ -95,6 +111,43 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function submitEditedExamQuestion(Request $request, $id)
+    {
+
+        $exam = Exam::where('id', "like", $id)->with('questions')->firstOrFail();
+        $questions = $request->question;
+        $answerAs = $request->answerA;
+        $answerBs = $request->answerB;
+        $answerCs = $request->answerC;
+        $answerDs = $request->answerD;
+        $correctAnswers = $request->correctAnswer;
+
+        $questionList = $exam->questions;
+
+
+        for ($x = 0; $x <= $exam->number_of_questions - 1; $x++) {
+            $question = $questionList[$x];
+            $question->question = "$questions[$x]";
+            $question->answerA = "$answerAs[$x]";
+            $question->answerB = "$answerBs[$x]";
+            $question->answerC = "$answerCs[$x]";
+            $question->answerD = "$answerDs[$x]";
+            $question->correctAnswer = "$correctAnswers[$x]";
+            $question->save();
+
+        }
+
+
+        return redirect(route("exam", ["id" => $id]));
+        // return view('exam-result',["exam"=>$exam,"answer"=>$answers,"mark"=>$mark]);
+
+    }
+
+    /**
+     * Show the form for showing a exam.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function submitExamQuestion(Request $request, $id)
     {
 
@@ -107,20 +160,18 @@ class QuestionController extends Controller
         $correctAnswers = $request->correctAnswer;
 
 
-
-
-        for ($x = 0; $x <= $exam->number_of_questions-1; $x++) {
+        for ($x = 0; $x <= $exam->number_of_questions - 1; $x++) {
 
             $question = Question::create([
-                    "created_by" => Auth::user()->id,
-                    "exam_id" => "$id",
-                    "question" => "$questions[$x]",
-                    "answerA" => "$answerAs[$x]",
-                    "answerB" => "$answerBs[$x]",
-                    "answerC" => "$answerCs[$x]",
-                    "answerD" => "$answerDs[$x]",
-                    "correctAnswer" => "$correctAnswers[$x]"
-            ])  ;
+                "created_by" => Auth::user()->id,
+                "exam_id" => "$id",
+                "question" => "$questions[$x]",
+                "answerA" => "$answerAs[$x]",
+                "answerB" => "$answerBs[$x]",
+                "answerC" => "$answerCs[$x]",
+                "answerD" => "$answerDs[$x]",
+                "correctAnswer" => "$correctAnswers[$x]"
+            ]);
 
         }
 

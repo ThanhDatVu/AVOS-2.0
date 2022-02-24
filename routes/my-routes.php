@@ -32,10 +32,13 @@ Route::get('/edit-exam/{id}', [ExamController::class, "editExam"])->middleware([
 //lưu bài kiểm tra
 Route::post('/edit-exam/{id}', [ExamController::class, "submitExam"])->middleware(['auth'])->name('submit-edited-exam');
 //Tạo câu hỏi trong bài kiểm tra
-Route::get('/question/create/{examid}', [QuestionController::class, "createExamQuestion"])->middleware(['auth'])->name('create-questions');
+Route::get('exam/{examid}/question/create', [QuestionController::class, "createExamQuestion"])->middleware(['auth'])->name('create-questions');
 //Lưu câu hỏi trong bài kiểm tra
-Route::post('/question/create/{examid}', [QuestionController::class, "submitExamQuestion"])->middleware(['auth'])->name('create-questions');
-
+Route::post('exam/{examid}/question/create', [QuestionController::class, "submitExamQuestion"])->middleware(['auth'])->name('submit-create-questions');
+//Sửa câu hỏi trong bài kiểm tra
+Route::get('exam/{examid}/question/edit', [QuestionController::class, "editExamQuestion"])->middleware(['auth'])->name('edit-exam-questions');
+//Lưu câu hỏi đã sửa trong bài kiểm tra
+Route::post('exam/{examid}/question/edit', [QuestionController::class, "submitEditedExamQuestion"])->middleware(['auth'])->name('submit-edited-questions');
 /*courses*/
 Route::get('/make-new-course', [CourseController::class, "makeNewCourse"])->middleware(['auth'])->name('make-new-course');
 

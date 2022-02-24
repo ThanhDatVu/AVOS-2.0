@@ -70,7 +70,13 @@ class CourseListLayout extends Table
                         ->list([
 
                             Link::make(__('Edit'))
-                                ->route('edit-course', $course->id)
+                                ->route('platform.systems.courses.lesson', $course->id)
+                                ->icon('pencil'),
+                            Link::make(__('Xem các bài học'))
+                                ->route('platform.systems.courses.lesson', $course->id)
+                                ->icon('pencil'),
+                            Link::make(__('Xem các bài kiểm tra'))
+                                ->route('platform.systems.courses.exam', $course->id)
                                 ->icon('pencil'),
 
                             Button::make(__('Xoá'))

@@ -119,8 +119,10 @@
                                                             @if(isset(Auth::user()->teacher->id))
                                                                     @if (Auth::user()->teacher->id == $course->teacher_id)
                                                                         <a href="{{route("edit-exam",["id"=>$exam])}}"
-                                                                           class="btn ti-pencil">&nbsp;Update</a><a
-                                                                            href="{{route("edit-exam",$exam->id)}}"
+                                                                           class="btn ti-pencil">&nbsp;Update</a>
+                                                                        <a href="{{route("edit-exam-questions",["examid"=>$exam->id])}}"
+                                                                           class="btn ti-pencil">&nbsp;Sửa câu hỏi</a>
+                                                                        <a href="{{route("edit-exam",$exam->id)}}"
                                                                             class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Xoá</a>
                                                                     @endif
                                                                 @endif

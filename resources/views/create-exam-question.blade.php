@@ -34,37 +34,37 @@
                                 </ul>
                             @endif
 
-                            @foreach($exam->questions as $question )
+                            @for ($i = 0; $i < $exam->number_of_questions; $i++)
                                 <hr>
                                 <div class="form-group">
-                                    <label for="">Câu hỏi thứ {{$loop->index+1}}</label>
-                                    <input name="question[{{$loop->index}}]" type="text" id="" class="form-control"
-                                           value="{{$question->question}}" aria-describedby="helpId" required>
+                                    <label for="">Câu hỏi thứ {{$i+1}}</label>
+                                    <input name="question[{{$i}}]" type="text" id="" class="form-control"
+                                           value="Câu hỏi thứ {{$i + 1}}" aria-describedby="helpId" required>
                                 </div>
                                 <div class="p-4">
                                     <div class="form-group">
                                         <label for="">Đáp án A</label>
-                                        <input name="answerA[{{$loop->index}}]" type="text" id="" class="form-control"
-                                               value="{{$question->answerA}}" aria-describedby="helpId" required>
+                                        <input name="answerA[{{$i}}]" type="text" id="" class="form-control"
+                                               value="Đáp án A : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án B</label>
-                                        <input name="answerB[{{$loop->index}}]" type="text" id="" class="form-control"
-                                               value="{{$question->answerB}}" aria-describedby="helpId" required>
+                                        <input name="answerB[{{$i}}]" type="text" id="" class="form-control"
+                                               value="Đáp án B : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án C</label>
-                                        <input name="answerC[{{$loop->index}}]" type="text" id="" class="form-control"
-                                               value="{{$question->answerC}}" aria-describedby="helpId" required>
+                                        <input name="answerC[{{$i}}]" type="text" id="" class="form-control"
+                                               value="Đáp án C : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án D</label>
-                                        <input name="answerD[{{$loop->index}}]" type="text" id="" class="form-control"
-                                               value="{{$question->answerD}}" aria-describedby="helpId" required>
+                                        <input name="answerD[{{$i}}]" type="text" id="" class="form-control"
+                                               value="Đáp án D : Câu {{$i + 1}}" aria-describedby="helpId" required>
                                     </div>
                                     <div>
                                         <label for="">Đáp án đúng</label>
-                                        <select class="rounded" name="correctAnswer[{{$loop->index}}]" id="cars">
+                                        <select class="rounded" name="correctAnswer[{{$i}}]" id="cars">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -72,7 +72,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            @endforeach
+                            @endfor
 
                             <div class="form-group">
 

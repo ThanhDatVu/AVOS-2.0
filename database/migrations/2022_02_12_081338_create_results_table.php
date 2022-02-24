@@ -17,7 +17,7 @@ class CreateResultsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('exam_id');
-            $table->float('points');
+            $table->float('points')->default(0);
             $table->timestamps();
         });
     }

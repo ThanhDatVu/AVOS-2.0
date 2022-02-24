@@ -11,7 +11,7 @@
 
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Tạo câu hỏi') }} - Phần: {{ $exam->title}} - Khoá học: {{ $exam->course->title}}
+            {{ __('Sửa câu hỏi') }} - Phần: {{ $exam->title}} - Khoá học: {{ $exam->course->title}}
         </h2>
     </x-slot>
 
@@ -34,37 +34,37 @@
                                 </ul>
                             @endif
 
-                            @foreach($exam->questions as $question )
+
                                 <hr>
                                 <div class="form-group">
-                                    <label for="">Câu hỏi thứ {{$loop->index+1}}</label>
-                                    <input name="question[{{$loop->index}}]" type="text" id="" class="form-control"
+
+                                    <input name="question" type="text" id="" class="form-control"
                                            value="{{$question->question}}" aria-describedby="helpId" required>
                                 </div>
                                 <div class="p-4">
                                     <div class="form-group">
                                         <label for="">Đáp án A</label>
-                                        <input name="answerA[{{$loop->index}}]" type="text" id="" class="form-control"
+                                        <input name="answerA" type="text" id="" class="form-control"
                                                value="{{$question->answerA}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án B</label>
-                                        <input name="answerB[{{$loop->index}}]" type="text" id="" class="form-control"
+                                        <input name="answerB" type="text" id="" class="form-control"
                                                value="{{$question->answerB}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án C</label>
-                                        <input name="answerC[{{$loop->index}}]" type="text" id="" class="form-control"
+                                        <input name="answerC" type="text" id="" class="form-control"
                                                value="{{$question->answerC}}" aria-describedby="helpId" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Đáp án D</label>
-                                        <input name="answerD[{{$loop->index}}]" type="text" id="" class="form-control"
+                                        <input name="answerD" type="text" id="" class="form-control"
                                                value="{{$question->answerD}}" aria-describedby="helpId" required>
                                     </div>
                                     <div>
                                         <label for="">Đáp án đúng</label>
-                                        <select class="rounded" name="correctAnswer[{{$loop->index}}]" id="cars">
+                                        <select class="rounded" name="correctAnswer" id="cars">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -72,7 +72,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            @endforeach
+
 
                             <div class="form-group">
 

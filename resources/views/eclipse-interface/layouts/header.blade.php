@@ -15,7 +15,11 @@
     <meta charset="UTF-8"/>
     <!-- Site Title -->
 
-    <link rel="shortcut icon" href="{{config('app.icon', Storage::url("images/Computer.png"))}}" type="image/x-icon">
+    <link
+        href="/favicon.ico"
+        id="favicon"
+        rel="icon"
+    >
     <title>{{config("app.name")}} {{ isset($title)?' | '.$title:""}}</title>
 
     <link href="{{ asset("https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700")}}"

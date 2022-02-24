@@ -18,6 +18,7 @@ use App\Orchid\Screens\User\UserProfileScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 use App\Orchid\Screens\EmailSenderScreen;
+use App\Orchid\Screens\LessonListScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,7 +84,23 @@ Route::screen('courses', \App\Orchid\Screens\KhoaHocScreen::class)
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
-            ->push(__('Khoá học'), route('platform.systems.users'));
+            ->push(__('Khoá học'), route('platform.systems.courses'));
+    });
+// Platform > System > Khoahoc > Lesson
+Route::screen('course/{courseid}/lessons', \App\Orchid\Screens\LessonListScreen::class)
+    ->name('platform.systems.courses.lesson')
+    ->breadcrumbs(function (Trail $trail, $courseid) {
+        return $trail
+            ->parent('platform.systems.courses')
+            ->push(__('Bài học'), route('platform.systems.courses.lesson', $courseid));
+    });
+// Platform > System > Khoahoc > Exam
+Route::screen('course/{courseid}/exams', \App\Orchid\Screens\ExamListScreen::class)
+    ->name('platform.systems.courses.exam')
+    ->breadcrumbs(function (Trail $trail, $courseid) {
+        return $trail
+            ->parent('platform.systems.courses')
+            ->push(__('Bài kiểm tra'), route('platform.systems.courses.exam', $courseid));
     });
 // Platform > System > DanhmucKhoahoc
 Route::screen('categories', \App\Orchid\Screens\DanhMucKhoaHocScreen::class)

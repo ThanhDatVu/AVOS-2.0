@@ -65,7 +65,6 @@ class UserGradeScreen extends Screen
         $this->user = $user;
         $results = Result::all()->where('user_id', $user->id);
 
-
         $user->load(['roles']);
 
         return [
