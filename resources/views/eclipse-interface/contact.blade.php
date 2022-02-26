@@ -10,9 +10,9 @@
                     </h1>
                     <div class="link-nav">
 						<span class="box">
-							<a href="index.html">Home </a>
+							<a href="{{route('home')}}">Trang chủ </a>
 							<i class="lnr lnr-arrow-right"></i>
-							<a href="contacts.html">Contacts</a>
+							<a href="{{route('contact')}}">Liên hệ</a>
 						</span>
                     </div>
                 </div>
@@ -35,9 +35,9 @@
                             <span class="lnr lnr-home"></span>
                         </div>
                         <div class="contact-details">
-                            <h5>Messassi, Yaoundé</h5>
+                            <h5>Hà Nội, Việt Nam</h5>
                             <p>
-                                Carrefour Messassi
+                                Vũ Thành Đạt
                             </p>
                         </div>
                     </div>
@@ -46,8 +46,8 @@
                             <span class="lnr lnr-phone-handset"></span>
                         </div>
                         <div class="contact-details">
-                            <h5>(00237) 657675216</h5>
-                            <p>Mon to Fri 8am to 6 pm</p>
+                            <h5>(+84) 0869 659 930</h5>
+                            <p>Giờ hành chính từ Thứ Hai đến Thứ sáu</p>
                         </div>
                     </div>
                     <div class="flex-row single-contact-address d-flex">
@@ -55,8 +55,8 @@
                             <span class="lnr lnr-envelope"></span>
                         </div>
                         <div class="contact-details">
-                            <h5>danieluokof@gmail.com</h5>
-                            <p>Send us your query anytime!</p>
+                            <h5>vuthanhdat26dev@gmail.com</h5>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -64,28 +64,28 @@
                     <form class="text-right form-area contact-form" id="myForm" action="mail.php" method="post">
                         <div class="row">
                             <div class="col-lg-6 form-group">
-                                <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''"
-                                       onblur="this.placeholder = 'Enter your name'"
+                                <input name="name" placeholder="Tên của bạn" onfocus="this.placeholder = ''"
+                                       onblur="this.placeholder = 'Tên của bạn'"
                                        class="mb-20 common-input form-control" required="" type="text">
 
-                                <input name="email" placeholder="Enter email address"
+                                <input name="email" placeholder="Địa chỉ Email của bạn"
                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                                       onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
+                                       onfocus="this.placeholder = ''" onblur="this.placeholder = 'Địa chỉ Email của bạn'"
                                        class="mb-20 common-input form-control"
                                        required="" type="email">
 
-                                <input name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''"
-                                       onblur="this.placeholder = 'Enter subject'"
+                                <input name="subject" placeholder="Chủ đề" onfocus="this.placeholder = ''"
+                                       onblur="this.placeholder = 'Chủ đề'"
                                        class="mb-20 common-input form-control" required="" type="text">
                             </div>
                             <div class="col-lg-6 form-group">
 								<textarea class="common-textarea form-control" name="message"
-                                          placeholder="Enter Messege" onfocus="this.placeholder = ''"
-                                          onblur="this.placeholder = 'Enter Messege'" required=""></textarea>
+                                          placeholder="Nhập nội dung" onfocus="this.placeholder = ''"
+                                          onblur="this.placeholder = 'Nhập nội dung'" required=""></textarea>
                             </div>
                             <div class="col-lg-12">
                                 <div class="alert-msg" style="text-align: left;"></div>
-                                <button class="btn" style="float: right;">Send Message</button>
+                                <button class="btn" style="float: right;">Gửi</button>
                             </div>
                         </div>
                     </form>

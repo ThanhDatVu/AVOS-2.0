@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Orchid\Layouts\Course;
 
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\Link;
@@ -53,6 +55,15 @@ class CourseListLayout extends Table
                 ->sort()
                 ->render(function (Course $course) {
                     return $course->category;
+                }),
+            TD::make('category', __('Số học viên'))
+                ->sort()
+                ->render(function (Course $course) {
+
+                    $userIds1 = DB::table('course_user')->where('course_id', $course->id)->pluck('user_id');
+                    $userIds2 = DB::table('users')->where('class', $course->category)->pluck('id');
+                    $userIds =$userIds1->merge($userIds2);
+                    return $userIds->count();
                 }),
 
             TD::make('updated_at', __('Cập nhật lần cuối'))

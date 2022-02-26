@@ -31,8 +31,7 @@ class BaiHocScreen extends Screen
     public function query(): array
     {
         return [
-            'lessons' => ::with('teacher')
-                ->paginate(),
+
 
 
         ];

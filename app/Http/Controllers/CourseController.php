@@ -2,27 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Result;
 use URL;
 use Session;
 use Exception;
 use App\Models\Course;
-use App\Models\User;
-use PayPal\Api\Item;
-use App\Models\Lesson;
-use PayPal\Api\Payee;
-use PayPal\Api\Payer;
-use PayPal\Api\Amount;
-use PayPal\Api\Details;
-use PayPal\Api\Payment;
-use App\Models\CourseUser;
-use PayPal\Api\ItemList;
+use App\Models\Exam;
+
 use App\Models\Category;
-use PayPal\Api\Transaction;
-use PayPal\Rest\ApiContext;
+
 use Illuminate\Http\Request;
-use PayPal\Api\RedirectUrls;
-use Illuminate\Routing\RouteUri;
-use PayPal\Api\PaymentExecution;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
@@ -244,7 +234,7 @@ class CourseController extends Controller
             $userId = Auth::user()->id;
             $courseIds1 = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
             $courseIds2 = DB::table('courses')->where('category', Auth::user()->class)->pluck('id');
-            $courseIds =$courseIds1->merge($courseIds2);
+            $courseIds = $courseIds1->merge($courseIds2);
 
             return view('my-courses', ["courses" => Course::whereIn('id', $courseIds)->get()]);
         } else {
@@ -262,9 +252,11 @@ class CourseController extends Controller
 
         if (true) {
             $userId = Auth::user()->id;
-            $courseIds = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
+            $courseIds1 = DB::table('course_user')->where('user_id', $userId)->pluck('course_id');
+            $courseIds2 = DB::table('courses')->where('category', Auth::user()->class)->pluck('id');
+            $courseIds = $courseIds1->merge($courseIds2);
 
-            return view('dashboard', ["courses" => Course::whereIn('id', $courseIds)->get()]);
+            return view('dashboard', ["courses" => Course::whereIn('id', $courseIds)->get(), "results" => Auth::user()->results] );
         } else {
             return view("dashboard");
         }

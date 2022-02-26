@@ -12,6 +12,8 @@
                 <div class="border-b border-gray-200">
 
                     <div class="container w-100 lg:w-4/5 mx-auto flex flex-col">
+                        <hr>
+                        <h2 class="pt-2">Các khoá học của tôi</h2>
                     @foreach($courses as $course)
 
 
@@ -36,14 +38,43 @@
                                         {{$course->teacher->user->fullname}}  &bull; {{$course->created_at}}
                                     </p>
                                 </div>
-                            </div><!--/ card-->
-
-                            <!--================ Start Course Details Area =================-->
-
-                            <!--================ End Course Details Area =================-->
+                            </div>
 
 
                         @endforeach
+                        <hr>
+                        <h2 class="m-3">Các kết quả bài kiểm tra của tôi</h2>
+                        <table class="table-auto min-w-full divide-y divide-gray-200 2xl:my-4">
+                            <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Khoá học
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Tên bài kiểm tra
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Sô điểm
+                                </th>
+
+                            </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                            @foreach($results as $result)
+                                <tr>
+                                    <td>{{$result->exam->course->title}}</td>
+                                    <td>{{$result->exam->title}}</td>
+                                    <td>{{$result->points . '/' . $result->exam->number_of_questions}}</td>
+                                </tr>
+
+                            @endforeach
+
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

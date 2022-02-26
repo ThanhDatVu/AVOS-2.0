@@ -26,15 +26,15 @@
                 <div
                     class="flex flex-col items-center justify-center w-full bg-green-600 bg-opacity-25 md:w-1/2 backdrop">
                     <h1 class="my-2 text-3xl font-extrabold text-white md:text-4xl md:my-0">
-                        Better Learning
+                        AVOS
                     </h1>
                     <p class="hidden mb-2 font-mono text-white md:block">
-                        Get something new for your life.
+                        "Học, học nữa, học mãi"
                     </p>
                 </div>
                 <div class="flex flex-col items-center w-full px-4 py-5 bg-white md:w-1/2 md:py-8">
-                    <h3 class="flex items-center mb-4 text-3xl font-bold text-green-500">
-                        LOGIN
+                    <h3 class="flex items-center mb-4 text-3xl font-bold text-gray-600">
+                            ĐĂNG NHẬP
                     </h3>
 
                     <!-- Session Status -->
@@ -61,7 +61,7 @@
                         @if (Route::has('password.request'))
                             <a class="float-left text-sm text-left underline gray-600 text- hover:text-green-900"
                                href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                                {{ __('Quên mật khẩu?') }}
                             </a>
                     @endif
 
@@ -71,27 +71,25 @@
                                 <input id="remember_me" type="checkbox"
                                        class="text-indigo-600 border-gray-300 rounded shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                        name="remember">
-                                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                <span class="ml-2 text-sm text-gray-600">{{ __('Lưu đăng nhập') }}</span>
                             </label>
                         </div>
                         <div class="flex items-center justify-end w-full mt-4">
                             <button
                                 class="flex items-center justify-center w-full px-3 py-1 ml-2 text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none focus:ring">
-                                <p class="ml-1 text-lg">
-                                    Login
-                                </p>
-                            </button>
+
+                            Đăng nhập</button>
                         </div>
 
 
                     </form>
 
                     <p class="mt-2 text-sm text-gray-700">
-                        Don't have an account?
+                        Bạn chưa có tài khoản?
                         @if (Route::has('register'))
                             <a href="{{ route("register") }}"
                                class="mt-3 font-bold text-green-500 underline hover:text-green-600 focus:outline-none">
-                                register
+                                Đăng ký
                             </a>
                         @endif
                     </p>
