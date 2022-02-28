@@ -120,6 +120,8 @@
                                                                     @if (Auth::user()->teacher->id == $course->teacher_id)
                                                                         <a href="{{route("edit-exam",["id"=>$exam])}}"
                                                                            class="btn ti-pencil">&nbsp;Update</a>
+                                                                        <a href="{{route("show-all-exam-result",["examid"=>$exam->id])}}"
+                                                                           class="btn ti-eye">&nbsp;Xem kết quả</a>
                                                                         <a href="{{route("edit-exam-questions",["examid"=>$exam->id])}}"
                                                                            class="btn ti-pencil">&nbsp;Sửa câu hỏi</a>
                                                                         <a href="{{route("edit-exam",$exam->id)}}"

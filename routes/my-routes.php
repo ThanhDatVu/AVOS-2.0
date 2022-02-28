@@ -31,6 +31,8 @@ Route::get('/courses/exam/{id}/result', [ExamController::class, "showResult"])->
 Route::get('/edit-exam/{id}', [ExamController::class, "editExam"])->middleware(['auth'])->name('edit-exam');
 //lưu bài kiểm tra
 Route::post('/edit-exam/{id}', [ExamController::class, "submitExam"])->middleware(['auth'])->name('submit-edited-exam');
+//Xem tổng điểm bài kiểm tra
+Route::get('/exam/{examid}/totalresult', [ExamController::class, "showAllExamResult"])->middleware(['auth'])->name('show-all-exam-result');
 //Tạo câu hỏi trong bài kiểm tra
 Route::get('exam/{examid}/question/create', [QuestionController::class, "createExamQuestion"])->middleware(['auth'])->name('create-questions');
 //Lưu câu hỏi trong bài kiểm tra

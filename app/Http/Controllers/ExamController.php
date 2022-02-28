@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\exam;
 use App\Models\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -150,5 +151,19 @@ class ExamController extends Controller
         return view('exam-result', ["exam" => $exam, "answer" => $answers, "mark" => $mark]);
 
     }
+    /**
+     * Show the form for creating a new course.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAllExamResult($examid)
+    {
+            $exam = Exam::find($examid);
+            $results = Result::where('exam_id', $examid)->get();
 
+
+
+            return view('total-exam-result', ["results" => $results, "exam" => $exam] );
+
+    }
 }
