@@ -201,11 +201,15 @@ class ExampleScreen extends Screen
                 fputcsv($csv, ['header:col1', 'header:col2', 'header:col3']);
             });
 
-            collect([
+            $data = collect([
                 ['row1:col1', 'row1:col2', 'row1:col3'],
                 ['row2:col1', 'row2:col2', 'row2:col3'],
-                ['row3:col1', 'row3:col2', 'row3:col3'],
-            ])->each(function (array $row) use ($csv) {
+
+            ]);
+
+
+            $data->push(['row3:col1', 'alo', 'alo']);
+            $data->each(function (array $row) use ($csv) {
                 fputcsv($csv, $row);
             });
 

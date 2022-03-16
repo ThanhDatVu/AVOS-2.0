@@ -82,17 +82,11 @@ class UserGradeScreen extends Screen
     public function commandBar(): array
     {
         return [
-
-
-            Button::make(__('Remove'))
-                ->icon('trash')
-                ->confirm(__('Once the account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.'))
-                ->method('remove')
-                ->canSee($this->user->exists),
-
-            Button::make(__('Save'))
-                ->icon('check')
-                ->method('save'),
+            Button::make('Xuất ra CSV')
+                ->method('export')
+                ->icon('cloud-download')
+                ->rawClick()
+                ->novalidate(),
         ];
     }
 
@@ -199,5 +193,27 @@ class UserGradeScreen extends Screen
         return redirect()->route('platform.systems.users');
     }
 
+    public function export(User $user)
+    {
+        $results = Result::all()->where('user_id', $user->id);
+        $data = collect([
+        ]);
+        foreach ($results as $result) {
+            $data->push([$result->exam->course->title,$result->exam->title,$result->points . ' trên ' . $result->exam->number_of_questions]);
+        }
 
+        return response()->streamDownload(function () use ($data) {
+
+            $csv = tap(fopen('php://output', 'wb'), function ($csv) {
+                fputcsv($csv, ['Tên khoá học ', 'Tên bài kiểm tra ' , 'Điểm số ']);
+            });
+            $data->each(function (array $row) use ($csv) {
+                fputcsv($csv, $row);
+            });
+
+            return tap($csv, function ($csv) {
+                fclose($csv);
+            });
+        }, 'Điểm số cá nhân '.$user->fullname.'.csv');
+    }
 }

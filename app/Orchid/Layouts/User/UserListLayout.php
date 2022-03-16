@@ -48,6 +48,13 @@ class UserListLayout extends Table
                             'user' => $user->id,
                         ]);
                 }),
+            TD::make('class', __('Lớp'))
+                ->sort()
+                ->cantHide()
+                ->filter(Input::make())
+                ->render(function (User $user) {
+                    return $user->class;
+                }),
             TD::make('role', __('Role'))
                 ->sort()
                 ->cantHide()

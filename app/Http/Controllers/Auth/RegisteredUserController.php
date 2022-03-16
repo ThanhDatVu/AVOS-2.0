@@ -80,7 +80,7 @@ class RegisteredUserController extends Controller
             'name' => $request->username,
             'genre' => $request->gender,
             'telephone' => $request->phone,
-            "biographie" => $request->biographie,
+            "class" => $request->class,
             'remember_token' => str_shuffle(Str::random(5) . $request->name . now()),
             'avatar' => avatar($request),
             'password' => Hash::make($request->password),
