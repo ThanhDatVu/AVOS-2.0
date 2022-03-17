@@ -10,7 +10,7 @@
     </style>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Sửa bài học') }} - Phần: {{ $exam->title}} - Khoá học: {{ $exam->course->title}}
+            {{ __('Sửa bài kiểm tra') }} - Phần: {{ $exam->title}} - Khoá học: {{ $exam->course->title}}
         </h2>
     </x-slot>
 

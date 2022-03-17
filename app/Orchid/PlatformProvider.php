@@ -37,7 +37,7 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Danh mục khoá học')
                 ->icon('list')
                 ->route('platform.systems.categories'),
-            Menu::make('Yêu cầu khoá học')
+            Menu::make('Yêu cầu tham gia khoá học')
                 ->icon('list')
                 ->route('platform.systems.enrollrequest')
                 ->badge(function () {

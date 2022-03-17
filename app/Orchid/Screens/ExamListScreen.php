@@ -136,10 +136,10 @@ class ExamListScreen extends Screen
                             ->list([
 
                                 Link::make(__('Edit'))
-                                    ->route('platform.systems.courses.lesson', $exam->id)
+                                    ->route('edit-exam-questions', $exam->id)
                                     ->icon('pencil'),
                                 Link::make(__('Xem các câu hỏi'))
-                                    ->route('platform.systems.courses.lesson', $exam->id)
+                                    ->route('exam', $exam->id)
                                     ->icon('eye'),
                                 Link::make(__('Xem danh sách điểm'))
                                     ->route("show-all-exam-result",["examid"=>$exam->id])
