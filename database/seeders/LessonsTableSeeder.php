@@ -14,20 +14,20 @@ class LessonsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('lessons')->delete();
-
-        \DB::table('lessons')->insert(array(
-            0 =>
-                array(
-                    'id' => 1,
-                    'course_id' => 3,
-                    'title' => 'Chương 1 : Tổng quan',
-                    'descriptif' => 'tổng quan về hệ quản trị CSDL',
-                    'image' => 'lessons/default2.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+        
+        \DB::table('lessons')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'course_id' => 3,
+                'title' => 'Chương 1 : Tổng quan',
+                'descriptif' => 'tổng quan về hệ quản trị CSDL',
+                'image' => 'lessons/default2.png',
+                'objectif' => '8',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>Hệ quản trị cơ sở dữ liệu (DBMS) l&agrave; một phần mềm cho ph&eacute;p tạo lập c&aacute;c CSDL cho c&aacute;c ứng dụng kh&aacute;c nhau v&agrave; điều khiển mọi truy cập tới c&aacute;c CSDL đ&oacute;. Nghĩa l&agrave;, hệ quản trị CSDL cho ph&eacute;p định nghĩa (x&aacute;c định kiểu, cấu tr&uacute;c, r&agrave;ng buộc dữ liệu), tạo lập (lưu trữ dữ liệu tr&ecirc;n c&aacute;c thiết bị nhớ) v&agrave; thao t&aacute;c (truy vấn, cập nhật, kết xuất, ...) c&aacute;c CSDL cho c&aacute;c ứng dụng kh&aacute;c nhau. V&iacute; dụ: MS. Access, MS. SQL Server, ORACLE, IBM DB2, ...</p>
 <p><span class="progressive-img_capturer progressive-img_wrapper article-img-wrapper"><canvas class="progressive-img_tiny progressive-img_filter-blur article-img-tiny progressive-img_hidden" width="328" height="224"></canvas><img class="progressive-img_full article-img" src="https://images.viblo.asia/dfcc8972-f517-4294-b2e2-56825d856df3.png" alt="" width="328" height="224" data-full-src="https://images.viblo.asia/dfcc8972-f517-4294-b2e2-56825d856df3.png" data-tiny-src="https://images.viblo.asia/60/dfcc8972-f517-4294-b2e2-56825d856df3.png" data-zoom-src="https://images.viblo.asia/full/dfcc8972-f517-4294-b2e2-56825d856df3.png" data-srcset="https://images.viblo.asia/retina/dfcc8972-f517-4294-b2e2-56825d856df3.png 2x" data-wrapper-class="article-img-wrapper" data-tiny-class="article-img-tiny" data-full-class="article-img" /></span></p>
 <p>-- Bộ Quản l&yacute; lưu trữ</p>
@@ -49,19 +49,19 @@ class LessonsTableSeeder extends Seeder
 <li>Quản l&yacute; điều khiển tương tranh.</li>
 <li>Ph&aacute;t hiện lỗi v&agrave; phục hồi CSDL</li>
 </ul>',
-                    'file' => 'pdf/chuong1.pdf',
-                    'created_at' => '2022-02-17 14:35:22',
-                    'updated_at' => '2022-02-17 14:35:22',
-                ),
-            1 =>
-                array(
-                    'id' => 2,
-                    'course_id' => 3,
-                    'title' => 'Chuong 2 : Một số hệ quản trị CSDL',
-                    'descriptif' => 'Một số hệ quản trị CSDL',
-                    'image' => 'lessons/default1.png',
-                    'objectif' => '7',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+                'file' => 'pdf/chuong1.pdf',
+                'created_at' => '2022-02-17 14:35:22',
+                'updated_at' => '2022-02-17 14:35:22',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'course_id' => 3,
+                'title' => 'Chuong 2 : Một số hệ quản trị CSDL',
+                'descriptif' => 'Một số hệ quản trị CSDL',
+                'image' => 'lessons/default1.png',
+                'objectif' => '7',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p><strong>Một số hệ quản trị CSDL</strong></p>
 <p><strong>1. MySQL</strong></p>
 <ul>
@@ -122,19 +122,19 @@ class LessonsTableSeeder extends Seeder
 <li>Oracle Database Enterprise Edition: l&agrave; phi&ecirc;n bản mạnh mẽ nhất, cung cấp nhiều t&iacute;nh năng bảo mật cao cấp, gi&uacute;p cho c&aacute;c c&ocirc;ng ty quản l&yacute; truy xuất c&aacute;c nguồn t&agrave;i nguy&ecirc;n v&agrave; dữ liệu một c&aacute;ch hữu hiệu v&agrave; tiện lợi hơn.</li>
 <li>Oracle Database Personal Edition: l&agrave; một sản phẩm đặc biệt, c&oacute; chứa hầu hết c&aacute;c t&iacute;nh năng của Enterprise Edition (ngoại trừ Oracle Real Application Clusters), ph&ugrave; hợp cho m&ocirc;i trường ph&aacute;t triển v&agrave; triển khai một người d&ugrave;ng c&oacute; đ&ograve;i hỏi c&oacute; sự tương th&iacute;ch đầy đủ với c&aacute;c phi&ecirc;n bản kh&aacute;c của Oracle.</li>
 </ul>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:38:26',
-                    'updated_at' => '2022-02-17 14:38:26',
-                ),
-            2 =>
-                array(
-                    'id' => 3,
-                    'course_id' => 3,
-                    'title' => 'Chương 3 : hệ quản trị csdl SQL',
-                    'descriptif' => 'hệ quản trị csdl SQL',
-                    'image' => 'lessons/default2.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+                'file' => 'pdf/SQL Chương 2 Một số hệ quản trị CSDL.pdf',
+                'created_at' => '2022-02-17 14:38:26',
+                'updated_at' => '2022-02-17 14:38:26',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'course_id' => 3,
+                'title' => 'Chương 3 : hệ quản trị csdl SQL',
+                'descriptif' => 'hệ quản trị csdl SQL',
+                'image' => 'lessons/default2.png',
+                'objectif' => '8',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>&Aacute;df&agrave;</p>
 <p>&nbsp;</p>
 <p>
@@ -198,20 +198,20 @@ nhập dữ liệu, gồm:
 - Mô hình CSDL Client/Server (Client/Server database model)
 - Mô hình CSDL phân tán (Distributed database model)
 </p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:40:00',
-                    'updated_at' => '2022-02-17 14:40:00',
-                ),
-            3 =>
-                array(
-                    'id' => 4,
-                    'course_id' => 3,
-                    'title' => 'Chuong 4 : SQL server
+                'file' => 'pdf/SQL Chương 3 MY SQL.pdf',
+                'created_at' => '2022-02-17 14:40:00',
+                'updated_at' => '2022-02-17 14:40:00',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'course_id' => 3,
+                'title' => 'Chuong 4 : SQL server
 ',
-                    'descriptif' => 'SQL server',
-                    'image' => 'lessons/default1.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+                'descriptif' => 'SQL server',
+                'image' => 'lessons/default1.png',
+                'objectif' => '8',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p><strong>Microsoft SQL Server</strong>&nbsp;l&agrave; một hệ quản trị cơ sở dữ, cung cấp c&aacute;ch tổ chức dữ liệu bằng c&aacute;ch lưu ch&uacute;ng v&agrave;o c&aacute;c bảng. Dữ liệu quan hệ được lưu trữ trong c&aacute;c bảng v&agrave; c&aacute;c quan hệ đ&oacute; được định nghĩa giữa c&aacute;c bảng với nhau. Người d&ugrave;ng truy cập dữ liệu tr&ecirc;n Server th&ocirc;ng qua ứng dụng. Người quản trị CSDL truy cập Server trực tiếp để thực hiện c&aacute;c chức năng cấu h&igrave;nh, quản trị v&agrave; thực hiện c&aacute;c thao t&aacute;c bảo tr&igrave; CSDL. Ngo&agrave;i ra, SQL Server l&agrave; một CSDL c&oacute; khả năng mở rộng, nghĩa l&agrave; ch&uacute;ng c&oacute; thể lưu một lượng lớn dữ liệu v&agrave; hỗ trợ t&iacute;nh năng cho ph&eacute;p nhiều người d&ugrave;ng truy cập dữ liệu đồng thời. C&aacute;c phi&ecirc;n bản của SQL Server phổ biến hiện n&agrave;y tr&ecirc;n thị trường l&agrave; SQL Server 7.0, SQL Server 2000, SQL Server 2005, SQL Server 2008, ...</p>
 <p>C&aacute;c phi&ecirc;n bản của SQL Server gồm 6 bản ch&iacute;nh dưới đ&acirc;y:</p>
 <ul>
@@ -225,19 +225,19 @@ nhập dữ liệu, gồm:
 <li>SQL Client: L&agrave; phi&ecirc;n bản d&agrave;nh cho m&aacute;y kh&aacute;ch, khi thực hiện khai th&aacute;c sẽ thực hiện kết nối đến phi&ecirc;n bản SQL Server, phi&ecirc;n bản n&agrave;y cung cấp giao diện GUI khai th&aacute;c cho người sử dụng.</li>
 <li>SQL Connectivity only: L&agrave; phi&ecirc;n bản sử dụng chỉ cho c&aacute;c ứng dụng để kết nối đến SQL Server, phi&ecirc;n bản n&agrave;y kh&ocirc;ng cung cấp c&ocirc;ng cụ GUI cho người d&ugrave;ng khai th&aacute;c SQL Server.</li>
 </ul>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:46:32',
-                    'updated_at' => '2022-02-17 14:46:32',
-                ),
-            4 =>
-                array(
-                    'id' => 5,
-                    'course_id' => 4,
-                    'title' => 'Chương 1 : Tổng quan về QTM',
-                    'descriptif' => 'Tổng quan về QTM',
-                    'image' => 'lessons/default2.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><strong>Quản trị mạng m&aacute;y t&iacute;nh học g&igrave;?</strong></p>
+                'file' => 'pdf/SQL Chương 4 SQL server.pdf',
+                'created_at' => '2022-02-17 14:46:32',
+                'updated_at' => '2022-02-17 14:46:32',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'course_id' => 4,
+                'title' => 'Chương 1 : Tổng quan về QTM',
+                'descriptif' => 'Tổng quan về QTM',
+                'image' => 'lessons/default2.png',
+                'objectif' => '8',
+                'contenu' => '<p><strong>Quản trị mạng m&aacute;y t&iacute;nh học g&igrave;?</strong></p>
 <p>Học ng&agrave;nh Quản trị mạng m&aacute;y t&iacute;nh bạn sẽ được đ&agrave;o tạo chuy&ecirc;n s&acirc;u về: khoa học m&aacute;y t&iacute;nh, kỹ thuật m&aacute;y t&iacute;nh, hệ thống th&ocirc;ng tin, kỹ thuật phần mềm, mạng m&aacute;y t&iacute;nh v&agrave; truyền th&ocirc;ng,&hellip; C&ugrave;ng với đ&oacute; l&agrave; c&aacute;c kỹ năng nghiệp vụ cần thiết như:</p>
 <p>+ Quản trị hệ thống</p>
 <p>+ C&agrave;i đặt phần mềm</p>
@@ -250,57 +250,57 @@ nhập dữ liệu, gồm:
 <p>+ Giải quyết sự cố</p>
 <p><img class="alignnone wp-image-6652 size-full" src="https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1.jpg 800w, https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1-300x179.jpg 300w, https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1-768x458.jpg 768w, https://caodangquoctehanoi.edu.vn/wp-content/uploads/2021/06/QTM-MT-1-184x109.jpg 184w" alt="" width="800" height="477" /></p>
 <p>Tại Trường Cao đẳng Quốc tế H&agrave; Nội, sinh vi&ecirc;n ng&agrave;nh Quản trị mạng m&aacute;y t&iacute;nh được trang bị đầy đủ kiến thức đại cương, kiến thức chuy&ecirc;n ng&agrave;nh. Đồng thời ch&uacute; trọng thực h&agrave;nh, ph&aacute;t triển c&aacute;c kỹ năng triển khai ứng dụng c&ocirc;ng nghệ th&ocirc;ng tin, khả năng nắm bắt c&aacute;c xu thế c&ocirc;ng nghệ mới. Kh&ocirc;ng chỉ vậy, nh&agrave; trường đẩy mạnh hợp t&aacute;c với c&aacute;c doanh nghiệp để tạo điều kiện cho sinh vi&ecirc;n thực tập, tiếp cận việc l&agrave;m.<iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:48:55',
-                    'updated_at' => '2022-02-17 14:48:55',
-                ),
-            5 =>
-                array(
-                    'id' => 11,
-                    'course_id' => 4,
-                    'title' => 'Chuong 2 : Lên kế hoạch, quản trị dự án',
-                    'descriptif' => 'Lên kế hoạch, quản trị dự án',
-                    'image' => 'lessons/default0.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+                'file' => 'pdf/QTM Chương 1 Tổng quan.pdf',
+                'created_at' => '2022-02-17 14:48:55',
+                'updated_at' => '2022-02-17 14:48:55',
+            ),
+            5 => 
+            array (
+                'id' => 11,
+                'course_id' => 4,
+                'title' => 'Chuong 2 : Lên kế hoạch, quản trị dự án',
+                'descriptif' => 'Lên kế hoạch, quản trị dự án',
+                'image' => 'lessons/default0.png',
+                'objectif' => '8',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>Gdsgdsgdsg</p>
 <p>Sdgdsg</p>
 <p>Sdgdsgdsg</p>
 <p>Sdgdsg</p>
 <p>Dsgdsgdsg</p>
 <p>Sdgdsgdsg</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:56:34',
-                    'updated_at' => '2022-02-17 14:56:34',
-                ),
-            6 =>
-                array(
-                    'id' => 12,
-                    'course_id' => 4,
-                    'title' => 'Chuong 3 : Giải quyết sự cố',
-                    'descriptif' => 'Giải quyết sự cố',
-                    'image' => 'lessons/default1.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+                'file' => 'pdf/QTM Chương 2 Lên kế hoạch.pdf',
+                'created_at' => '2022-02-17 14:56:34',
+                'updated_at' => '2022-02-17 14:56:34',
+            ),
+            6 => 
+            array (
+                'id' => 12,
+                'course_id' => 4,
+                'title' => 'Chuong 3 : Giải quyết sự cố',
+                'descriptif' => 'Giải quyết sự cố',
+                'image' => 'lessons/default1.png',
+                'objectif' => '8',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>Fds&agrave;dsgg</p>
 <p>Dsgdsgdsg</p>
 <p>Dsgdsgdsg</p>
 <p>Dsgdsgds</p>
 <p>Gdsgdsg</p>
 <p>Dsgdsg</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:57:10',
-                    'updated_at' => '2022-02-17 14:57:10',
-                ),
-            7 =>
-                array(
-                    'id' => 13,
-                    'course_id' => 5,
-                    'title' => 'Chương 1 : tổng quan về phát luật VN',
-                    'descriptif' => 'tổng quan về phát luật VN',
-                    'image' => 'lessons/default0.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/hh5tBZ9yxcU" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+                'file' => 'pdf/QTM Chương 3 Giải quyết sự cố.pdf',
+                'created_at' => '2022-02-17 14:57:10',
+                'updated_at' => '2022-02-17 14:57:10',
+            ),
+            7 => 
+            array (
+                'id' => 13,
+                'course_id' => 5,
+                'title' => 'Chương 1 : tổng quan về phát luật VN',
+                'descriptif' => 'tổng quan về phát luật VN',
+                'image' => 'lessons/default0.png',
+                'objectif' => '8',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/hh5tBZ9yxcU" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>Fdsfs&agrave;</p>
 <p>&Agrave;</p>
 <p>S&agrave;</p>
@@ -313,19 +313,19 @@ nhập dữ liệu, gồm:
 <p>Fsa</p>
 <p>F</p>
 <p>Sf</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:58:42',
-                    'updated_at' => '2022-02-17 14:58:42',
-                ),
-            8 =>
-                array(
-                    'id' => 14,
-                    'course_id' => 5,
-                    'title' => 'Chuong 2 : Luật pháp hôn nhân',
-                    'descriptif' => 'Luật pháp hôn nhân',
-                    'image' => 'lessons/default2.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/hh5tBZ9yxcU" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+                'file' => NULL,
+                'created_at' => '2022-02-17 14:58:42',
+                'updated_at' => '2022-02-17 14:58:42',
+            ),
+            8 => 
+            array (
+                'id' => 14,
+                'course_id' => 5,
+                'title' => 'Chuong 2 : Luật pháp hôn nhân',
+                'descriptif' => 'Luật pháp hôn nhân',
+                'image' => 'lessons/default2.png',
+                'objectif' => '8',
+                'contenu' => '<p><iframe src="//www.youtube.com/embed/hh5tBZ9yxcU" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>&nbsp;</p>
 <p style="font-weight: 400;"><strong>LUẬT</strong></p>
 <p style="font-weight: 400;"><strong>H&Ocirc;N NH&Acirc;N V&Agrave; GIA Đ&Igrave;NH</strong></p>
@@ -416,19 +416,19 @@ nhập dữ liệu, gồm:
 <p style="font-weight: 400;"><strong>&nbsp;</strong></p>
 <p style="font-weight: 400;"><strong>Điều 18</strong></p>
 <p style="font-weight: 400;">Khi h&ocirc;n nh&acirc;n tồn tại, nếu một b&ecirc;n y&ecirc;u cầu v&agrave; c&oacute; l&yacute; do ch&iacute;nh đ&aacute;ng, th&igrave; c&oacute; thể chia t&agrave;i sản chung của vợ chồng theo quy định ở Điều 42 của Luật n&agrave;y.</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 14:59:52',
-                    'updated_at' => '2022-02-17 14:59:52',
-                ),
-            9 =>
-                array(
-                    'id' => 15,
-                    'course_id' => 6,
-                    'title' => 'Nguyên lý HĐH',
-                    'descriptif' => 'tổng quan về HĐH',
-                    'image' => 'lessons/default2.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/YILh1dduI8E?list=PLZEIt444jqpD0tZv9KgsCsDHOML7QRLIN" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+'file' => NULL,
+'created_at' => '2022-02-17 14:59:52',
+'updated_at' => '2022-02-17 14:59:52',
+),
+9 => 
+array (
+'id' => 15,
+'course_id' => 6,
+'title' => 'Nguyên lý HĐH',
+'descriptif' => 'tổng quan về HĐH',
+'image' => 'lessons/default2.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/YILh1dduI8E?list=PLZEIt444jqpD0tZv9KgsCsDHOML7QRLIN" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>R&otilde; r&agrave;ng hệ điều h&agrave;nh l&agrave; một thứ kh&ocirc;ng thể thiếu trong m&aacute;y t&iacute;nh c&aacute; nh&acirc;n hiện nay. Hệ điều h&agrave;nh điều khiển mọi hoạt động của m&aacute;y t&iacute;nh từ những c&ocirc;ng việc đơn giản cho tới phức tạp. Hệ điều h&agrave;nh l&agrave; m&ocirc;i trường để c&aacute;c phần mềm c&oacute; thể hoạt động v&agrave; chạy tr&ecirc;n đ&oacute;. Hệ điều h&agrave;nh sẽ t&iacute;nh to&aacute;n để ph&acirc;n bổ t&agrave;i nguy&ecirc;n cho c&aacute;c tiến tr&igrave;nh cho hợp l&iacute; để cho mọi thứ c&oacute; thể hoạt động một c&aacute;ch ho&agrave;n hảo nhất.</p>
 <p>Chung quy lại th&igrave; hệ điều h&agrave;nh chỉ l&agrave; một phần mềm hệ thống, n&oacute; tạo ra một m&ocirc;i trường m&agrave; c&aacute;c phần mềm c&oacute; thể hoạt động tr&ecirc;n n&oacute;. Hệ điều h&agrave;nh đ&oacute;ng vai tr&ograve; chung gian giữa người sử dụng v&agrave; m&aacute;y t&iacute;nh, che giấu đi những phần phức tạp để việc sử dụng m&aacute;y t&iacute;nh trở l&ecirc;n đơn giản v&agrave; hiệu quả hơn.</p>
 <div class="separator"><a href="https://1.bp.blogspot.com/-N9CYW91BeOE/Xz-LcguSaeI/AAAAAAAAA8s/jX_8CfdkdZ0kQWq2D7IBnFSmHGUsljvdwCPcBGAYYCw/s2040/soict.png"><img src="https://1.bp.blogspot.com/-N9CYW91BeOE/Xz-LcguSaeI/AAAAAAAAA8s/jX_8CfdkdZ0kQWq2D7IBnFSmHGUsljvdwCPcBGAYYCw/s320/soict.png" height="320" border="0" data-original-height="2040" data-original-width="2040" /></a></div>
@@ -442,19 +442,19 @@ nhập dữ liệu, gồm:
 <li>Quản l&yacute; hệ thống file</li>
 <li>Quản l&yacute; v&agrave;o ra</li>
 </ul>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:03:46',
-                    'updated_at' => '2022-02-17 15:03:46',
-                ),
-            10 =>
-                array(
-                    'id' => 16,
-                    'course_id' => 9,
-                    'title' => 'Chương 1 : Khái niệm cơ bản về HTML',
-                    'descriptif' => 'Khái niệm cơ bản về HTML',
-                    'image' => 'lessons/default0.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/GArJ0EPu77w" width="560" height="314" allowfullscreen="allowfullscreen"></iframe>&Egrave;</p>
+'file' => NULL,
+'created_at' => '2022-02-17 15:03:46',
+'updated_at' => '2022-02-17 15:03:46',
+),
+10 => 
+array (
+'id' => 16,
+'course_id' => 9,
+'title' => 'Chương 1 : Khái niệm cơ bản về HTML',
+'descriptif' => 'Khái niệm cơ bản về HTML',
+'image' => 'lessons/default0.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/GArJ0EPu77w" width="560" height="314" allowfullscreen="allowfullscreen"></iframe>&Egrave;</p>
 <p>Ewfhưgiưhgiuhiwughiug</p>
 <p>Ưegewjghiwueg</p>
 <p>Ưegưe</p>
@@ -470,19 +470,19 @@ nhập dữ liệu, gồm:
 <p>Gf</p>
 <p>J</p>
 <p>&nbsp;</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:05:22',
-                    'updated_at' => '2022-02-17 15:05:22',
-                ),
-            11 =>
-                array(
-                    'id' => 17,
-                    'course_id' => 10,
-                    'title' => 'Chương 1 : Tổng quan',
-                    'descriptif' => 'Tổng quan',
-                    'image' => 'lessons/default2.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/RN8UgMsXRlI?list=PLnRl-W3gZI79kfp8E7lcDkImtMHA6FIfr" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+'file' => NULL,
+'created_at' => '2022-02-17 15:05:22',
+'updated_at' => '2022-02-17 15:05:22',
+),
+11 => 
+array (
+'id' => 17,
+'course_id' => 10,
+'title' => 'Chương 1 : Tổng quan',
+'descriptif' => 'Tổng quan',
+'image' => 'lessons/default2.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/RN8UgMsXRlI?list=PLnRl-W3gZI79kfp8E7lcDkImtMHA6FIfr" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>Ư&egrave;</p>
 <p>Ew</p>
 <p>F</p>
@@ -496,19 +496,19 @@ nhập dữ liệu, gồm:
 <p>F</p>
 <p>Ư&egrave;</p>
 <p>&nbsp;</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:06:27',
-                    'updated_at' => '2022-02-17 15:06:27',
-                ),
-            12 =>
-                array(
-                    'id' => 18,
-                    'course_id' => 16,
-                    'title' => 'Chương 1 : Tổng quan',
-                    'descriptif' => 'aaaaaaa',
-                    'image' => 'lessons/default1.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/rSJAixS-vZs?list=PLFrigdg6S6B6RGQmsOEP4YbB7RTlXUnR4" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+'file' => NULL,
+'created_at' => '2022-02-17 15:06:27',
+'updated_at' => '2022-02-17 15:06:27',
+),
+12 => 
+array (
+'id' => 18,
+'course_id' => 16,
+'title' => 'Chương 1 : Tổng quan',
+'descriptif' => 'aaaaaaa',
+'image' => 'lessons/default1.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/rSJAixS-vZs?list=PLFrigdg6S6B6RGQmsOEP4YbB7RTlXUnR4" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>&nbsp;</p>
 <p>Ư&egrave;</p>
 <p>Ưe</p>
@@ -520,32 +520,32 @@ nhập dữ liệu, gồm:
 <p>F</p>
 <p>Ư&egrave;</p>
 <p>&nbsp;</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:07:17',
-                    'updated_at' => '2022-02-17 15:07:17',
-                ),
-            13 =>
-                array(
-                    'id' => 19,
-                    'course_id' => 17,
-                    'title' => 'Chương 1 : tổng quan về àn toàn CSDL',
-                    'descriptif' => 'tổng quan về àn toàn CSDL',
-                    'image' => 'lessons/default1.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/XByLb__xhLk" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:08:05',
-                    'updated_at' => '2022-02-17 15:08:05',
-                ),
-            14 =>
-                array(
-                    'id' => 20,
-                    'course_id' => 3,
-                    'title' => 'Chuong 5 : Tổng kết',
-                    'descriptif' => 'tổng kết',
-                    'image' => 'lessons/default0.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+'file' => NULL,
+'created_at' => '2022-02-17 15:07:17',
+'updated_at' => '2022-02-17 15:07:17',
+),
+13 => 
+array (
+'id' => 19,
+'course_id' => 17,
+'title' => 'Chương 1 : tổng quan về àn toàn CSDL',
+'descriptif' => 'tổng quan về àn toàn CSDL',
+'image' => 'lessons/default1.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/XByLb__xhLk" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>',
+'file' => NULL,
+'created_at' => '2022-02-17 15:08:05',
+'updated_at' => '2022-02-17 15:08:05',
+),
+14 => 
+array (
+'id' => 20,
+'course_id' => 3,
+'title' => 'Chuong 5 : Tổng kết',
+'descriptif' => 'tổng kết',
+'image' => 'lessons/default0.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/Qvzxh7lR_O8?list=PLMxBWNFEl3lZl-4fBZDb4R-iRSgPXI4og&amp;index=2" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>
 TOP 5 giáo trình hệ quản trị cơ sở dữ liệu
 Sau khi tìm hiểu về những kiến thức trong phần trên, không quá khó để chúng ta nhận ra tầm quan trọng cũng như mức độ phổ biến của các giáo trình hệ quản trị cơ sở dữ liệu. Mặc dù theo một số thống kê cho thấy hiện nay, có đến hơn 300 hệ quản trị CSDL khác nhau, tuy nhiên, chỉ có khoản hơn 10 giáo trình hệ quản trị cơ sở dữ liệu được sử dụng phổ biến trên thế giới hơn cả để cải thiện khả năng lý dữ liệu cho các ứng dụng công nghệ thông tin, các phần mềm máy tính hay website,… Cùng chúng tôi điểm danh Top 10 hệ quản trị CSDL phổ biến nhất sau đây nhé!
@@ -620,34 +620,34 @@ Cách bước lập kế hoạch Marketing cho sản phẩm đạt hiệu quả 
 Những bước chiến lược chiêu thị quan trọng trong ngành bán lẻ
 Marketing Specialist là gì? Kỹ năng cần có của người làm Marketing Specialist
 </p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:09:21',
-                    'updated_at' => '2022-02-17 15:09:21',
-                ),
-            15 =>
-                array(
-                    'id' => 21,
-                    'course_id' => 4,
-                    'title' => 'Chuong 4 : Cài đặt phần mềm , môi trường',
-                    'descriptif' => 'Cài đặt phần mề và môi trường',
-                    'image' => 'lessons/default0.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+'file' => 'pdf/SQL Chương 5 Tổng kết.pdf',
+'created_at' => '2022-02-17 15:09:21',
+'updated_at' => '2022-02-17 15:09:21',
+),
+15 => 
+array (
+'id' => 21,
+'course_id' => 4,
+'title' => 'Chuong 4 : Cài đặt phần mềm , môi trường',
+'descriptif' => 'Cài đặt phần mề và môi trường',
+'image' => 'lessons/default0.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>&nbsp;</p>
 <p>Một số phần mềm cơ bản người học n&ecirc;n sử dụng</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:46:57',
-                    'updated_at' => '2022-02-17 15:46:57',
-                ),
-            16 =>
-                array(
-                    'id' => 22,
-                    'course_id' => 4,
-                    'title' => 'Chuong 5 : Cài đặt cáu hình mạng, hệ thống',
-                    'descriptif' => 'Cấu hình mạng, cấu hình hệ thống',
-                    'image' => 'lessons/default2.png',
-                    'objectif' => '8',
-                    'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+'file' => 'pdf/QTM Chương 4 Cài đặ PM.pdf',
+'created_at' => '2022-02-17 15:46:57',
+'updated_at' => '2022-02-17 15:46:57',
+),
+16 => 
+array (
+'id' => 22,
+'course_id' => 4,
+'title' => 'Chuong 5 : Cài đặt cáu hình mạng, hệ thống',
+'descriptif' => 'Cấu hình mạng, cấu hình hệ thống',
+'image' => 'lessons/default2.png',
+'objectif' => '8',
+'contenu' => '<p><iframe src="//www.youtube.com/embed/DJMWMp850SE?list=PLSzZlHir9jJSf7X0I_P7wuHh4WTDZGDN6" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
 <p>Sơ đồ&nbsp;hệ thống mạng một đường</p>
 <p><img src="https://www.daihockhonggiay.com/Network/1/18.jpg" /></p>
 <p>1. Đặt địa chỉ IP cho 2 PC v&agrave; Server</p>
@@ -767,12 +767,12 @@ Marketing Specialist là gì? Kỹ năng cần có của người làm Marketing
 <p>SW0(config-if)#switchport mode trunk</p>
 <p>SW0(config-if)#end</p>
 <p>SW0#wr (lưu lại cấu h&igrave;nh)</p>',
-                    'file' => NULL,
-                    'created_at' => '2022-02-17 15:49:10',
-                    'updated_at' => '2022-02-17 15:49:10',
-                ),
-        ));
-
-
+'file' => 'pdf/QTM Chương 5 Cấu hình Mạng.pdf',
+'created_at' => '2022-02-17 15:49:10',
+'updated_at' => '2022-02-17 15:49:10',
+),
+));
+        
+        
     }
 }

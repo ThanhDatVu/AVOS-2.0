@@ -3,16 +3,21 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{$course->title}}
+            @php
+                $courseUserCheck = DB::table('course_user')
+                                ->where('user_id', Auth::user()->id)
+                                ->where('course_id', $course->id)
+                                ->first();
+
+            @endphp
             @if(isset(Auth::user()->teacher->id))
                 @if ((Auth::user()->teacher->id != $course->teacher_id))
                     <a href="{{route('enroll',['id'=>$course->id])}}"
-                       class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll
-                        the course</a>
+                       class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Đăng ký tham gia</a>
                 @endif
-            @else
+            @elseif($course->category != Auth::user()->class and !$courseUserCheck)
                 <a href="{{route('enroll',['id'=>$course->id])}}"
-                   class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll
-                    the course</a>
+                   class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Đăng ký tham gia</a>
             @endif
         </h2>
     </x-slot>
@@ -83,14 +88,19 @@
                                                 </ul>
 
                                             </div>
-                                            <div class='grid place-items-center w-100 m-3'>
+
+                                            @if(isset(Auth::user()->teacher->id))
+                                                @if (Auth::user()->teacher->id == $course->teacher_id)
+                                                    <div class='grid place-items-center w-100 m-3'>
                                                 <span class="text-uppercase justify-content-between d-flex">
                                                     <a href="{{route('make-new-lesson',["id"=>$course->id])}}"
                                                        class="btn ti-plus bg-gray-100">&nbsp;Thêm bài học mới</a>
 
                                                 </span>
 
-                                            </div>
+                                                    </div>
+                                                @endif
+                                            @endif
 
                                             <h4 class="title">Các bài kiểm tra</h4>
                                             <div class="content">
@@ -125,7 +135,7 @@
                                                                         <a href="{{route("edit-exam-questions",["examid"=>$exam->id])}}"
                                                                            class="btn ti-pencil">&nbsp;Sửa câu hỏi</a>
                                                                         <a href="{{route("edit-exam",$exam->id)}}"
-                                                                            class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Xoá</a>
+                                                                           class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Xoá</a>
                                                                     @endif
                                                                 @endif
                                                             </span>
@@ -142,15 +152,34 @@
                                         </div>
 
                                     </div>
-                                    <div class='grid place-items-center w-100 m-3'>
+                                    @if(isset(Auth::user()->teacher->id))
+                                        @if (Auth::user()->teacher->id == $course->teacher_id)
+                                            <div class='grid place-items-center w-100 m-3'>
 
-                                        <span class="text-uppercase justify-content-between d-flex m-2">
-                                        <a href="{{route('make-new-exam',["id"=>$course->id])}}"
-                                           class="btn ti-plus bg-gray-100">&nbsp;Thêm bài kiểm tra mới </a>
+                                                <span class="text-uppercase justify-content-between d-flex m-2">
+                                                <a href="{{route('make-new-exam',["id"=>$course->id])}}"
+                                                   class="btn ti-plus bg-gray-100">&nbsp;Thêm bài kiểm tra mới </a>
 
-                                        </span>
+                                                </span>
 
-                                    </div>
+                                            </div>
+                                        @endif
+                                    @endif
+                                    @if(isset(Auth::user()->teacher->id))
+                                        @if (Auth::user()->teacher->id == $course->teacher_id)
+                                            <hr>
+
+                                            <div class='grid place-items-center w-100 m-3'>
+
+                                                <span class="text-uppercase justify-content-between d-flex m-2">
+                                                <a href="{{route('make-new-exam',["id"=>$course->id])}}"
+                                                   class="btn ti-plus bg-gray-100">&nbsp;Danh sách học viên</a>
+
+                                                </span>
+
+                                            </div>
+                                        @endif
+                                    @endif
 
 
                                 </div>

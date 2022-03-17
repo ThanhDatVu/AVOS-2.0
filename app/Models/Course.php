@@ -25,7 +25,7 @@ class Course extends Model
         "objectif",
         "competences_requises",
         "niveau_de_difficulte",
-
+        "category",
         "image",
         "updated_at",
         "teacher_id",

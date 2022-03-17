@@ -7,6 +7,7 @@ use URL;
 use Session;
 use Exception;
 use App\Models\Course;
+use App\Models\CourseUserRequests;
 use App\Models\Exam;
 
 use App\Models\Category;
@@ -108,94 +109,25 @@ class CourseController extends Controller
      */
     public $idu;
 
-    public function enroll($id)
+    public function enroll($id, Request $request)
     {
         $this->idu = $id;
         $course = Course::where('id', $id)->firstOrFail();
 
-        function pay($course, $id)
-        {
-            if ($course->coût_du_cours != 0) {
-                $url = "http://money_service.local?number=" . Auth::user()->telephone . "&benef=657675216&amount=$course->coût_du_cours";
-                $pay = @json_decode(file_get_contents($url));
-                if ($pay->status) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                Auth::user()->course()->toggle([$course->id]);
-            }
-        }
+        DB::table('course_user_requests')
+            ->updateOrInsert(
+                ['user_id' => Auth::user()->id,
+                    'course_id' => $id]
 
-        $coursA = array();
-        $i = 0;
-        foreach (Auth::user()->course as $cours) {
-            $coursA[$i] = $cours->id;
-        }
-        $Existusers = DB::table('cour_user')
-            ->whereIn('cour_id', $coursA)
-            ->where('user_id', Auth::user()->id)
-            ->get();
-        if (!isset($Existusers[0])) {
-
-            if (isset(Auth::user()->cours)) {
-                if (($couruser->user_id != Auth::user()->id) && ($couruser->cour_id != $id)) {
-                    if (pay($course, $id))
-                        Auth::user()->course()->toggle([$course->id]);
-
-                }
-            } else {
-                pay($course, $id);
-            }
-        }
-
-        return view('all-courses', ["courses" => Auth::user()->cours]);
-        /* if($course->coût_du_cours){
-            // Create new payer and method
-            $payer = new Payer();
-            $payer->setPaymentMethod("paypal");
-
-            // Set redirect URLs
-            $redirectUrls = new RedirectUrls();
-            $redirectUrls->setReturnUrl(route("course",['id'=>$course->id]))
-            ->setCancelUrl(route("course",['id'=>$course->id]));
-
-            // Set payment amount
-            $amount = new Amount();
-            $amount->setCurrency("USD")
-            ->setTotal($course->coût_du_cours);
-
-            // Set transaction object
-            $transaction = new Transaction();
-            $transaction->setAmount($amount)
-            ->setDescription('paiement effectué pour '.$course->title.', montant '.$course->coût_du_cours.' par '.Auth::user()->nom_utilisateur);
-
-            // Create the full payment object
-            $payment = new Payment();
-            $payment->setIntent('sale')
-            ->setPayer($payer)
-            ->setRedirectUrls($redirectUrls)
-            ->setTransactions(array($transaction));
-            $apiContext = new ApiContext(
-                new OAuthTokenCredential(
-                    config("paypal.client_id"),
-                    config("paypal.secret")
-                )
             );
-            try {
-                dd($payment->create($apiContext));
-                // Get PayPal redirect URL and redirect the customer
-                //$approvalUrl = $payment->getApprovalLink();
 
-                // Redirect the customer to $approvalUrl
-            } catch (PayPal\Exception\PayPalConnectionException $ex) {
-                echo $ex->getCode();
-                echo $ex->getData();
-                die($ex);
-            } catch (Exception $ex) {
-               dd($ex->getMessage());
-            }*/
+
+
+
+
+
+        return view('enroll-confirm', ["course" => $course]);
+
     }
 
 

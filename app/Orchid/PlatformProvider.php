@@ -9,6 +9,7 @@ use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
 use Orchid\Screen\Actions\Menu;
 use Orchid\Support\Color;
+use App\Models\CourseUserRequest;
 
 class PlatformProvider extends OrchidServiceProvider
 {
@@ -36,6 +37,13 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Danh mục khoá học')
                 ->icon('list')
                 ->route('platform.systems.categories'),
+            Menu::make('Yêu cầu khoá học')
+                ->icon('list')
+                ->route('platform.systems.enrollrequest')
+                ->badge(function () {
+                    $count = CourseUserRequest::all()->count();
+                    return $count;
+                }),
 
             Menu::make('Điểm số cá nhân')
                 ->title('Quản lý điểm')

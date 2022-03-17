@@ -110,6 +110,14 @@ Route::screen('categories', \App\Orchid\Screens\DanhMucKhoaHocScreen::class)
             ->parent('platform.index')
             ->push(__('Danh mục'), route('platform.systems.users'));
     });
+// Platform > System > EnrollRequest
+Route::screen('enrollrequest', \App\Orchid\Screens\EnrollRequestScreen::class)
+    ->name('platform.systems.enrollrequest')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Yêu cầu tham gia khoá học'), route('platform.systems.enrollrequest'));
+    });
 
 // Platform > System > Roles > Role
 Route::screen('roles/{roles}/edit', RoleEditScreen::class)

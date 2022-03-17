@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Orchid\Screen\AsSource;
 
 
-class CourseUser extends Model
+class CourseUserRequest extends Model
 {
     use HasFactory, AsSource;
 
@@ -19,18 +19,15 @@ class CourseUser extends Model
     ];
 
 
-    public function courses()
+    public function course()
     {
-        return $this->hasMany(Course::class);
+        return $this->belongsTo(Course::class);
     }
 
-    public function users()
+    public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function lessons()
-    {
-        return $this->belongsToMany(Lesson::class);
-    }
+
 }
