@@ -80,9 +80,13 @@ class CourseListLayout extends Table
                         ->icon('options-vertical')
                         ->list([
 
-                            Link::make(__('Edit'))
-                                ->route('platform.systems.courses.lesson', $course->id)
-                                ->icon('pencil'),
+
+                            Link::make(__('Xem danh sách học viên'))
+                                ->route('course-users', $course->id)
+                                ->icon('eye'),
+                            Link::make(__('Xem danh sách kết quả'))
+                                ->route('course-user-results', $course->id)
+                                ->icon('eye'),
                             Link::make(__('Xem các bài học'))
                                 ->route('platform.systems.courses.lesson', $course->id)
                                 ->icon('pencil'),

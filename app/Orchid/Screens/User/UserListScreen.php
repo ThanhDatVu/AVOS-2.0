@@ -28,7 +28,7 @@ class UserListScreen extends Screen
      *
      * @var string
      */
-    public $description = 'All registered users';
+    public $description = 'Tất cả người dùng đã đăng ký';
 
     /**
      * @var string
@@ -59,7 +59,7 @@ class UserListScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make(__('Add'))
+            Link::make(__('Thêm'))
                 ->icon('plus')
                 ->route('platform.systems.users.create'),
         ];

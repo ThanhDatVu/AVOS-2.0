@@ -19,11 +19,16 @@ class UserRoleLayout extends Rows
     public function fields(): array
     {
         return [
-            Select::make('user.roles.')
-                ->fromModel(Role::class, 'name')
-                ->multiple()
-                ->title(__('Name role'))
-                ->help('Xác định Role của người dùng này'),
+            Select::make('user.role.')
+                ->options([
+                    'student'   => 'student',
+                    'teacher'   => 'teacher',
+                    'administrator' => 'administrator',
+                ])
+                ->title(__('Xác định Role'))
+                ->help('Xác định Role của người dùng này')
+
+
         ];
     }
 }

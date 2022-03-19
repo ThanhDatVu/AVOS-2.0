@@ -8,6 +8,7 @@ use Laravel\Scout\Builder;
 use Orchid\Screen\Contracts\Personable;
 use Orchid\Screen\Contracts\Searchable;
 use Orchid\Support\Presenter;
+use Illuminate\Support\Facades\Storage;
 
 class UserPresenter extends Presenter implements Searchable, Personable
 {
@@ -34,9 +35,7 @@ class UserPresenter extends Presenter implements Searchable, Personable
     {
         $roles = $this->entity->roles->pluck('name')->implode(' / ');
 
-        return empty($roles)
-            ? __('Regular user')
-            : $roles;
+        return $this->entity->role;
     }
 
     /**
@@ -52,9 +51,9 @@ class UserPresenter extends Presenter implements Searchable, Personable
      */
     public function image(): ?string
     {
-        $hash = md5(strtolower(trim($this->entity->email)));
 
-        return "https://www.gravatar.com/avatar/$hash?d=mp";
+
+        return Storage::url($this->entity->avatar);
     }
 
     /**

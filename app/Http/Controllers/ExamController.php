@@ -114,7 +114,7 @@ class ExamController extends Controller
         }
         //Kiểm tra kết quả đã tồn tại chưa
         $result = Result::firstOrCreate(
-            ['exam_id' => $id], ['user_id' => 13]
+            ['exam_id' => $id,'user_id' => Auth::user()->id]
 
 
         );

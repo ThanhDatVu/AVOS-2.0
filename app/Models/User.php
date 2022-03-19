@@ -58,6 +58,7 @@ class User extends Authenticatable
         'id',
         'name',
         'email',
+        'class',
         'permissions',
     ];
 
@@ -70,6 +71,7 @@ class User extends Authenticatable
         'id',
         'name',
         'email',
+        'class',
         'updated_at',
         'created_at',
     ];

@@ -17,14 +17,14 @@ class RoleListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Manage roles';
+    public $name = 'Danh sách Role';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Access rights';
+    public $description = '';
 
     /**
      * @var string
@@ -51,9 +51,7 @@ class RoleListScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make(__('Add'))
-                ->icon('plus')
-                ->href(route('platform.systems.roles.create')),
+
         ];
     }
 

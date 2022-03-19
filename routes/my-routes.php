@@ -64,3 +64,6 @@ Route::get('/admin-my-course/{id}', [CourseController::class, "showSingle"])->mi
 
 /*courses*/
 Route::get('/users', [UserController::class, "showUsers"])->middleware(['auth'])->name('users');
+Route::get('course/{courseid}/users', [UserController::class, "showCourseUsers"])->middleware(['auth'])->name('course-users');
+Route::get('course/{courseid}/user-result', [UserController::class, "showCourseUserResults"])->middleware(['auth'])->name('course-user-results');
+Route::post('course/{courseid}/users', [UserController::class, "submitCourseUsers"])->middleware(['auth'])->name('submit-course-users');

@@ -51,7 +51,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systems.users.grade', 13),
             Menu::make('Điểm số theo khoá học')
                 ->icon('database')
-                ->route('platform.example.fields'),
+                ->route('course-user-results', 3),
 
 
             Menu::make(__('Danh sách Users'))

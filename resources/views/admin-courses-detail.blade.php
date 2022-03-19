@@ -172,8 +172,13 @@
                                             <div class='grid place-items-center w-100 m-3'>
 
                                                 <span class="text-uppercase justify-content-between d-flex m-2">
-                                                <a href="{{route('make-new-exam',["id"=>$course->id])}}"
-                                                   class="btn ti-plus bg-gray-100">&nbsp;Danh sách học viên</a>
+                                                <a href="{{route('course-users',["courseid"=>$course->id])}}"
+                                                   class="btn ti-eye bg-gray-100">&nbsp;Danh sách học viên</a>
+
+                                                </span>
+                                                <span class="text-uppercase justify-content-between d-flex m-2">
+                                                <a href="{{route('course-user-results',["courseid"=>$course->id])}}"
+                                                   class="btn ti-eye bg-gray-100">&nbsp;Danh sách kết quả học tập</a>
 
                                                 </span>
 

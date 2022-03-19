@@ -13,7 +13,7 @@ class DanhMucKhoaHocScreen extends Screen
      *
      * @var string
      */
-    public $name = 'DanhMucKhoaHocScreen';
+    public $name = 'Danh sách danh mục các khoá học';
 
     /**
      * Query data.

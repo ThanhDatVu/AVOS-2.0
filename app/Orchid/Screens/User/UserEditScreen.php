@@ -8,6 +8,7 @@ use App\Orchid\Layouts\Role\RolePermissionLayout;
 use App\Orchid\Layouts\User\UserEditLayout;
 use App\Orchid\Layouts\User\UserPasswordLayout;
 use App\Orchid\Layouts\User\UserRoleLayout;
+use App\Orchid\Layouts\User\UserClassLayout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -130,6 +131,16 @@ class UserEditScreen extends Screen
                         ->canSee($this->user->exists)
                         ->method('save')
                 ),
+            Layout::block(UserClassLayout::class)
+                ->title(__('Nhóm'))
+                ->description(__('Phân người dùng vào các nhóm'))
+                ->commands(
+                    Button::make(__('Lưu'))
+                        ->type(Color::DEFAULT())
+                        ->icon('check')
+                        ->canSee($this->user->exists)
+                        ->method('save')
+                ),
 
             Layout::block(RolePermissionLayout::class)
                 ->title(__('Permissions'))
@@ -168,13 +179,15 @@ class UserEditScreen extends Screen
             ->toArray();
 
         $userData = $request->get('user');
+
         if ($user->exists && (string)$userData['password'] === '') {
             // When updating existing user null password means "do not change current password"
             unset($userData['password']);
         } else {
             $userData['password'] = Hash::make($userData['password']);
         }
-
+        $user->class = $userData['class'][0];
+        $user->role = $userData['role'][0];
         $user
             ->fill($userData)
             ->fill([
