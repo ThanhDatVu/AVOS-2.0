@@ -1,8 +1,12 @@
-tải các package cần thiết composer update
+AVOS - E-learning platform
 
-tạo + seed cơ sở dữ liệu php artisan migrate:fresh --seed
+Dự án này được phát triển như một bài tập lớn môn học Thực tập cơ sở chuyên ngành
 
-chạy php artisan serve
+Dự án này là 1 ứng dụng web được viết bằng framework Laravel, dữ liệu được lưu trữ bằng cơ sở dữ liệu MySQL, phần quản trị được phát triển trên package Orchid, một package cho phép xây dựng giao diện quản lý mạnh mẽ
 
-iseed khoá hoc, bai hoc php artisan iseed courses,lessons --force php artisan iseed
-courses,lessons,course_user,questions,exams,users,results --force
+Chức năng chính: 
+    Quản lý người dùng
+    Tạo, quản lý bài giảng, học liệu
+    Tạo, quản lý bài kiểm tra
+    Quản lý kêt quả học tập
+    
